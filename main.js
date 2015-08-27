@@ -1,28 +1,44 @@
-angular.module('todoApp', [])
-  .controller('TodoListController', function() {
-    var todoList = this;
-    todoList.todos = [
-      {text:'learn angular', done:true},
-      {text:'build an angular app', done:false}];
+(function() {
+  var app = angular.module("jho",[]);
 
-    todoList.addTodo = function() {
-      todoList.todos.push({text:todoList.todoText, done:false});
-      todoList.todoText = '';
+  app.controller("PanelController", function(){
+    this.tab = 1;
+
+    this.selectTab = function(newActiveTab) {
+      this.tab = newActiveTab;
     };
 
-    todoList.remaining = function() {
-      var count = 0;
-      angular.forEach(todoList.todos, function(todo) {
-        count += todo.done ? 0 : 1;
-      });
-      return count;
-    };
-
-    todoList.archive = function() {
-      var oldTodos = todoList.todos;
-      todoList.todos = [];
-      angular.forEach(oldTodos, function(todo) {
-        if (!todo.done) todoList.todos.push(todo);
-      });
+    this.isSelected = function(tabToCheck) {
+      return this.tab === tabToCheck;
     };
   });
+
+  app.controller('BoardController',function(){
+    this.board = board1;
+    this.list1_items = list1_items;
+  });
+
+  app.controller("AddOrganizationController", function(){
+    this.organization = {};
+    this.list1_items = list1_items;
+
+    this.addOrganization = function(list1_items) {
+      this.list1_items.push(this.organization);
+      this.organization = {};
+    };
+  });
+
+  var board1 = {
+    name: "Test Board Title",
+    description: '...'
+  }
+  var list1_items = [
+    { title: "Google"},
+    { title: "Wired"},
+    { title: "TheGreatBlue"},
+  ]
+
+})();
+
+
+
