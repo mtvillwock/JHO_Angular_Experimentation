@@ -1,161 +1,26 @@
 <!doctype html>
-<html ng-app="jho">
-<head>
-  <link rel="stylesheet" href="normalize.css">
-  <link rel="stylesheet" href="main.css">
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-</head>
-
-<body>
-
-  <div class="grid-container outline">
-
-    <div class="row">
-      <div class="col-6 header-bar">
-        <h1>JHO</h1>
-      </div>
-    </div>
-
-    <!-- Token auth demo -->
-    <button ng-click="logout()">Logout</button>
-    <form nonvalidate ng-submit="newSession(signin)">
-      <p>
-        <label>Email</label>
-        <input type="email" ng-model="signin.email" class='form-control'>
-      </p>
-      <p>
-        <label>Password</label>
-        <input type="password" ng-model="signin.password" class='form-control'>
-      </p>
-      <p>
-        <input type="submit" name='SigninButton' value="Sign in" class='btn btn-primary'>
-      </p>
-    </form>
-    <!-- end token auth demo -->
-
-    <div ng-controller="PanelController as panel">
-      <div class="row">
-       <ul class="col-6 tab-bar">
-        <li >
-          <a href ng-click="panel.selectTab(1)" ng-class="{active: panel.isSelected(1) }">Board</a>
-        </li>
-        <li >
-          <a href ng-click="panel.selectTab(2)" ng-class="{active: panel.isSelected(2) }">Today</a>
-        </li>
-        <li >
-          <a href ng-click="panel.selectTab(3)" ng-class="{active: panel.isSelected(3) }">Stats</a>
-        </li>
-        <li>
-          <a href ng-click="panel.selectTab(4)" ng-class="{active: panel.isSelected(4) }">Tips</a>
+<html ng-app="todoApp">
+  <head>
+    <script src="angular.min.js"></script>
+    <script src="simple/main.js"></script>
+    <link rel="stylesheet" href="stylesheets/main.css">
+  </head>
+  <body>
+    <h2>Todo</h2>
+    <div ng-controller="TodoListController as todoList">
+      <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+      [ <a href="" ng-click="todoList.archive()">archive</a> ]
+      <ul class="unstyled">
+        <li ng-repeat="todo in todoList.todos">
+          <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
         </li>
       </ul>
+      <form ng-submit="todoList.addTodo()">
+        <input type="text" ng-model="todoList.todoText"  size="30"
+               placeholder="add new todo here">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
     </div>
-
-    <div class="row" >
-      <div class="col-6 panel board grad" ng-controller="BoardController as board" ng-show="panel.isSelected(1)">
-
-        <h1>{{board.board.name}} </h1>
-
-        <div id="interested-col" >
-          <h3>Interested</h3>
-          <ul ng-repeat="list1_item in board.list1_items">
-            <li>{{list1_item.title}}</li>
-          </ul>
-
-          <form id="board-form" name="addOrganizationForm" ng-controller="AddOrganizationController as addOrgCtrl" ng-submit="addOrganizationForm .$valid && addOrgCtrl.addOrganization(list1_items)" novalidate>
-            <input ng-model="addOrgCtrl.organization.title" type="text" placeholder="New Organization" required/>
-            <input type="submit" value="Add" />
-          </form>
-
-        </div>
-
-        <div id="personal-contact-col">
-          <h3>Personal Contact</h3>
-
-          <div id="in-progress">
-            <h4>In Progress</h4>
-            <ul>
-              <li>Test 1</li>
-              <li>Test 2</li>
-              <li>Test 3</li>
-            </ul>
-          </div>
-
-          <div id="done">
-            <h4>Done</h4>
-            <ul>
-              <li>Test 1</li>
-              <li>Test 2</li>
-            </ul>
-          </div>
-
-        </div>
-
-        <div id="apply-col">
-          <h3>Apply</h3>
-          <div id="in-progress">
-            <h4>In Progress</h4>
-            <ul>
-              <li>Test 1</li>
-              <li>Test 2</li>
-              <li>Test 3</li>
-            </ul>
-          </div>
-
-          <div id="done">
-            <h4>Done</h4>
-            <ul>
-              <li>Test 1</li>
-              <li>Test 2</li>
-            </ul>
-          </div>
-
-        </div>
-
-        <div id="interview-col">
-          <h3>Interview</h3>
-          <ul> </ul>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-6 panel" ng-show="panel.isSelected(2)">
-        Today's Opportunities
-        List of prioritized opportunities for today
-        {{panel.tab}}
-
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-6 panel" ng-show="panel.isSelected(3)">
-        Stats
-        progress, points, streaks
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-6 panel" ng-show="panel.isSelected(4)">
-        Tips
-        timely, bite-sized articles related to your job hunt
-      </div>
-    </div>
-
-  </div>
-
-
-  <div class="row">
-    <div class="col-6 footer">
-      Footer and related facts.  Probably make this 2 columns.  And push to the bottom of the viewing screen...  Is this even necessary??
-    </div>
-  </div>
-
-
-  <script src="angular.min.js"></script>
-  <script src="main.js"></script>
-
-</body>
-
+  </body>
 </html>
