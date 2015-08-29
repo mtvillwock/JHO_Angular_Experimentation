@@ -10,7 +10,7 @@
 
 (function() {
     // inject dependency modules
-    var app = angular.module('todoApp', ['dndLists']);
+    var app = angular.module('jho-drag-drop', ['dndLists']);
     // for compatibility with Rails CSRF protection
     app.config([
         '$httpProvider',
