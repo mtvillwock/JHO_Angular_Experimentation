@@ -4,7 +4,7 @@
     app.controller('UsersController', function($http) {
         var controller = this;
         console.log("in user controller")
-        this.createUser = function(user) {
+        controller.createUser = function(user) {
             console.log("in createUser")
             $http({
                 method: 'POST',
