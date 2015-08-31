@@ -1,7 +1,7 @@
-angular.module('JHO')
-    .controller('UsersCreateController', function($http) {
+angular.module('users-controller', [])
+    .controller('UsersController', function($http) {
         var controller = this;
-
+        console.log("in user controller")
         this.createUser = function(user) {
             $http({
                 method: 'POST',

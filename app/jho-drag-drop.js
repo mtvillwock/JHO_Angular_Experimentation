@@ -12,12 +12,12 @@
     // inject dependency modules
     var app = angular.module('jho-drag-drop', ['dndLists']);
     // for compatibility with Rails CSRF protection
-    app.config([
-        '$httpProvider',
-        function($httpProvider) {
-            $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
-        }
-    ]);
+    // app.config([
+    //     '$httpProvider',
+    //     function($httpProvider) {
+    //         $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
+    //     }
+    // ]);
 
     // start boardController
     app.controller('boardController', function() {

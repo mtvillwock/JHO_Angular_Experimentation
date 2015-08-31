@@ -17,14 +17,14 @@
     </div>
 
 
-    <div ng-controller="UsersCreateController" class="register">
-      <form action="">
-        Name: <input type="text" name="user[name]">
-        Email: <input type="text" name="user[email]">
-        Password: <input type="password" name="user[password]">
-        Password Confirmation: <input type="password" name="user[password_confirmation]">
+    <div ng-controller="UsersController" class="register">
+      <form novalidate>
+        Name: <input ng-model="user.name" type="text" name="user[name]">
+        Email: <input ng-model="user.email" type="text" name="user[email]">
+        Password: <input ng-model="user.password" type="password" name="user[password]">
+        Password Confirmation: <input ng-model="user.password_confirmation" type="password" name="user[password_confirmation]">
       </form>
-      <input ng-click="UsersCreateController.saveUser(user)" type="submit" value="Register">
+      <input ng-click="UsersController.createUser(user)" type="submit" value="Register">
     </div>
 <!-- Token auth demo -->
     <!--
@@ -165,7 +165,14 @@
   </div>
 
 
-  <script src="angular.min.js"></script>
+  <script src="angular.js"></script>
+  <script src="angular-route.js"></script>
+  <script src="angular-cookies.js"></script>
+  <script src="angular-drag-and-drop-lists.js"></script>
+  <script src="controllers/users-create-controller.js"></script>
+  <script src="jho-drag-drop.js"></script>
+  <script src="routes.js"></script>
+  <script src="jho-auth.js"></script>
   <script src="main.js"></script>
 
 </body>

@@ -45,7 +45,7 @@ function minErr(module, ErrorConstructor) {
       message = '[' + (module ? module + ':' : '') + code + '] ',
       template = templateArgs[1],
       paramPrefix, i;
-
+      console.log(message);
     message += template.replace(/\{\d+\}/g, function(match) {
       var index = +match.slice(1, -1),
         shiftedIndex = index + SKIP_INDEXES;
