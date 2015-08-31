@@ -23,7 +23,7 @@
         Email: <input ng-model="user.email" type="text" name="user[email]">
         Password: <input ng-model="user.password" type="password" name="user[password]">
         Password Confirmation: <input ng-model="user.password_confirmation" type="password" name="user[password_confirmation]">
-        <input ng-click="UsersController.createUser(user)" type="submit" value="Register">
+        <input ng-submit="UsersController.createUser(user)" type="submit" value="Register">
       </form>
     </div>
 <!-- Token auth demo -->
