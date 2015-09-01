@@ -16,35 +16,6 @@
       </div>
     </div>
 
-
-    <div ng-controller="UsersController" class="register">
-      <form novalidate>
-        Name: <input ng-model="user.name" type="text" name="user[name]">
-        Email: <input ng-model="user.email" type="text" name="user[email]">
-        Password: <input ng-model="user.password" type="password" name="user[password]">
-        Password Confirmation: <input ng-model="user.password_confirmation" type="password" name="user[password_confirmation]">
-        <input ng-submit="UsersController.createUser(user)" type="submit" value="Register">
-      </form>
-    </div>
-<!-- Token auth demo -->
-    <!--
-    <button ng-click="logout()">Logout</button>
-    <form nonvalidate ng-submit="newSession(signin)">
-      <p>
-        <label>Email</label>
-        <input type="email" ng-model="signin.email" class='form-control'>
-      </p>
-      <p>
-        <label>Password</label>
-        <input type="password" ng-model="signin.password" class='form-control'>
-      </p>
-      <p>
-        <input type="submit" name='SigninButton' value="Sign in" class='btn btn-primary'>
-      </p>
-    </form>
-  -->
-    <!-- end token auth demo -->
-
     <div ng-controller="PanelController as panel">
       <div class="row">
        <ul class="col-6 tab-bar">
@@ -165,15 +136,33 @@
   </div>
 
 
+<!-- vendor -->
   <script src="angular.js"></script>
   <script src="angular-route.js"></script>
+  <script src="angular-resource.js"></script>
   <script src="angular-cookies.js"></script>
   <script src="angular-drag-and-drop-lists.js"></script>
-  <script src="controllers/users-create-controller.js"></script>
-  <script src="jho-drag-drop.js"></script>
-  <script src="routes.js"></script>
-  <script src="jho-auth.js"></script>
+
+<!-- App -->
   <script src="main.js"></script>
+  <script src="routes.js"></script>
+
+<!-- Directives -->
+
+<!-- Controllers -->
+  <script src="jho-drag-drop.js">
+  // Break into Board and Lists controllers
+  </script>
+  <script src="jho-auth.js">
+  // Break into SignIn controller, 4 factories
+  </script>
+  <script src="controllers/users-create-controller.js"></script>
+  <script src="controllers/board-controller.js"></script>
+  <script src="controllers/panel-controller.js"></script>
+
+<!-- Filters -->
+
+<!-- Services -->
 
 </body>
 

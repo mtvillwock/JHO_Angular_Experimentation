@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="JHO">
+<head>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="register.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<div ng-controller="UsersController" class="register">
+      <form novalidate>
+        Name: <input ng-model="user.name" type="text" name="user[name]">
+        Email: <input ng-model="user.email" type="text" name="user[email]">
+        Password: <input ng-model="user.password" type="password" name="user[password]">
+        Password Confirmation: <input ng-model="user.password_confirmation" type="password" name="user[password_confirmation]">
+        <input ng-submit="UsersController.createUser(user)" type="submit" value="Register">
+      </form>
+    </div>
+
+<!-- vendor -->
+  <script src="angular.js"></script>
+  <script src="angular-route.js"></script>
+  <script src="angular-resource.js"></script>
+  <script src="angular-cookies.js"></script>
+  <script src="angular-drag-and-drop-lists.js"></script>
+
+<!-- App -->
+  <script src="main.js"></script>
+  <script src="routes.js"></script>
+
+<!-- Directives -->
+
+<!-- Controllers -->
+  <script src="jho-drag-drop.js">
+  // Break into Board and Lists controllers
+  </script>
+  <script src="jho-auth.js">
+  // Break into SignIn controller, 4 factories
+  </script>
+  <script src="controllers/users-create-controller.js"></script>
+
+<!-- Filters -->
+
+<!-- Services -->
+
+</body>
+
+</html>
