@@ -59,13 +59,10 @@ black: #272729*/
 
 /*In general, think it would be good to fix the width of the tab and adjust text to fit*/
 .tab-bar {
-  /*Why is this not centered??*/
   margin: 20px auto 6px 2%;
-  /*text-align: center;*/
   font-size: 1.25em;
   font-weight: normal;
   padding: 0;
-  /*margin: 25px auto;*/
 }
 
 .tab-bar li {
@@ -83,26 +80,25 @@ black: #272729*/
   border-top-right-radius: 10%;
   text-decoration: none;
   color: #22c1ee;
-  background-color: #fdfcfc;
 }
 
 .tab-bar a:hover {
   /*Enabling this causes the tab bar to jump a bit, fix and re-enable*/
   font-size: 1.1em;
-  /*background-color: red;*/
+  /*Resetting the padding to stop other tabs being pushed*/
+  /*padding: 3px 1% 0px 1%;*/
 }
 
 .tab-bar .active {
   font-size: 1.1em;
-  /*What the color of the tab is*/
   background: #22c1ee;
   color: #fdfcfc;
   border-bottom: 6px solid #22c1ee;
+  /*Resetting the padding to stop other tabs being pushed*/
+  /*padding: 3px 1% 0px 1%;*/
 }
 
 .panel {
-  /*background-color: #faf0e6;*/
-  /*border: 2px solid #22c1ee;*/
   border-top: 3px solid #22c1ee;
   border-radius: 10px;
   margin: 0px 3px 3px 3px;
@@ -116,31 +112,25 @@ black: #272729*/
 
 /*Styles for the Board*/
 .board {
-  /*display: inline;*/
-  /*float: left;*/
   width: 1425px;
   max-width: 1425px;
   display: inline-block;
+/*  Put a scroll bar at the bottom
+  overflow: scroll;*/
 }
 
-/*.grad {
-  background: -webkit-linear-gradient(left, #C8C8C8 , #33FF00);
-  background: -o-linear-gradient(right, #C8C8C8, #33FF00);
-  background: -moz-linear-gradient(right, #C8C8C8, #33FF00);
-  background: linear-gradient(to right, #C8C8C8 , #33FF00);
-}*/
 #interested-col {
   display: inline;
   width: 225px;
+/*  The boards need to start with a default height and then grow if they are filled with cards
+*/
   height: 500px;
   margin: 0 0 0 0;
   border: 1px solid #272729;
   border-radius: 10px;
   margin: 0 .5% 0 .5%;
   float: left;
-  /*border: 2px solid #272729;*/
-  /*background-color: #D6F5D6;*/
-  /*border-radius: 4px;*/
+  background-color: #f8f8f8;
 }
 #interested-col h3 {
   text-align: center;
@@ -150,39 +140,32 @@ black: #272729*/
 #interested-col ul {
   list-style-type: none;
   padding: 0;
-  /*background-color: #8c8c8c*/
-  /*text-align: center;*/
 }
 #interested-col li {
   font-size: 0.75em;
   width: 200px;
   border: 1px solid ;
-  /*display: inline;*/
   margin: 8px auto 8px auto;
   border-radius: 4px;
   padding: 3px;
   background-color: #fdfcfc;
-  /*background-color: green;*/
 }
-
 #interested-col li:hover {
   font-size: 0.9em;
-  background-color: #8c8c8c;
-}
-#interested-col li:active {
-  font-size: 0.9em;
-  background-color: #8c8c8c;
-}
+  background-color: #22c1ee;
+  border-color: #22c1ee;
+  color: #fdfcfc;
 
+  padding: 2px;
+}
+/*#interested-col li:active {
+  font-size: 0.9em;
+  background-color: #22c1ee;
+}*/
 #board-form {
-  /*margin-top: 75%*/
-  /*how to force an element to the bottom of the container it is in?*/
-  /*margin: 75px auto 25px auto;*/
+  /*how to force an element to the bottom of the container it is in? -- should it be at the bottom of the list container or just under the last card??*/
   font-size: 0.85em;
   text-align: center;
-  clear: both;
-
-  /*background-color: red;*/
 }
 
 /*Highlight input when valid and invalid*/
@@ -204,7 +187,7 @@ black: #272729*/
   margin: 0 .5% 0 .5%;
 
   float: left;
-  /*background-color: #99E699;*/
+  background-color: #f8f8f8;
 }
 #personal-contact-col h3 {
   width: 450px;
@@ -279,7 +262,6 @@ black: #272729*/
 
 
 
-
 #apply-col {
   display: inline;
   width: 450px;
@@ -288,7 +270,7 @@ black: #272729*/
   border: 1px solid #272729;
   border-radius: 10px;
   margin: 0 .5% 0 .5%;
-  /*background-color: #5CD65C;*/
+  background-color: #f8f8f8;
 
   float: left;
 }
@@ -318,7 +300,7 @@ black: #272729*/
   border-radius: 10px;
   margin: 0 .5% 0 .5%;
   float: left;
-  /*background-color: #2EB82E*/
+  background-color: #f8f8f8;
 }
 #interview-col h3 {
   width: 225px;
@@ -338,23 +320,6 @@ black: #272729*/
   font-size: .5em;
 }
 
-
-
-
-
-
-
-
-
-/*.col-1{ width: 16.66%; }
-.col-2{ width: 33.33%; }
-.col-3{ width: 50%;    }
-.col-4{ width: 66.66%; }
-.col-5{ width: 83.33%; }
-.col-6{ width: 100%;   }
-*/
-white: #fdfcfc
-blue: #22c1ee
 
 
 
