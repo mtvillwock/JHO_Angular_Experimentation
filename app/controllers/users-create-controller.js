@@ -1,4 +1,4 @@
-angular.module('users-controller', [])
+angular.module("JHO", [])
     .controller('UsersController', function($http) {
         var controller = this;
         console.log("in user controller")
