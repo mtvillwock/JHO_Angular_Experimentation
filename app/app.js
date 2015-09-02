@@ -26,8 +26,13 @@ angular
         .state('welcome', {
             url: '/',
             templateUrl: "/templates/welcome.html",
-            controller: 'WelcomeController',
-            controllerAs: 'welcomeCtrl'
+            controller: 'welcomeCtrl'
+        })
+
+        .state('about', {
+            url: '/about',
+            templateUrl: '/templates/about.html',
+            controller: 'aboutCtrl'
         })
 
 //         // Register state
