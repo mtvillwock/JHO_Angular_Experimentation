@@ -1,25 +1,26 @@
 angular.module("JHO", [])
-    .controller('UsersController', function($http) {
-        var controller = this;
-        console.log("in user controller")
-        this.createUser = function(user) {
-            $http({
-                method: 'POST',
-                url: 'https://jho.herokuapp.com/users',
-                data: {
-                    user: {
-                        name: "Matt",
-                        email: "mtvillwock@gmail.com",
-                        password: "foobar",
-                        password_confirmation: "foobar"
-                    }
-                }
-            })
-                .success(function(data) {
-                    controller.user = data;
+    .controller('UsersController', ['$http',
+        function($http) {
+            var controller = this;
+            console.log("in user controller");
+
+            controller.createUser = function(user) {
+                console.log(user);
+
+                $http({
+                    method: 'POST',
+                    url: 'http://localhost:3000/users',
+                    // url: 'https://jho.herokuapp.com/users',
+                    data: { user: user },
                 })
-                .catch(function(note) {
-                  // controller.errors = user.data;
-                })
+                    .then(function(response) {
+                        console.log("success: ", response);
+                        console.log("user data is: ", response["data"]);
+                        controller.user = response["data"];
+                    }, function(data) {
+                        console.log("errors: ", data);
+                    })
+            }
+            console.log(controller);
         }
-    });
+    ]);
