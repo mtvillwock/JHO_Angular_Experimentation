@@ -35,7 +35,7 @@ angular.module("JHO", [
             // Welcome state
             .state('welcome', {
                 url: '/',
-                templateUrl: "/welcome.html",
+                templateUrl: "/templates/welcome.html",
                 controller: 'WelcomeController',
                 controllerAs: 'welcomeCtrl'
             })
