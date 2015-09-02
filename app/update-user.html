@@ -1,0 +1,10 @@
+<h2>Update User</h2>
+<div ng-controller="UsersController as userCtrl" class="update">
+  <form novalidate ng-submit="userCtrl.updateUser(user)">
+    Name: <input ng-model="user.name" type="text" name="user[name]" value="userCtrl.user.name">
+    Email: <input ng-model="user.email" type="text" name="user[email]" value="userCtrl.user.email">
+    Password: <input ng-model="user.password" type="password" name="user[password]">
+    Password Confirmation: <input ng-model="user.password_confirmation" type="password" name="user[password_confirmation]">
+    <input type="submit" value="Update">
+  </form>
+</div>

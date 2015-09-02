@@ -1,0 +1,9 @@
+<div ng-controller="WelcomeController as welcomeCtrl">
+  <h1>Welcome to JHO</h1>
+  <h3>{{ quote }}</h3>
+  <p> {{foo}}}, {{bar}}, {{baz}}</p>
+  <!-- links using ui-state ref -->
+  <p>Please <a ui-sref="register">register</a> if you are a new user. Otherwise, <a ui-sref="login">log in</a>.</p>
+  <!-- links without using ui-state ref -->
+  <p>Please <a href="#/register">register</a> if you are a new user. Otherwise, <a href="#/login">log in</a>.</p>
+</div>

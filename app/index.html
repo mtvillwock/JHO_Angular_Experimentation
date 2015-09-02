@@ -8,157 +8,33 @@
 
 <body>
 
-  <div class="grid-container outline">
-
-    <div class="row">
-      <div class="col-6 header-bar">
-        <h1>JHO</h1>
-      </div>
-    </div>
-
-    <div ng-controller="PanelController as panel">
-      <div class="row">
-       <ul class="col-6 tab-bar">
-        <li >
-          <a href ng-click="panel.selectTab(1)" ng-class="{active: panel.isSelected(1) }">Board</a>
-        </li>
-        <li >
-          <a href ng-click="panel.selectTab(2)" ng-class="{active: panel.isSelected(2) }">Today</a>
-        </li>
-        <li >
-          <a href ng-click="panel.selectTab(3)" ng-class="{active: panel.isSelected(3) }">Stats</a>
-        </li>
-        <li>
-          <a href ng-click="panel.selectTab(4)" ng-class="{active: panel.isSelected(4) }">Tips</a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="row" >
-      <div class="col-6 panel board grad" ng-controller="BoardController as board" ng-show="panel.isSelected(1)">
-
-        <h1>{{board.board.name}} </h1>
-
-        <div id="interested-col" >
-          <h3>Interested</h3>
-          <ul ng-repeat="list1_item in board.list1_items">
-            <li>{{list1_item.title}}</li>
-          </ul>
-
-          <form id="board-form" name="addOrganizationForm" ng-controller="AddOrganizationController as addOrgCtrl" ng-submit="addOrganizationForm .$valid && addOrgCtrl.addOrganization(list1_items)" novalidate>
-            <input ng-model="addOrgCtrl.organization.title" type="text" placeholder="New Organization" required/>
-            <input type="submit" value="Add" />
-          </form>
-
-        </div>
-
-        <div id="personal-contact-col">
-          <h3>Personal Contact</h3>
-
-          <div id="in-progress">
-            <h4>In Progress</h4>
-            <ul>
-              <li>Test 1</li>
-              <li>Test 2</li>
-              <li>Test 3</li>
-            </ul>
-          </div>
-
-          <div id="done">
-            <h4>Done</h4>
-            <ul>
-              <li>Test 1</li>
-              <li>Test 2</li>
-            </ul>
-          </div>
-
-        </div>
-
-        <div id="apply-col">
-          <h3>Apply</h3>
-          <div id="in-progress">
-            <h4>In Progress</h4>
-            <ul>
-              <li>Test 1</li>
-              <li>Test 2</li>
-              <li>Test 3</li>
-            </ul>
-          </div>
-
-          <div id="done">
-            <h4>Done</h4>
-            <ul>
-              <li>Test 1</li>
-              <li>Test 2</li>
-            </ul>
-          </div>
-
-        </div>
-
-        <div id="interview-col">
-          <h3>Interview</h3>
-          <ul> </ul>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-6 panel" ng-show="panel.isSelected(2)">
-        Today's Opportunities
-        List of prioritized opportunities for today
-        {{panel.tab}}
-
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-6 panel" ng-show="panel.isSelected(3)">
-        Stats
-        progress, points, streaks
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-6 panel" ng-show="panel.isSelected(4)">
-        Tips
-        timely, bite-sized articles related to your job hunt
-      </div>
-    </div>
-
-  </div>
-
-
-  <div class="row">
-    <div class="col-6 footer">
-      Footer and related facts.  Probably make this 2 columns.  And push to the bottom of the viewing screen...  Is this even necessary??
-    </div>
-  </div>
+<div ui-view></div>
 
 
 <!-- vendor -->
   <script src="angular.js"></script>
+  <script src="angular-ui-router.js"></script>
+  <!--
   <script src="angular-route.js"></script>
   <script src="angular-resource.js"></script>
   <script src="angular-cookies.js"></script>
   <script src="angular-drag-and-drop-lists.js"></script>
-
+-->
 <!-- App -->
-  <script src="main.js"></script>
-  <script src="routes.js"></script>
-
-<!-- Directives -->
-
-<!-- Controllers -->
+  <script src="app.js"></script>
 
   <!-- // <script src="jho-auth.js"> -->
   <!-- // Break into SignIn controller, 4 factories -->
   <!-- </script> -->
+<!-- Directives -->
+
+<!-- Controllers
   <script src="controllers/board-controller.js"></script>
   <script src="controllers/panel-controller.js"></script>
-  <script src="controllers/users-create-controller.js"></script>
+  <script src="controllers/users-controller.js"></script>
   <script src="controllers/add-organization-controller.js"></script>
   <script src="controllers/todo-list-controller.js"></script>
+-->
 
 <!-- Filters -->
 
