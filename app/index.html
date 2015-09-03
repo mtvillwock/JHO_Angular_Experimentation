@@ -8,7 +8,12 @@
 
 <body ng-app="JHO" ng-strict-di>
 <header ng-include="'/templates/header.html'"></header>
+<!-- Unnamed -->
 <div ui-view></div>
+
+<!-- Named -->
+<div ui-view="viewName"></div>
+
 <footer ng-include="'/templates/footer.html'"></footer>
 
 
