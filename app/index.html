@@ -5,41 +5,23 @@
   <link rel="stylesheet" href="main.css">
   <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
 </head>
+  <body ng-app="JHO" ng-strict-di>
+  <!-- <header ng-include="'/templates/header.html'"></header>
+  <div ng-include="'/templates/welcome.html'" ng-controller="welcomeCtrl"></div>
+  <footer ng-include="'/templates/footer.html'"></footer> -->
 
-<body ng-app="JHO" ng-strict-di >
-<header ng-include="'/templates/header.html'"></header>
-
-<!-- Can't get this to show up -->
-<!-- <div ui-view></div> -->
-<div ng-include="'/templates/welcome.html'" ng-controller="welcomeCtrl"></div>
-
-<footer ng-include="'/templates/footer.html'"></footer>
+  <div ng-view>
+  <!-- route based content renders here -->
+  </div>
 
 
-<!-- vendor -->
+  <!-- vendor -->
   <script src="/vendor/angular.js"></script>
-  <script src="/vendor/angular-ui-router.js"></script>
-<!-- App -->
+  <script src="/vendor/angular-route.js"></script>
+  <script src="/vendor/angular-resource.js"></script>
+  <!-- App -->
   <script src="app.js"></script>
-  <script src="/controllers/welcomeCtrl.js"></script>
 
-  <!-- // <script src="jho-auth.js"> -->
-  <!-- // Break into SignIn controller, 4 factories -->
-  <!-- </script> -->
-<!-- Directives -->
-
-<!-- Controllers
-  <script src="controllers/board-controller.js"></script>
-  <script src="controllers/panel-controller.js"></script>
-  <script src="controllers/users-controller.js"></script>
-  <script src="controllers/add-organization-controller.js"></script>
-  <script src="controllers/todo-list-controller.js"></script>
--->
-
-<!-- Filters -->
-
-<!-- Services -->
-
-</body>
+  </body>
 
 </html>
