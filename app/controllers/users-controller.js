@@ -36,6 +36,8 @@ angular.module("JHO", [])
                         user: user
                     },
                     headers: {
+                        "Accept": "application/json, text/plain, * / *",
+                        "Content-Type": "application/json",
                         "name": controller.user["name"],
                         "auth_token": controller.user["auth_token"]
                     }

@@ -1,5 +1,5 @@
-<h2>{{ pageTitle }}</h2>
-<div ng-controller="SessionsController as sessionsCtrl" class="login">
+<h2>{{ title }}</h2>
+<div class="login">
   <form novalidate ng-submit="sessionsCtrl.createSession(user)">
     Email: <input ng-model="user.email" type="text" name="user[email]">
     Password: <input ng-model="user.password" type="password" name="user[password]">
