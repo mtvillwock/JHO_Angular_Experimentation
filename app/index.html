@@ -1,18 +1,17 @@
 <!doctype html>
-<html >
+<html>
 <head>
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="main.css">
   <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
 </head>
 
-<body ng-app="JHO" ng-strict-di>
+<body ng-app="JHO" ng-strict-di >
 <header ng-include="'/templates/header.html'"></header>
-<!-- Unnamed -->
-<div ui-view></div>
 
-<!-- Named -->
-<div ui-view="viewName"></div>
+<!-- Can't get this to show up -->
+<!-- <div ui-view></div> -->
+<div ng-include="'/templates/welcome.html'" ng-controller="welcomeCtrl"></div>
 
 <footer ng-include="'/templates/footer.html'"></footer>
 
@@ -20,12 +19,6 @@
 <!-- vendor -->
   <script src="/vendor/angular.js"></script>
   <script src="/vendor/angular-ui-router.js"></script>
-  <!--
-  <script src="angular-route.js"></script>
-  <script src="angular-resource.js"></script>
-  <script src="angular-cookies.js"></script>
-  <script src="angular-drag-and-drop-lists.js"></script>
--->
 <!-- App -->
   <script src="app.js"></script>
   <script src="/controllers/welcomeCtrl.js"></script>
