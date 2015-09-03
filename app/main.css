@@ -1,3 +1,9 @@
+.app-content {
+  height: 100px;
+  width: 100%;
+  border: 1px red solid;
+}
+
  Grid set up */
 .grid-container{
         width: 100%;
