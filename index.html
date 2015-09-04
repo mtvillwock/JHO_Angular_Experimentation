@@ -35,14 +35,19 @@
       </div>
 
       <div class="row" >
-        <div class="col-6 panel board" ng-controller="BoardController as boardCtrl" ng-show="panel.isSelected(1)">
+        <div class="col-6 panel board" ng-controller="BoardController as boardCtrl" ng-show="panel.isSelected(1)" >
 
-          <h1>{{board.board.name}} </h1>
+          <h1>{{boardCtrl.board.name}} </h1>
 
-          <div ng-repeat="list in boardCtrl.board.lists" id="{{list.name}}" >
+            <div ng-repeat="list in boardCtrl.board.lists" id="{{list.name}}" dnd-list="list.cards" >
             <h3>{{list.name}}</h3>
-            <ul ng-repeat="card in list.cards">
-              <li>{{card.title}}</li>
+
+            <ul ng-repeat="card in list.cards" dnd-allowed-types="['card']">
+              <li dnd-draggable="card"
+                  dnd-effect-allowed="move"
+                  dnd-type="card"
+                  dnd-moved="list.cards.splice($index, 1)"
+              >{{card.title}}</li>
             </ul>
 
 

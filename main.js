@@ -40,14 +40,14 @@
             ]
         },
         {
-            name: "Applied",
+            name: "Interested",
             cards: [
                 {title: 'Wired'},
                 {title: 'Make'}
             ]
         },
         {
-            name: "Interviewed",
+            name: "Interested",
             cards: [
                 {title: 'Wired'},
                 {title: 'Make'}
