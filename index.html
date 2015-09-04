@@ -35,40 +35,38 @@
       </div>
 
       <div class="row" >
-        <div class="col-6 panel board" ng-controller="BoardController as board" ng-show="panel.isSelected(1)">
+        <div class="col-6 panel board" ng-controller="BoardController as boardCtrl" ng-show="panel.isSelected(1)">
 
           <h1>{{board.board.name}} </h1>
 
-          <div id="interested-col" >
-            <h3>Interested</h3>
-            <ul ng-repeat="list1_item in board.list1_items">
-              <li>{{list1_item.title}}</li>
+          <div ng-repeat="list in boardCtrl.board.lists" id="{{list.name}}" >
+            <h3>{{list.name}}</h3>
+            <ul ng-repeat="card in list.cards">
+              <li>{{card.title}}</li>
             </ul>
 
-            <form id="board-form" name="addOrganizationForm" ng-controller="AddOrganizationController as addOrgCtrl" ng-submit="addOrganizationForm .$valid && addOrgCtrl.addOrganization(list1_items)" novalidate>
+
+<!--             <form id="board-form" name="addOrganizationForm" ng-controller="AddOrganizationController as addOrgCtrl" ng-submit="addOrganizationForm .$valid && addOrgCtrl.addOrganization(list1_items)" novalidate>
               <input ng-model="addOrgCtrl.organization.title" type="text" placeholder="New Organization" required/>
               <input type="submit" value="Add" />
-            </form>
+            </form> -->
 
           </div>
 
-          <div id="personal-contact-col">
+          <!-- <div id="personal-contact-col">
             <h3>Personal Contact</h3>
 
             <div id="in-progress">
               <h4>In Progress</h4>
-              <ul>
-                <li>Test 1</li>
-                <li>Test 2</li>
-                <li>Test 3</li>
+              <ul ng-repeat="list1_item in board.list1_items">
+                <li>{{list1_item.title}}</li>
               </ul>
             </div>
 
             <div id="done">
               <h4>Done</h4>
-              <ul>
-                <li>Test 1</li>
-                <li>Test 2</li>
+              <ul ng-repeat="list1_item in board.list1_items">
+                <li>{{list1_item.title}}</li>
               </ul>
             </div>
 
@@ -78,18 +76,15 @@
             <h3>Apply</h3>
             <div id="in-progress">
               <h4>In Progress</h4>
-              <ul>
-                <li>Test 1</li>
-                <li>Test 2</li>
-                <li>Test 3</li>
+              <ul ng-repeat="list1_item in board.list1_items">
+                <li>{{list1_item.title}}</li>
               </ul>
             </div>
 
             <div id="done">
               <h4>Done</h4>
-              <ul>
-                <li>Test 1</li>
-                <li>Test 2</li>
+              <ul ng-repeat="list1_item in board.list1_items">
+                <li>{{list1_item.title}}</li>
               </ul>
             </div>
 
@@ -97,8 +92,10 @@
 
           <div id="interview-col">
             <h3>Interview</h3>
-            <ul> </ul>
-          </div>
+            <ul ng-repeat="list1_item in board.list1_items">
+              <li>{{list1_item.title}}</li>
+            </ul>
+          </div> -->
 
         </div>
       </div>
@@ -135,10 +132,46 @@
       </div>
     </div>
 
-
     <script src="angular.min.js"></script>
+    <script src="vendor/angular-route.js"></script>
+    <script src="vendor/angular-resource.js"></script>
+    <script src="vendor/angular-drag-and-drop-lists.js"></script>
     <script src="main.js"></script>
 
   </body>
 
 </html>
+
+<!-- <body ng-app="todoApp">
+  <div class="board" ng-controller="boardController as board">
+
+    <div class="list"
+        ng-repeat="list in board.lists"
+        dnd-list="list.cards"
+        dnd-allowed-types="['card']">
+
+
+      <h2>{{ list.name }}</h2>
+
+      <ul class="unstyled" dnd-list="list.cards">
+
+        <li class="card"
+            ng-repeat="card in list.cards"
+            dnd-draggable="card"
+            dnd-effect-allowed="move"
+            dnd-type="card"
+            dnd-moved="list.cards.splice($index, 1)">
+
+          <span>{{card.title}}</span>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <script src="angular.min.js"></script>
+  <script src="vendor/angular-route.js"></script>
+  <script src="vendor/angular-resource.js"></script>
+  <script src="vendor/angular-drag-and-drop-lists.js"></script>
+  <script src="drag-drop-app.js"></script>
+</body> -->

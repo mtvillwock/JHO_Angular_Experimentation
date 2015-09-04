@@ -87,6 +87,8 @@ black: #272729*/
   font-size: 1.1em;
   /*Resetting the padding to stop other tabs being pushed*/
   /*padding: 3px 1% 0px 1%;*/
+  /*margin: 0 0 0 0;*/
+  /*border: 4px solid black;*/
 }
 
 .tab-bar .active {
@@ -119,12 +121,12 @@ black: #272729*/
   overflow: scroll;*/
 }
 
-#interested-col {
+#Interested {
   display: inline;
   width: 225px;
 /*  The boards need to start with a default height and then grow if they are filled with cards
 */
-  height: 500px;
+  min-height: 500px;
   margin: 0 0 0 0;
   border: 1px solid #272729;
   border-radius: 10px;
@@ -137,11 +139,11 @@ black: #272729*/
   border-bottom: 2px solid #272729;
   margin: 10px 0 37px 0;
 }
-#interested-col ul {
+.board ul {
   list-style-type: none;
   padding: 0;
 }
-#interested-col li {
+.board li {
   font-size: 0.75em;
   width: 200px;
   border: 1px solid ;
@@ -150,12 +152,11 @@ black: #272729*/
   padding: 3px;
   background-color: #fdfcfc;
 }
-#interested-col li:hover {
+.board li:hover {
   font-size: 0.9em;
   background-color: #22c1ee;
   border-color: #22c1ee;
   color: #fdfcfc;
-
   padding: 2px;
 }
 /*#interested-col li:active {
@@ -180,7 +181,7 @@ black: #272729*/
 #personal-contact-col {
   display: inline;
   width: 450px;
-  height: 400px;
+  min-height: 400px;
   margin: 0 0 0 0;
   border: 1px solid #272729;
   border-radius: 10px;
@@ -199,7 +200,7 @@ black: #272729*/
 #in-progress {
   /*border: 1px solid red;*/
   width: 224px;
-  height: 360px;
+  min-height: 360px;
   float: left;
   border-right: 1px dashed #272729
   /*margin: 0 0 0 10%;*/
@@ -213,20 +214,20 @@ black: #272729*/
   border-bottom: 1px dashed #272729;
 }
 
-#in-progress ul {
+/*#in-progress ul {
   list-style-type: none;
   padding: 0;
-}
+}*/
 
-#in-progress li {
+/*#in-progress li {
   font-size: 0.75em;
   width: 200px;
   border: 1px solid #272729;
-  /*display: inline;*/
+  display: inline;
   margin: 8px auto 8px auto;
   border-radius: 4px;
   padding: 3px;
-}
+}*/
 
 
 #done {
@@ -234,7 +235,7 @@ black: #272729*/
   float: right;
   /*margin: 0 10% 0 0;*/
   width: 225px;
-  height: 250px;
+  min-height: 250px;
 }
 
 #done h4 {
@@ -245,27 +246,28 @@ black: #272729*/
   border-bottom: 1px dashed #272729;
 }
 
-#done ul {
+/*#done ul {
   list-style-type: none;
   padding: 0;
-}
+}*/
 
-#done li {
+/*#done li {
   font-size: 0.75em;
   width: 200px;
   border: 1px solid ;
-  /*display: inline;*/
+  display: inline;
   margin: 8px auto 8px auto;
   border-radius: 4px;
   padding: 3px;
 }
+*/
 
 
 
 #apply-col {
   display: inline;
   width: 450px;
-  height: 300px;
+  min-height: 300px;
   margin: 0 0 0 0;
   border: 1px solid #272729;
   border-radius: 10px;
@@ -284,7 +286,7 @@ black: #272729*/
 #apply-col #in-progress {
   /*border: 1px solid red;*/
   /*width: 224px;*/
-  height: 260px;
+  min-height: 260px;
   /*float: left;*/
   /*border-right: 1px dashed #272729*/
   /*margin: 0 0 0 10%;*/
@@ -294,7 +296,7 @@ black: #272729*/
 #interview-col {
   display: inline;
   width: 225px;
-  height: 200px;
+  min-height: 200px;
   margin: 0 0 0 0;
   border: 1px solid #272729;
   border-radius: 10px;
