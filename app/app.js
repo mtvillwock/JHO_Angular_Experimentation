@@ -1,6 +1,7 @@
 angular
-    .module("JHO", ['ngRoute', 'ngResource'])
-
+    .module("JHO", ['ngRoute', 'ngResource', 'JHO.controllers'])
+// .constant('DEV_API_URL', 'http://localhost:3000');
+// .constant('PROD_API_URL', 'https://jho.herokuapp.com');
 .config([
     // These strings are annotations of dependencies being injected
     // This is for properly tracking dependencies in minified code
@@ -38,11 +39,13 @@ angular
         // Register view
         .when('/register', {
             templateUrl: "templates/register.html",
-            controller: ['$scope',
-                function($scope) {
-                    $scope.title = "Register New User";
-                }
-            ]
+            // controller: ['$scope',
+            //     function($scope) {
+            //         $scope.title = "Register New User";
+            //     }
+            // ]
+            controller: 'UsersController',
+            controllerAs: 'userCtrl'
         })
 
         // Login view
@@ -122,3 +125,4 @@ angular
         // end routing
     }
 ])
+

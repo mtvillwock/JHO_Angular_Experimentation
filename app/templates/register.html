@@ -1,6 +1,6 @@
 <h2>{{ title }}</h2>
-<div ng-controller="UsersController as userCtrl" class="register">
-  <form novalidate ng-submit="userCtrl.createUser(user)">
+<div ng-controller="UsersController as usersCtrl" class="register">
+  <form novalidate ng-submit="usersCtrl.createUser(user)">
     Name: <input ng-model="user.name" type="text" name="user[name]">
     Email: <input ng-model="user.email" type="text" name="user[email]">
     Password: <input ng-model="user.password" type="password" name="user[password]">
