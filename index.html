@@ -51,12 +51,10 @@
                   >{{card.title}}</li>
                 </ul>
 
-                <!-- <div ng-if="list.name == 'interested-col'"> -->
-                  <form id="board-form" name="addOrganizationForm" ng-controller="AddOrganizationController as addOrgCtrl" ng-submit="addOrganizationForm .$valid && addOrgCtrl.addOrganization(list1_items)" novalidate>
-                    <input ng-model="addOrgCtrl.organization.title" type="text" placeholder="New Organization" required/>
-                    <input type="submit" value="Add" />
-                  </form>
-                <!-- </div> -->
+                <form id="board-form" name="addOrganizationForm" ng-controller="AddOrganizationController as addOrgCtrl" ng-submit="addOrganizationForm .$valid && addOrgCtrl.addOrganization(list1_items)" novalidate>
+                  <input ng-model="addOrgCtrl.organization.title" type="text" placeholder="New Organization" required/>
+                  <input type="submit" value="Add" />
+                </form>
 
               </div>
           </div>

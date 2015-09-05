@@ -15,15 +15,15 @@
 
   app.controller('BoardController',function(){
     this.board = board1;
-    // this.list1_items = board1.lists[0];
+    this.list1_items = board1.lists[0];
   });
 
   app.controller("AddOrganizationController", function(){
     this.organization = {};
-    this.list1_items = board1.lists;
-
+    this.list1_items = board1.lists[0];
     this.addOrganization = function(list1_items) {
-      this.list1_items.push(this.organization);
+    console.log("in AddOrganizationController")
+      this.list1_items.cards.push(this.organization);
       this.organization = {};
     };
   });
