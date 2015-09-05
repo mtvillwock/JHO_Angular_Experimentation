@@ -37,35 +37,17 @@
             cards: [
                 {title: 'Google'},
                 {title: 'FaceBook'}
-            ],
-            numOfSubCols: 0
+            ]
         },
         {
             name: "in-progress",
             cards: [
                 {title: 'Wired'},
                 {title: 'Make'}
-            ],
-            numOfSubCols: 2
+            ]
         },
         {
             name: "done",
-            cards: [
-                {title: 'Wired'},
-                {title: 'Make'}
-            ],
-            numOfSubCols: 2
-        },
-        {
-            name: "interested-col",
-            cards: [
-                {title: 'Wired'},
-                {title: 'Make'}
-            ],
-            numOfSubCols: 3
-        },
-        {
-            name: "interested-col",
             cards: [
                 {title: 'Wired'},
                 {title: 'Make'}
@@ -75,7 +57,21 @@
             name: "interested-col",
             cards: [
                 {title: 'Wired'},
+                {title: 'Maker Times'}
+            ]
+        },
+        {
+            name: "interested-col",
+            cards: [
+                {title: 'News Corp.'},
                 {title: 'Make'}
+            ]
+        },
+        {
+            name: "interested-col",
+            cards: [
+                {title: 'Wired'},
+                {title: 'WWF'}
             ]
         }
     ],
