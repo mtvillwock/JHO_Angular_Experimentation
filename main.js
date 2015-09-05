@@ -33,21 +33,42 @@
     name: "New Test Board",
     lists:[
         {
-            name: "Interested",
+            name: "interested",
             cards: [
                 {title: 'Google'},
                 {title: 'FaceBook'}
             ]
         },
         {
-            name: "Interested",
+            name: "interested",
             cards: [
                 {title: 'Wired'},
                 {title: 'Make'}
             ]
         },
         {
-            name: "Interested",
+            name: "interested",
+            cards: [
+                {title: 'Wired'},
+                {title: 'Make'}
+            ]
+        },
+        {
+            name: "interested",
+            cards: [
+                {title: 'Wired'},
+                {title: 'Make'}
+            ]
+        },
+        {
+            name: "interested",
+            cards: [
+                {title: 'Wired'},
+                {title: 'Make'}
+            ]
+        },
+        {
+            name: "interested",
             cards: [
                 {title: 'Wired'},
                 {title: 'Make'}
