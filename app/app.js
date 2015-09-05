@@ -1,5 +1,5 @@
 angular
-    .module("JHO", ['ngRoute', 'ngResource', 'JHO.controllers'])
+    .module("JHO", ['ngRoute', 'ngResource', 'JHO.controllers', 'JHO.auth'])
 // .constant('DEV_API_URL', 'http://localhost:3000');
 // .constant('PROD_API_URL', 'https://jho.herokuapp.com');
 .config([
