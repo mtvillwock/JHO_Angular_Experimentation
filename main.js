@@ -33,42 +33,46 @@
     name: "New Test Board",
     lists:[
         {
-            name: "interested",
+            name: "interested-col",
             cards: [
                 {title: 'Google'},
                 {title: 'FaceBook'}
-            ]
+            ],
+            numOfSubCols: 0
         },
         {
-            name: "interested",
+            name: "in-progress",
+            cards: [
+                {title: 'Wired'},
+                {title: 'Make'}
+            ],
+            numOfSubCols: 2
+        },
+        {
+            name: "done",
+            cards: [
+                {title: 'Wired'},
+                {title: 'Make'}
+            ],
+            numOfSubCols: 2
+        },
+        {
+            name: "interested-col",
+            cards: [
+                {title: 'Wired'},
+                {title: 'Make'}
+            ],
+            numOfSubCols: 3
+        },
+        {
+            name: "interested-col",
             cards: [
                 {title: 'Wired'},
                 {title: 'Make'}
             ]
         },
         {
-            name: "interested",
-            cards: [
-                {title: 'Wired'},
-                {title: 'Make'}
-            ]
-        },
-        {
-            name: "interested",
-            cards: [
-                {title: 'Wired'},
-                {title: 'Make'}
-            ]
-        },
-        {
-            name: "interested",
-            cards: [
-                {title: 'Wired'},
-                {title: 'Make'}
-            ]
-        },
-        {
-            name: "interested",
+            name: "interested-col",
             cards: [
                 {title: 'Wired'},
                 {title: 'Make'}

@@ -121,7 +121,7 @@ black: #272729*/
   overflow: scroll;*/
 }
 
-#interested {
+#interested-col {
   display: inline;
   width: 225px;
   min-height: 500px;
@@ -134,7 +134,7 @@ black: #272729*/
 }
 #interested-col h3 {
   text-align: center;
-  border-bottom: 2px solid #272729;
+  border-bottom: 1px solid #272729;
   margin: 10px 0 37px 0;
 }
 .board ul {
