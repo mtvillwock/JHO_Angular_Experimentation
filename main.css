@@ -140,7 +140,7 @@ black: #272729*/
 .board ul {
   list-style-type: none;
   padding: 0;
-  min-height: 1px;
+  min-height: 10px;
   /*position: relative;*/
 }
 .board li {
@@ -168,7 +168,7 @@ ul .dndDraggingSource {
 
 .board .dndPlaceholder {
     display: block;
-    background-color: #EBFAFF;
+    background-color: #D3F3FC;  /*Should be a blue shadow*/
     min-height: 20px;
 }
 
@@ -308,11 +308,8 @@ ul .dndDraggingSource {
   width: 225px;
   text-align: center;
   border-bottom: 2px solid #272729;
-  margin: 10px 0 0 0;
+  margin: 10px 0 37px 0;
 }
-
-
-
 
 
 
