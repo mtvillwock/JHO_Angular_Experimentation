@@ -19,7 +19,9 @@ angular.module("JHO")
             };
 
             self.isAuthed = function() {
-                if (localStorage["auth_token"]) {
+                var auth_token = localStorage["auth_token"];
+                    console.log("true")
+                if (auth_token.length > 0) {
                     return true
                 } else {
                     return false
