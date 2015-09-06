@@ -9,7 +9,7 @@ angular.module("JHO", ['ngRoute', 'JHO.controllers'])
             $routeProvider
 
             .when('/', {
-                redirectTo: '/welcome'
+                redirectTo: '/auth'
             })
 
             // example route
@@ -18,6 +18,11 @@ angular.module("JHO", ['ngRoute', 'JHO.controllers'])
             //     controller: "NotesIndexController"
             // })
 
+            .when('/auth', {
+                templateUrl: "templates/auth.html",
+                controller: "AuthController",
+                controllerAs: "auth"
+            })
             // Welcome view
             .when('/welcome', {
                 templateUrl: "templates/welcome.html",

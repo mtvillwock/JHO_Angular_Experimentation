@@ -1,5 +1,5 @@
 angular.module("JHO", [])
-.controller('Auth', ['user', 'auth', function AuthCtrl(user, auth) {
+.controller('AuthController', ['user', 'auth', function AuthController(user, auth) {
         var self = this;
 
         function handleRequest(res) {

@@ -1,0 +1,13 @@
+<!-- <div ng-controller="AuthController as auth"> -->
+  <!-- ng-if="existingUser()" -->
+<div ng-view="register">
+  <section
+  ng-include="'templates/login.html'">
+
+</section>
+  <!-- ng-if="newUser()" -->
+  <section
+  ng-include="'templates/register.html'">
+</section>
+</div>
+<!-- </div>
