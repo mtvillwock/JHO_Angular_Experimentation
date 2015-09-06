@@ -9,11 +9,9 @@
    <!-- ng-strict-di> -->
   <header ng-include="'templates/header.html'"></header>
 
-  <!-- <div ng-include="'templates/auth.html'"></div> -->
-
-  <div ng-view class="app-content">
   <!-- route based content renders here -->
-  </div>
+  <div ng-view class="app-content"></div>
+
 
 
   <footer ng-include="'templates/footer.html'"></footer>
@@ -26,8 +24,12 @@
   <script src="app.js"></script>
   <script src="routes.js"></script>
   <script src="controllers.js"></script>
-  <!-- <script src="modules/auth.js"></script> -->
+  <script src="services/user.js"></script>
+  <script src="services/auth.js"></script>
+  <script src="services/interceptors.js"></script>
   <script src="controllers/auth-controller.js"></script>
+  <script src="controllers/welcome-controller.js"></script>
+  <script src="controllers/users-controller.js"></script>
 
   </body>
 

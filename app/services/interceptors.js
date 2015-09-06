@@ -1,4 +1,4 @@
-angular.module("JHO", [])
+angular.module("JHO")
     .factory('authInterceptor', ['API', 'auth',
         function authInterceptor(API, auth) {
             return {

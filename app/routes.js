@@ -1,4 +1,4 @@
-angular.module("JHO", ['ngRoute', 'JHO.controllers'])
+angular.module("JHO")
     .config([
         // These strings are annotations of dependencies being injected
         // This is for properly tracking dependencies in minified code
@@ -18,13 +18,17 @@ angular.module("JHO", ['ngRoute', 'JHO.controllers'])
             //     controller: "NotesIndexController"
             // })
 
+            .when('/logout', {
+                redirectTo: '/auth'
+            })
+
             .when('/auth', {
                 templateUrl: "templates/auth.html",
                 controller: "AuthController as auth"
             })
             // Welcome view
             .when('/welcome', {
-                templateUrl: "app/templates/welcome.html",
+                templateUrl: "templates/welcome.html",
                 controller: ['$scope',
                     function($scope) {
                         $scope.title = "Welcome to JHO";
@@ -37,11 +41,6 @@ angular.module("JHO", ['ngRoute', 'JHO.controllers'])
             // Register view
             .when('/register', {
                 templateUrl: "templates/register.html",
-                // controller: ['$scope',
-                //     function($scope) {
-                //         $scope.title = "Register New User";
-                //     }
-                // ]
                 controller: 'UsersController',
                 controllerAs: 'userCtrl'
             })
@@ -54,6 +53,12 @@ angular.module("JHO", ['ngRoute', 'JHO.controllers'])
                         $scope.title = "Login User";
                     }
                 ]
+            })
+
+            .when('/update-user', {
+                templateUrl: "templates/update-user.html",
+                controller: "UsersController",
+                controllerAs: "userCtrl"
             })
 
             .when('/about', {

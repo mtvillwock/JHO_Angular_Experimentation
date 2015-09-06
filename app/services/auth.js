@@ -1,4 +1,4 @@
-angular.module("JHO", [])
+angular.module("JHO")
     .service('auth', ['$window',
         function authService($window) {
             var self = this;
@@ -19,16 +19,23 @@ angular.module("JHO", [])
             };
 
             self.isAuthed = function() {
-                var token = self.getToken();
-                if (token) {
-                    var params = self.parseJwt(token);
-                    return Math.round(new Date().getTime() / 1000) <= params.exp;
+                if (localStorage["auth_token"]) {
+                    return true
                 } else {
-                    return false;
+                    return false
                 }
+
+                // var token = self.getToken();
+                // if (token) {
+                //     var params = self.parseJwt(token);
+                //     return Math.round(new Date().getTime() / 1000) <= params.exp;
+                // } else {
+                //     return false;
+                // }
             };
 
             self.logout = function() {
+                console.log("logging out");
                 $window.localStorage.removeItem('jwtToken');
             };
         }

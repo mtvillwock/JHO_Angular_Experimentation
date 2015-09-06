@@ -1,9 +1,9 @@
 <div ng-controller="AuthController as auth">
 <!-- ng-if="existingUser()" -->
   <section id="login">
-    <h2>{{ title }}</h2>
+    <h2>Login</h2>
     <div class="login">
-      <form novalidate ng-submit="sessionsCtrl.createSession(user)">
+      <form novalidate ng-submit="auth.login(user)">
         Email: <input ng-model="user.email" type="text" name="user[email]">
         Password: <input ng-model="user.password" type="password" name="user[password]">
         <input type="submit" value="Login">
@@ -11,10 +11,13 @@
     </div>
   </section>
   <!-- ng-if="newUser()" -->
+    <h3>
+      {{auth.message}}
+    </h3>
   <section id="register">
-    <h2>{{ title }}</h2>
-    <div ng-controller="UsersController as usersCtrl" class="register">
-      <form novalidate ng-submit="usersCtrl.createUser(user)">
+    <h2>Register</h2>
+    <div class="register">
+      <form novalidate ng-submit="auth.register(user)">
         Name: <input ng-model="user.name" type="text" name="user[name]">
         Email: <input ng-model="user.email" type="text" name="user[email]">
         Password: <input ng-model="user.password" type="password" name="user[password]">
@@ -24,3 +27,4 @@
     </div>
   </section>
 </div>
+
