@@ -168,7 +168,7 @@ ul .dndDraggingSource {
 
 .board .dndPlaceholder {
     display: block;
-    background-color: #D3F3FC;  /*Should be a blue shadow*/
+    background-color: #ADEBAD;  /*Should be a blue shadow*/
     min-height: 20px;
 }
 
