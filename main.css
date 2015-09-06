@@ -141,6 +141,7 @@ black: #272729*/
   list-style-type: none;
   padding: 0;
   min-height: 1px;
+  /*position: relative;*/
 }
 .board li {
   font-size: 0.75em;
@@ -150,6 +151,7 @@ black: #272729*/
   border-radius: 4px;
   padding: 3px;
   background-color: #fdfcfc;
+  /*position: relative;*/
 }
 .board li:hover {
   font-size: 0.9em;
@@ -158,6 +160,20 @@ black: #272729*/
   color: #fdfcfc;
   padding: 2px;
 }
+
+/*To style the drag and drop*/
+ul .dndDraggingSource {
+    display: none;
+}
+
+.board .dndPlaceholder {
+    display: block;
+    background-color: #EBFAFF;
+    min-height: 20px;
+}
+
+
+
 /*#interested-col li:active {
   font-size: 0.9em;
   background-color: #22c1ee;

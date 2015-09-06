@@ -16,6 +16,7 @@
   app.controller('BoardController',function(){
     this.board = board1;
     this.list1_items = board1.lists[0];
+    // console.log("board1")
   });
 
   app.controller("AddOrganizationController", function(){
