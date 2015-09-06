@@ -40,7 +40,8 @@
           <h1>{{boardCtrl.board.name}} </h1>
 
           <div id="interested-col" dnd-allowed-types="['card']">
-              <h3>{{boardCtrl.board.lists[0].name}}</h3>
+              <!-- {{boardCtrl.board.lists[0].name}} -->
+              <h3> Interested </h3>
 
                 <ul dnd-list="boardCtrl.board.lists[0].cards" >
                   <li ng-repeat="card in boardCtrl.board.lists[0].cards" dnd-draggable="card"
