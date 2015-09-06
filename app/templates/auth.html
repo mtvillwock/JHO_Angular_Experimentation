@@ -1,13 +1,26 @@
-<!-- <div ng-controller="AuthController as auth"> -->
-  <!-- ng-if="existingUser()" -->
-<div ng-view="register">
-  <section
-  ng-include="'templates/login.html'">
-
-</section>
+<div ng-controller="AuthController as auth">
+<!-- ng-if="existingUser()" -->
+  <section id="login">
+    <h2>{{ title }}</h2>
+    <div class="login">
+      <form novalidate ng-submit="sessionsCtrl.createSession(user)">
+        Email: <input ng-model="user.email" type="text" name="user[email]">
+        Password: <input ng-model="user.password" type="password" name="user[password]">
+        <input type="submit" value="Login">
+      </form>
+    </div>
+  </section>
   <!-- ng-if="newUser()" -->
-  <section
-  ng-include="'templates/register.html'">
-</section>
+  <section id="register">
+    <h2>{{ title }}</h2>
+    <div ng-controller="UsersController as usersCtrl" class="register">
+      <form novalidate ng-submit="usersCtrl.createUser(user)">
+        Name: <input ng-model="user.name" type="text" name="user[name]">
+        Email: <input ng-model="user.email" type="text" name="user[email]">
+        Password: <input ng-model="user.password" type="password" name="user[password]">
+        Password Confirmation: <input ng-model="user.password_confirmation" type="password" name="user[password_confirmation]">
+        <input type="submit" value="Register">
+      </form>
+    </div>
+  </section>
 </div>
-<!-- </div>

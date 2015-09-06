@@ -1,6 +1,7 @@
 angular.module("JHO", [])
 .controller('AuthController', ['user', 'auth', function AuthController(user, auth) {
         var self = this;
+        console.log("in AuthController")
 
         function handleRequest(res) {
             var token = res.data ? res.data.token : null;

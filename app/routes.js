@@ -20,12 +20,11 @@ angular.module("JHO", ['ngRoute', 'JHO.controllers'])
 
             .when('/auth', {
                 templateUrl: "templates/auth.html",
-                controller: "AuthController",
-                controllerAs: "auth"
+                controller: "AuthController as auth"
             })
             // Welcome view
             .when('/welcome', {
-                templateUrl: "templates/welcome.html",
+                templateUrl: "app/templates/welcome.html",
                 controller: ['$scope',
                     function($scope) {
                         $scope.title = "Welcome to JHO";
@@ -33,9 +32,6 @@ angular.module("JHO", ['ngRoute', 'JHO.controllers'])
                         $scope.items = ["foo", "bar", "baz"]
                     }
                 ]
-                // For reasons I cannot discern, the below lines cause errors
-                // controller: 'WelcomeController', // same as WelcomeController.js
-                // controllerAs: 'welcomeCtrl'
             })
 
             // Register view
@@ -55,7 +51,7 @@ angular.module("JHO", ['ngRoute', 'JHO.controllers'])
                 templateUrl: "templates/login.html",
                 controller: ['$scope',
                     function($scope) {
-                        $scope.title = "Register New User";
+                        $scope.title = "Login User";
                     }
                 ]
             })
