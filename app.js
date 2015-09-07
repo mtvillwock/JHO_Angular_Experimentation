@@ -1,5 +1,5 @@
 (function() {
-  var app = angular.module("jho",['dndLists']);
+  var app = angular.module("jho",['dndLists','ngRoute']);
 
   app.controller("PanelController", function(){
     this.tab = 1;
