@@ -1,4 +1,4 @@
-angular.module("JHO", [])
+angular.module("JHO")
     .controller('WelcomeController', ['$scope', function($scope) {
         $scope.quote = "Anything added dilutes everything else.";
         $scope.items = ["foo", "bar", "baz"]
