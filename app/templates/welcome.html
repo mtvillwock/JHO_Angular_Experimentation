@@ -1,14 +1,9 @@
 <div>
-  <!-- for some reason adding ng-controller here breaks the scope -->
   <h1>{{ title }}</h1>
   <h3>{{ quote }}</h3>
   <ul>
     <li ng-repeat="item in items">{{ item }}</li>
   </ul>
-
-  <p><a href="#/auth">Authenticate</a></p>
-
-  <p>Please <a href="#/register">register</a> if you are a new user. Otherwise, <a href="#/login">log in</a>.</p>
 
   <p>Beta: see <a href="#/board">your board</a>!</p>
 </div>

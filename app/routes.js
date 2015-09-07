@@ -24,18 +24,14 @@ angular.module("JHO")
 
             .when('/auth', {
                 templateUrl: "templates/auth.html",
-                controller: "AuthController as auth"
+                controller: "AuthController",
+                controllerAs: 'auth'
             })
             // Welcome view
             .when('/welcome', {
                 templateUrl: "templates/welcome.html",
-                controller: ['$scope',
-                    function($scope) {
-                        $scope.title = "Welcome to JHO";
-                        $scope.quote = "Anything added dilutes everything else.";
-                        $scope.items = ["foo", "bar", "baz"]
-                    }
-                ]
+                controller: "WelcomeController",
+                controllerAs: 'welcome'
             })
 
             // Register view

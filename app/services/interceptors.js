@@ -26,6 +26,7 @@ angular.module("JHO")
                 },
 
                 responseError: function(res) {
+                    console.log("response is: ", res);
                     // if response to API is a 401
                     // redirect user to login page
                 }

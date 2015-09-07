@@ -19,26 +19,20 @@ angular.module("JHO")
             };
 
             self.isAuthed = function() {
-                var auth_token = localStorage["auth_token"];
-                    console.log("true")
-                if (auth_token.length > 0) {
-                    return true
+                var token = self.getToken();
+                if (token) {
+                    console.log("authenticated")
+                    var params = self.parseJwt(token);
+                    return Math.round(new Date().getTime() / 1000) <= params.exp;
                 } else {
-                    return false
+                    return false;
                 }
-
-                // var token = self.getToken();
-                // if (token) {
-                //     var params = self.parseJwt(token);
-                //     return Math.round(new Date().getTime() / 1000) <= params.exp;
-                // } else {
-                //     return false;
-                // }
             };
 
             self.logout = function() {
                 console.log("logging out");
                 $window.localStorage.removeItem('jwtToken');
+                // $window.localStorage.clear();
             };
         }
     ])

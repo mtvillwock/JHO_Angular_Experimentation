@@ -1,13 +1,13 @@
 <!doctype html>
-<html>
+<html ng-app="JHO" ng-strict-di>
 <head>
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="main.css">
   <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
 </head>
-  <body ng-app="JHO">
-   <!-- ng-strict-di> -->
+<body>
   <header ng-include="'templates/header.html'"></header>
+  <nav ng-include="'templates/auth-nav.html'"></nav>
 
   <!-- route based content renders here -->
   <div ng-view class="app-content"></div>
@@ -31,6 +31,5 @@
   <script src="controllers/welcome-controller.js"></script>
   <script src="controllers/users-controller.js"></script>
 
-  </body>
-
+</body>
 </html>
