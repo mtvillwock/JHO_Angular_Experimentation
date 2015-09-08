@@ -8,12 +8,6 @@ angular.module("JHO")
                     console.log("token from localStorage being used for API call:", token);
                     if (config.url.indexOf(API) === 0 && token) {
                         config.headers.Authorization = 'Bearer ' + token;
-                //         $http.defaults.headers.post = {
-                //     "Accept": "application/json, text/plain, * / *",
-                //     "Content-Type": "application/json",
-                //     "name": credentials["name"],
-                //     "auth_token": credentials["auth_token"]
-                // };
                     }
 
                     return config;

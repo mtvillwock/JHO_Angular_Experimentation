@@ -21,10 +21,11 @@ angular.module("JHO")
             self.isAuthed = function() {
                 var token = self.getToken();
                 if (token) {
-                    console.log("authenticated")
                     var params = self.parseJwt(token);
                     return Math.round(new Date().getTime() / 1000) <= params.exp;
+                    console.log("authenticated");
                 } else {
+                    console.log("not authenticated");
                     return false;
                 }
             };

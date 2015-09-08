@@ -35,6 +35,7 @@ angular.module("JHO")
                 token = auth.getToken();
                 parsed_token = auth.parseJwt(token);
                 user_id = parsed_token["user_id"];
+                console.log("auth headers are:", $http.headers);
 
                 $http({
                     method: 'PUT',
