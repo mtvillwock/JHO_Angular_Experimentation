@@ -32,9 +32,6 @@ angular.module("JHO")
             self.logout = function() {
                 console.log("logging out");
                 $window.localStorage.removeItem('jwtToken');
-                $window.localStorage.removeItem('name');
-                $window.localStorage.removeItem('id');
-                $window.localStorage.removeItem('auth_token');
             };
         }
     ])
