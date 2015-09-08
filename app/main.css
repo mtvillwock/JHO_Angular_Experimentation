@@ -1,5 +1,5 @@
 .app-content {
-  height: 100px;
+  min-height: 100px;
   width: 100%;
   border: 1px red solid;
 }
@@ -146,8 +146,7 @@ black: #272729*/
 .board ul {
   list-style-type: none;
   padding: 0;
-  min-height: 10px;
-  /*position: relative;*/
+  min-height: 1px;
 }
 .board li {
   font-size: 0.75em;
@@ -157,7 +156,6 @@ black: #272729*/
   border-radius: 4px;
   padding: 3px;
   background-color: #fdfcfc;
-  /*position: relative;*/
 }
 .board li:hover {
   font-size: 0.9em;
@@ -166,20 +164,6 @@ black: #272729*/
   color: #fdfcfc;
   padding: 2px;
 }
-
-/*To style the drag and drop*/
-ul .dndDraggingSource {
-    display: none;
-}
-
-.board .dndPlaceholder {
-    display: block;
-    background-color: #ADEBAD;  /*Should be a blue shadow*/
-    min-height: 20px;
-}
-
-
-
 /*#interested-col li:active {
   font-size: 0.9em;
   background-color: #22c1ee;
@@ -314,8 +298,11 @@ ul .dndDraggingSource {
   width: 225px;
   text-align: center;
   border-bottom: 2px solid #272729;
-  margin: 10px 0 37px 0;
+  margin: 10px 0 0 0;
 }
+
+
+
 
 
 

@@ -1,0 +1,31 @@
+<div ng-controller="AuthController as auth">
+<a href="#/logout" ng-if="auth.isAuthed()" ng-click="auth.logout()">Log out</a>
+<!-- ng-if="existingUser()" -->
+  <section id="login">
+    <h2>Login</h2>
+    <div class="login">
+      <form novalidate ng-submit="auth.login(user)" name="loginForm">
+        Email: <input required ng-model="user.email" type="text" name="user[email]">
+        Password: <input required ng-model="user.password" type="password" name="user[password]">
+        <input ng-disabled="loginForm.$invalid" type="submit" value="Login">
+      </form>
+    </div>
+  </section>
+  <!-- ng-if="newUser()" -->
+    <h3>
+      {{auth.message}}
+    </h3>
+  <section id="register">
+    <h2>Register</h2>
+    <div class="register">
+      <form novalidate ng-submit="auth.register(user)" name="registerForm">
+        Name: <input required ng-model="user.name" type="text" name="user[name]">
+        Email: <input required ng-model="user.email" type="text" name="user[email]">
+        Password: <input required ng-model="user.password" type="password" name="user[password]">
+        Password Confirmation: <input required ng-model="user.password_confirmation" type="password" name="user[password_confirmation]">
+        <input ng-disabled="registerForm.$invalid" type="submit" value="Register">
+      </form>
+    </div>
+  </section>
+</div>
+

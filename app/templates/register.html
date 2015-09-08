@@ -1,0 +1,44 @@
+<div ng-controller="AuthController as auth">
+    <small>
+      {{auth.message}}
+    </small>
+  <section id="register">
+    <h2>Register</h2>
+    <div class="register">
+      <form novalidate ng-submit="auth.register(user)" name="registerForm">
+        Name: <input required ng-model="user.name" type="text" name="user[name]">
+        Email: <input required ng-model="user.email" type="text" name="user[email]">
+        Password: <input required ng-model="user.password" type="password" name="user[password]">
+        Password Confirmation: <input required ng-model="user.password_confirmation" type="password" name="user[password_confirmation]">
+        <input ng-disabled="registerForm.$invalid" type="submit" value="Register">
+      </form>
+    </div>
+  </section>
+</div>
+
+
+
+<!-- <h2>{{ title }}</h2>
+<div ng-controller="UsersController as usersCtrl" class="register">
+  <form novalidate ng-submit="usersCtrl.createUser(user)">
+    Name: <input ng-model="user.name" type="text" name="user[name]">
+    Email: <input ng-model="user.email" type="text" name="user[email]">
+    Password: <input ng-model="user.password" type="password" name="user[password]">
+    Password Confirmation: <input ng-model="user.password_confirmation" type="password" name="user[password_confirmation]">
+    <input type="submit" value="Register">
+  </form>
+</div>
+
+<hr>
+<hr> -->
+<!-- <div ng-controller="Main as main">
+    <h1>Simple Angular Auth - Thinkster</h1>
+
+    <input type="text" ng-model="main.username" placeholder="username"><br>
+    <input type="password" ng-model="main.password" placeholder="password"><br>
+    <br>
+
+    <button ng-click="main.register()">Register</button>
+    <button ng-click="main.login()">Login</button>
+    <button ng-click="main.logout()" ng-show="main.isAuthed()">Logout</button>
+</div> -->
