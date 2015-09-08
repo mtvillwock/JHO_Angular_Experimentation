@@ -16,38 +16,13 @@
         </div>
       </div>
 
-    <div ng-controller="PanelController as panel">
       <div ng-include="'templates/nav-bar.html'"></div>
 
       <div class="row" >
-        <!-- Board Template -->
+        <!-- Templates accessed by router render here -->
         <div ng-view></div>
       </div>
 
-      <div class="row">
-        <div class="col-6 panel" ng-show="panel.isSelected(2)">
-          Today's Opportunities
-          List of prioritized opportunities for today
-          {{panel.tab}}
-
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-6 panel" ng-show="panel.isSelected(3)">
-            Stats
-            progress, points, streaks
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-6 panel" ng-show="panel.isSelected(4)">
-          Tips
-          timely, bite-sized articles related to your job hunt
-        </div>
-      </div>
-
-    <div>
 
     <div class="row">
       <div class="col-6 footer">
@@ -55,13 +30,14 @@
       </div>
     </div>
 
-    <!-- Move all these into js/vendor -->
+    <!-- Move all these into javascript/vendor -->
     <script src="angular.min.js"></script>
-    <!-- <script src="vendor/angular-ui-router.js"></script> -->
     <script src="vendor/angular-route.js"></script>
     <script src="vendor/angular-resource.js"></script>
     <script src="vendor/angular-drag-and-drop-lists.js"></script>
+    <!-- App -->
     <script src="app.js"></script>
+    <script src="javascript/routes.js"></script>
 
   </body>
 

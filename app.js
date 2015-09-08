@@ -1,17 +1,17 @@
 (function() {
   var app = angular.module("jho",['dndLists','ngRoute']);
 
-  app.controller("PanelController", function(){
-    this.tab = 1;
+  // app.controller("PanelController", function(){
+  //   this.tab = 1;
 
-    this.selectTab = function(newActiveTab) {
-      this.tab = newActiveTab;
-    };
+  //   this.selectTab = function(newActiveTab) {
+  //     this.tab = newActiveTab;
+  //   };
 
-    this.isSelected = function(tabToCheck) {
-      return this.tab === tabToCheck;
-    };
-  });
+  //   this.isSelected = function(tabToCheck) {
+  //     return this.tab === tabToCheck;
+  //   };
+  // });
 
   app.controller('BoardController',function(){
     this.board = board1;
@@ -79,15 +79,6 @@
     user_id: 123456
   }
 
-  // var board1 = {
-  //   name: "Test Board Title",
-  //   description: '...'
-  // }
-  // var list1_items = [
-  //   { title: "Google"},
-  //   { title: "Wired"},
-  //   { title: "TheGreatBlue"},
-  // ]
 
 })();
 
