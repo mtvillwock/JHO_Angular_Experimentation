@@ -1,12 +1,25 @@
 (function() {
-  angular.module("jho",['dndLists','ngRoute']);
+  var app = angular.module("jho",['dndLists','ngRoute']);
 
-  angular.module("jho").controller('BoardController',function(){
+  // app.controller("PanelController", function(){
+  //   this.tab = 1;
+
+  //   this.selectTab = function(newActiveTab) {
+  //     this.tab = newActiveTab;
+  //   };
+
+  //   this.isSelected = function(tabToCheck) {
+  //     return this.tab === tabToCheck;
+  //   };
+  // });
+
+  app.controller('BoardController',function(){
     this.board = board1;
     this.list1_items = board1.lists[0];
+    // console.log("board1")
   });
 
-  angular.module("jho").controller("AddOrganizationController", function(){
+  app.controller("AddOrganizationController", function(){
     this.organization = {};
     this.list1_items = board1.lists[0];
     this.addOrganization = function(list1_items) {
@@ -37,26 +50,26 @@
         {
             name: "done",
             cards: [
-                {title: 'EdSurge'},
+                {title: 'Wired'},
                 {title: 'Make'}
             ]
         },
         {
-            name: "in-progress",
+            name: "interested-col",
             cards: [
                 {title: 'Wired'},
                 {title: 'Maker Times'}
             ]
         },
         {
-            name: "done",
+            name: "interested-col",
             cards: [
                 {title: 'News Corp.'},
                 {title: 'Make'}
             ]
         },
         {
-            name: "interview",
+            name: "interested-col",
             cards: [
                 {title: 'Wired'},
                 {title: 'WWF'}

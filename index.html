@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en" ng-app="jho">
   <head>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   </head>
 
@@ -10,170 +10,27 @@
 
     <div class="grid-container outline">
 
-      <div class="row">
-        <div class="col-6 header-bar">
-          <h1>JHO</h1>
-        </div>
-      </div>
+      <div ng-include="'templates/header.html'"></div>
 
-    <div ng-controller="PanelController as panel">
-      <div class="row">
-       <ul class="col-6 tab-bar">
-          <li >
-            <a href ng-click="panel.selectTab(1)" ng-class="{active: panel.isSelected(1) }">Board</a>
-          </li>
-          <li >
-            <a href ng-click="panel.selectTab(2)" ng-class="{active: panel.isSelected(2) }">Today</a>
-          </li>
-          <li >
-            <a href ng-click="panel.selectTab(3)" ng-class="{active: panel.isSelected(3) }">Stats</a>
-          </li>
-          <li>
-            <a href ng-click="panel.selectTab(4)" ng-class="{active: panel.isSelected(4) }">Tips</a>
-          </li>
-        </ul>
-      </div>
+      <div ng-include="'templates/nav-bar.html'"></div>
 
       <div class="row" >
-        <!-- Board Template -->
-        <div class="col-6 panel board" ng-controller="BoardController as boardCtrl" ng-show="panel.isSelected(1)" >
-<!--           Eventually this board should be refactored to use a combination of ng-repeat and forceful CSS for the individual lists -->
-
-          <h1>{{boardCtrl.board.name}} </h1>
-
-          <div id="interested-col" dnd-allowed-types="['card']">
-              <!-- {{boardCtrl.board.lists[0].name}} -->
-              <h3> Interested </h3>
-
-                <ul dnd-list="boardCtrl.board.lists[0].cards" >
-                  <li ng-repeat="card in boardCtrl.board.lists[0].cards" dnd-draggable="card"
-                      dnd-effect-allowed="move"
-                      dnd-type="card"
-                      dnd-moved="boardCtrl.board.lists[0].cards.splice($index, 1)"
-                  >{{card.title}}</li>
-                </ul>
-
-                <form id="board-form" name="addOrganizationForm" ng-controller="AddOrganizationController as addOrgCtrl" ng-submit="addOrganizationForm .$valid && addOrgCtrl.addOrganization(list1_items)" novalidate>
-                  <input ng-model="addOrgCtrl.organization.title" type="text" placeholder="New Organization" required/>
-                  <input type="submit" value="Add" />
-                </form>
-
-          </div>
-
-
-          <div id="personal-contact-col">
-            <h3>Personal Contact</h3>
-
-            <div id="in-progress" dnd-allowed-types="['card']">
-              <h4>In Progress </h4>
-
-                <ul dnd-list="boardCtrl.board.lists[1].cards" >
-                  <li ng-repeat="card in boardCtrl.board.lists[1].cards" dnd-draggable="card"
-                      dnd-effect-allowed="move"
-                      dnd-type="card"
-                      dnd-moved="boardCtrl.board.lists[1].cards.splice($index, 1)"
-                  >{{card.title}}</li>
-                </ul>
-
-            </div>
-
-            <div id="done" dnd-allowed-types="['card']" >
-              <h4>Done </h4>
-                <ul dnd-list="boardCtrl.board.lists[2].cards">
-                  <li ng-repeat="card in boardCtrl.board.lists[2].cards" dnd-draggable="card"
-                      dnd-effect-allowed="move"
-                      dnd-type="card"
-                      dnd-moved="boardCtrl.board.lists[2].cards.splice($index, 1)"
-                  >{{card.title}}</li>
-                </ul>
-            </div>
-
-          </div>
-
-
-          <div id="apply-col">
-            <h3>Apply</h3>
-
-            <div id="in-progress" dnd-allowed-types="['card']">
-              <h4>In Progress</h4>
-
-                <ul dnd-list="boardCtrl.board.lists[3].cards">
-                  <li ng-repeat="card in boardCtrl.board.lists[3].cards" dnd-draggable="card"
-                      dnd-effect-allowed="move"
-                      dnd-type="card"
-                      dnd-moved="boardCtrl.board.lists[3].cards.splice($index, 1)"
-                  >{{card.title}}</li>
-                </ul>
-
-            </div>
-
-            <div id="done" dnd-allowed-types="['card']">
-              <h4>Done</h4>
-
-                <ul dnd-list="boardCtrl.board.lists[4].cards">
-                  <li ng-repeat="card in boardCtrl.board.lists[4].cards" dnd-draggable="card"
-                      dnd-effect-allowed="move"
-                      dnd-type="card"
-                      dnd-moved="boardCtrl.board.lists[4].cards.splice($index, 1)"
-                  >{{card.title}}</li>
-                </ul>
-
-            </div>
-          </div>
-
-          <div id="interview-col" dnd-allowed-types="['card']">
-            <h3>Interview</h3>
-
-              <ul dnd-list="boardCtrl.board.lists[5].cards" >
-                <li ng-repeat="card in boardCtrl.board.lists[5].cards" dnd-draggable="card"
-                    dnd-effect-allowed="move"
-                    dnd-type="card"
-                    dnd-moved="boardCtrl.board.lists[5].cards.splice($index, 1)"
-                >{{card.title}}</li>
-              </ul>
-
-        </div>
+        <!-- Templates accessed by router render here -->
+        <div ng-view></div>
       </div>
     </div>
 
-      <div class="row">
-        <div class="col-6 panel" ng-show="panel.isSelected(2)">
-          Today's Opportunities
-          List of prioritized opportunities for today
-          {{panel.tab}}
+      <div ng-include="'templates/footer.html'"></div>
 
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-6 panel" ng-show="panel.isSelected(3)">
-            Stats
-            progress, points, streaks
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-6 panel" ng-show="panel.isSelected(4)">
-          Tips
-          timely, bite-sized articles related to your job hunt
-        </div>
-      </div>
-
-    <div>
-
-    <div class="row">
-      <div class="col-6 footer">
-        Footer and related facts.  Probably make this 2 columns.  And push to the bottom of the viewing screen...  Is this even necessary??
-      </div>
     </div>
 
-    <!-- Move all these into js/vendor -->
-    <script src="angular.min.js"></script>
-    <!-- <script src="vendor/angular-ui-router.js"></script> -->
-    <script src="vendor/angular-route.js"></script>
-    <script src="vendor/angular-resource.js"></script>
-    <script src="vendor/angular-drag-and-drop-lists.js"></script>
-    <script src="app.js"></script>
+    <!-- Vendor -->
+    <script src="javascript/vendor/angular.min.js"></script>
+    <script src="javascript/vendor/angular-route.js"></script>
+    <script src="javascript/vendor/angular-resource.js"></script>
+    <script src="javascript/vendor/angular-drag-and-drop-lists.js"></script>
+    <!-- App -->
+    <script src="javascript/app.js"></script>
     <script src="javascript/routes.js"></script>
 
   </body>
