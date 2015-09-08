@@ -1,98 +1,98 @@
-        <div class="col-6 panel board" ng-controller="BoardController as boardCtrl" ng-show="panel.isSelected(1)" >
+<div class="col-6 panel board" ng-controller="BoardController as boardCtrl" ng-show="panel.isSelected(1)" >
 <!--           Eventually this board should be refactored to use a combination of ng-repeat and forceful CSS for the individual lists -->
 
-          <h1>{{boardCtrl.board.name}} </h1>
+    <h1>{{boardCtrl.board.name}} </h1>
 
-          <div id="interested-col" dnd-allowed-types="['card']">
-              <!-- {{boardCtrl.board.lists[0].name}} -->
-              <h3> Interested </h3>
+    <div id="interested-col" dnd-allowed-types="['card']">
+        <!-- {{boardCtrl.board.lists[0].name}} -->
+        <h3> Interested </h3>
 
-                <ul dnd-list="boardCtrl.board.lists[0].cards" >
-                  <li ng-repeat="card in boardCtrl.board.lists[0].cards" dnd-draggable="card"
-                      dnd-effect-allowed="move"
-                      dnd-type="card"
-                      dnd-moved="boardCtrl.board.lists[0].cards.splice($index, 1)"
-                  >{{card.title}}</li>
-                </ul>
+          <ul dnd-list="boardCtrl.board.lists[0].cards" >
+            <li ng-repeat="card in boardCtrl.board.lists[0].cards" dnd-draggable="card"
+                dnd-effect-allowed="move"
+                dnd-type="card"
+                dnd-moved="boardCtrl.board.lists[0].cards.splice($index, 1)"
+            >{{card.title}}</li>
+          </ul>
 
-                <form id="board-form" name="addOrganizationForm" ng-controller="AddOrganizationController as addOrgCtrl" ng-submit="addOrganizationForm .$valid && addOrgCtrl.addOrganization(list1_items)" novalidate>
-                  <input ng-model="addOrgCtrl.organization.title" type="text" placeholder="New Organization" required/>
-                  <input type="submit" value="Add" />
-                </form>
+          <form id="board-form" name="addOrganizationForm" ng-controller="AddOrganizationController as addOrgCtrl" ng-submit="addOrganizationForm .$valid && addOrgCtrl.addOrganization(list1_items)" novalidate>
+            <input ng-model="addOrgCtrl.organization.title" type="text" placeholder="New Organization" required/>
+            <input type="submit" value="Add" />
+          </form>
 
-          </div>
-
-
-          <div id="personal-contact-col">
-            <h3>Personal Contact</h3>
-
-            <div id="in-progress" dnd-allowed-types="['card']">
-              <h4>In Progress </h4>
-
-                <ul dnd-list="boardCtrl.board.lists[1].cards" >
-                  <li ng-repeat="card in boardCtrl.board.lists[1].cards" dnd-draggable="card"
-                      dnd-effect-allowed="move"
-                      dnd-type="card"
-                      dnd-moved="boardCtrl.board.lists[1].cards.splice($index, 1)"
-                  >{{card.title}}</li>
-                </ul>
-
-            </div>
-
-            <div id="done" dnd-allowed-types="['card']" >
-              <h4>Done </h4>
-                <ul dnd-list="boardCtrl.board.lists[2].cards">
-                  <li ng-repeat="card in boardCtrl.board.lists[2].cards" dnd-draggable="card"
-                      dnd-effect-allowed="move"
-                      dnd-type="card"
-                      dnd-moved="boardCtrl.board.lists[2].cards.splice($index, 1)"
-                  >{{card.title}}</li>
-                </ul>
-            </div>
-
-          </div>
+    </div>
 
 
-          <div id="apply-col">
-            <h3>Apply</h3>
+    <div id="personal-contact-col">
+      <h3>Personal Contact</h3>
 
-            <div id="in-progress" dnd-allowed-types="['card']">
-              <h4>In Progress</h4>
+      <div id="in-progress" dnd-allowed-types="['card']">
+        <h4>In Progress </h4>
 
-                <ul dnd-list="boardCtrl.board.lists[3].cards">
-                  <li ng-repeat="card in boardCtrl.board.lists[3].cards" dnd-draggable="card"
-                      dnd-effect-allowed="move"
-                      dnd-type="card"
-                      dnd-moved="boardCtrl.board.lists[3].cards.splice($index, 1)"
-                  >{{card.title}}</li>
-                </ul>
+          <ul dnd-list="boardCtrl.board.lists[1].cards" >
+            <li ng-repeat="card in boardCtrl.board.lists[1].cards" dnd-draggable="card"
+                dnd-effect-allowed="move"
+                dnd-type="card"
+                dnd-moved="boardCtrl.board.lists[1].cards.splice($index, 1)"
+            >{{card.title}}</li>
+          </ul>
 
-            </div>
-
-            <div id="done" dnd-allowed-types="['card']">
-              <h4>Done</h4>
-
-                <ul dnd-list="boardCtrl.board.lists[4].cards">
-                  <li ng-repeat="card in boardCtrl.board.lists[4].cards" dnd-draggable="card"
-                      dnd-effect-allowed="move"
-                      dnd-type="card"
-                      dnd-moved="boardCtrl.board.lists[4].cards.splice($index, 1)"
-                  >{{card.title}}</li>
-                </ul>
-
-            </div>
-          </div>
-
-          <div id="interview-col" dnd-allowed-types="['card']">
-            <h3>Interview</h3>
-
-              <ul dnd-list="boardCtrl.board.lists[5].cards" >
-                <li ng-repeat="card in boardCtrl.board.lists[5].cards" dnd-draggable="card"
-                    dnd-effect-allowed="move"
-                    dnd-type="card"
-                    dnd-moved="boardCtrl.board.lists[5].cards.splice($index, 1)"
-                >{{card.title}}</li>
-              </ul>
-
-        <!-- </div> -->
       </div>
+
+      <div id="done" dnd-allowed-types="['card']" >
+        <h4>Done </h4>
+          <ul dnd-list="boardCtrl.board.lists[2].cards">
+            <li ng-repeat="card in boardCtrl.board.lists[2].cards" dnd-draggable="card"
+                dnd-effect-allowed="move"
+                dnd-type="card"
+                dnd-moved="boardCtrl.board.lists[2].cards.splice($index, 1)"
+            >{{card.title}}</li>
+          </ul>
+      </div>
+
+    </div>
+
+
+    <div id="apply-col">
+      <h3>Apply</h3>
+
+      <div id="in-progress" dnd-allowed-types="['card']">
+        <h4>In Progress</h4>
+
+          <ul dnd-list="boardCtrl.board.lists[3].cards">
+            <li ng-repeat="card in boardCtrl.board.lists[3].cards" dnd-draggable="card"
+                dnd-effect-allowed="move"
+                dnd-type="card"
+                dnd-moved="boardCtrl.board.lists[3].cards.splice($index, 1)"
+            >{{card.title}}</li>
+          </ul>
+
+      </div>
+
+      <div id="done" dnd-allowed-types="['card']">
+        <h4>Done</h4>
+
+          <ul dnd-list="boardCtrl.board.lists[4].cards">
+            <li ng-repeat="card in boardCtrl.board.lists[4].cards" dnd-draggable="card"
+                dnd-effect-allowed="move"
+                dnd-type="card"
+                dnd-moved="boardCtrl.board.lists[4].cards.splice($index, 1)"
+            >{{card.title}}</li>
+          </ul>
+
+      </div>
+    </div>
+
+    <div id="interview-col" dnd-allowed-types="['card']">
+      <h3>Interview</h3>
+
+        <ul dnd-list="boardCtrl.board.lists[5].cards" >
+          <li ng-repeat="card in boardCtrl.board.lists[5].cards" dnd-draggable="card"
+              dnd-effect-allowed="move"
+              dnd-type="card"
+              dnd-moved="boardCtrl.board.lists[5].cards.splice($index, 1)"
+          >{{card.title}}</li>
+        </ul>
+
+  </div>
+</div>
