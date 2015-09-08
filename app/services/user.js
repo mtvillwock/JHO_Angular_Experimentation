@@ -16,15 +16,7 @@ angular.module("JHO")
                 });
             };
 
-            self.login = function(user, credentials) {
-                // this should probably go in the interceptors service
-                $http.defaults.headers.post = {
-                    "Accept": "application/json, text/plain, * / *",
-                    "Content-Type": "application/json",
-                    "name": credentials["name"],
-                    "auth_token": credentials["auth_token"]
-                };
-
+            self.login = function(user) {
                 return $http.post(API + '/sessions', {
                     session: {
                         email: user.email,

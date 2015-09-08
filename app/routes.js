@@ -37,18 +37,15 @@ angular.module("JHO")
             // Register view
             .when('/register', {
                 templateUrl: "templates/register.html",
-                controller: 'UsersController',
-                controllerAs: 'userCtrl'
+                controller: 'AuthController',
+                controllerAs: 'auth'
             })
 
             // Login view
             .when('/login', {
                 templateUrl: "templates/login.html",
-                controller: ['$scope',
-                    function($scope) {
-                        $scope.title = "Login User";
-                    }
-                ]
+                controller: 'AuthController',
+                controllerAs: 'auth'
             })
 
             .when('/update-user', {

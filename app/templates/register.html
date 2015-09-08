@@ -5,12 +5,12 @@
   <section id="register">
     <h2>Register</h2>
     <div class="register">
-      <form novalidate ng-submit="auth.register(user)">
-        Name: <input ng-model="user.name" type="text" name="user[name]">
-        Email: <input ng-model="user.email" type="text" name="user[email]">
-        Password: <input ng-model="user.password" type="password" name="user[password]">
-        Password Confirmation: <input ng-model="user.password_confirmation" type="password" name="user[password_confirmation]">
-        <input type="submit" value="Register">
+      <form novalidate ng-submit="auth.register(user)" name="registerForm">
+        Name: <input required ng-model="user.name" type="text" name="user[name]">
+        Email: <input required ng-model="user.email" type="text" name="user[email]">
+        Password: <input required ng-model="user.password" type="password" name="user[password]">
+        Password Confirmation: <input required ng-model="user.password_confirmation" type="password" name="user[password_confirmation]">
+        <input ng-disabled="registerForm.$invalid" type="submit" value="Register">
       </form>
     </div>
   </section>
