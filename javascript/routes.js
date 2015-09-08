@@ -17,7 +17,7 @@ angular.module('jho')
     })
     .when('/stats',{
       templateUrl: '/templates/panels/stats/stats-index.html',
-      activetab: 'today'
+      activetab: 'toda'
     })
     .when('/tips',{
       templateUrl: '/templates/panels/tips/tips-index.html',
