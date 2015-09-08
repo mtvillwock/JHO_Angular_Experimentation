@@ -41,6 +41,7 @@
 
       <div id="done" dnd-allowed-types="['card']" >
         <h4>Done </h4>
+          <!-- Bug : this is showing lists[1] instead of lists[2] -->
           <ul dnd-list="boardCtrl.board.lists[2].cards">
             <li ng-repeat="card in boardCtrl.board.lists[2].cards" dnd-draggable="card"
                 dnd-effect-allowed="move"
