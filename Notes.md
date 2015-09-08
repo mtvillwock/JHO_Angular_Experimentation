@@ -1,4 +1,4 @@
-Note 1:
+Note 1: Following is a possible direction for compacting the board code
 
 <div class="col-6 panel board" ng-controller="BoardController as boardCtrl" ng-show="panel.isSelected(1)" >
 

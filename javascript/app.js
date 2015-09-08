@@ -1,24 +1,13 @@
 (function() {
-  var app = angular.module("jho",['dndLists']);
+  angular.module("jho",['dndLists','ngRoute']);
 
-  app.controller("PanelController", function(){
-    this.tab = 1;
-
-    this.selectTab = function(newActiveTab) {
-      this.tab = newActiveTab;
-    };
-
-    this.isSelected = function(tabToCheck) {
-      return this.tab === tabToCheck;
-    };
-  });
-
-  app.controller('BoardController',function(){
+  angular.module("jho").controller('BoardController',function(){
     this.board = board1;
     this.list1_items = board1.lists[0];
+    // console.log("board1")
   });
 
-  app.controller("AddOrganizationController", function(){
+  angular.module("jho").controller("AddOrganizationController", function(){
     this.organization = {};
     this.list1_items = board1.lists[0];
     this.addOrganization = function(list1_items) {
@@ -49,7 +38,7 @@
         {
             name: "done",
             cards: [
-                {title: 'Wired'},
+                {title: 'Wired Times'},
                 {title: 'Make'}
             ]
         },
@@ -78,15 +67,6 @@
     user_id: 123456
   }
 
-  // var board1 = {
-  //   name: "Test Board Title",
-  //   description: '...'
-  // }
-  // var list1_items = [
-  //   { title: "Google"},
-  //   { title: "Wired"},
-  //   { title: "TheGreatBlue"},
-  // ]
 
 })();
 
