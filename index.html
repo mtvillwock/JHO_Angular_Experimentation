@@ -10,11 +10,7 @@
 
     <div class="grid-container outline">
 
-      <div class="row">
-        <div class="col-6 header-bar">
-          <h1>JHO</h1>
-        </div>
-      </div>
+      <div ng-include="'templates/header.html'"></div>
 
       <div ng-include="'templates/nav-bar.html'"></div>
 
@@ -23,18 +19,15 @@
         <div ng-view></div>
       </div>
 
+      <div ng-include="'templates/footer.html'"></div>
 
-    <div class="row">
-      <div class="col-6 footer">
-        Footer and related facts.  Probably make this 2 columns.  And push to the bottom of the viewing screen...  Is this even necessary??
-      </div>
     </div>
 
     <!-- Move all these into javascript/vendor -->
-    <script src="angular.min.js"></script>
-    <script src="vendor/angular-route.js"></script>
-    <script src="vendor/angular-resource.js"></script>
-    <script src="vendor/angular-drag-and-drop-lists.js"></script>
+    <script src="javascript/vendor/angular.min.js"></script>
+    <script src="javascript/vendor/angular-route.js"></script>
+    <script src="javascript/vendor/angular-resource.js"></script>
+    <script src="javascript/vendor/angular-drag-and-drop-lists.js"></script>
     <!-- App -->
     <script src="app.js"></script>
     <script src="javascript/routes.js"></script>
