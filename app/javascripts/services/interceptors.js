@@ -28,9 +28,9 @@ angular.module("JHO")
                 },
 
                 responseError: function(res) {
-                    console.log("response error is: ", res);
-                    // if response to API is a 401
-                    $window.location.href = '#/login'
+                    console.log("interceptor responseError: server error / bad request: ", res);
+                    // if response to API is a 422 or 401
+                    return res;
                 }
             }
         }

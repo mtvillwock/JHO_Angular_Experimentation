@@ -1,8 +1,8 @@
-<div ng-controller="AuthController as auth" ng-if="!auth.isAuthed()" ng-model="form">
-<a href="#/login" ng-click="form = 'login'">Login</a>
-<a href="#/register" ng-click="form = 'register'">Register</a>
+<div ng-controller="AuthController as auth" ng-model="form">
+<a href="#/auth" ng-click="form = 'login'">Login</a>
+<a href="#/auth" ng-click="form = 'register'">Register</a>
 
-  <section id="login" ng-show="form == 'login'">
+  <section id="login" ng-if="form == 'login'">
     <h2>Login</h2>
     <div class="login">
       <form novalidate ng-submit="auth.login(user)" name="loginForm">
@@ -17,7 +17,7 @@
       {{auth.message}}
     </h3>
 
-  <section id="register" ng-show="form == 'register'">
+  <section id="register" ng-if="form == 'register'">
     <h2>Register</h2>
     <div class="register">
       <form novalidate ng-submit="auth.register(user)" name="registerForm">

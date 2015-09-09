@@ -12,21 +12,36 @@ angular.module("JHO")
                 redirectTo: '/auth'
             })
 
-            // example route
-            // .when('/notes', {
-            //     templateUrl: "assets/templates/notes/index.html",
-            //     controller: "NotesIndexController"
-            // })
-
             .when('/logout', {
                 redirectTo: '/auth'
             })
-
+            // Auth view
             .when('/auth', {
                 templateUrl: "templates/auth.html",
                 controller: "AuthController",
                 controllerAs: 'auth'
             })
+
+            .when('/board', {
+                templateUrl: 'templates/panels/board/board-index.html',
+                activetab: 'board'
+            })
+
+            .when('/today', {
+                templateUrl: 'templates/panels/today/today-index.html',
+                activetab: 'today'
+            })
+
+            .when('/stats', {
+                templateUrl: 'templates/panels/stats/stats-index.html',
+                activetab: 'toda'
+            })
+
+            .when('/tips', {
+                templateUrl: 'templates/panels/tips/tips-index.html',
+                activetab: 'board'
+            })
+
             // Welcome view
             .when('/welcome', {
                 templateUrl: "templates/welcome.html",
@@ -71,23 +86,6 @@ angular.module("JHO")
                     }
                 ]
             })
-
-            .when('/board', {
-                templateUrl: 'templates/panels/board/board-index.html',
-                activetab: 'board'
-            })
-                .when('/today', {
-                    templateUrl: 'templates/panels/today/today-index.html',
-                    activetab: 'today'
-                })
-                .when('/stats', {
-                    templateUrl: 'templates/panels/stats/stats-index.html',
-                    activetab: 'toda'
-                })
-                .when('/tips', {
-                    templateUrl: 'templates/panels/tips/tips-index.html',
-                    activetab: 'board'
-                })
 
             // If client doesn't hit an existing route, go to '/'
             .otherwise({

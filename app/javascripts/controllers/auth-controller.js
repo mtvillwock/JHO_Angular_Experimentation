@@ -4,18 +4,27 @@ angular.module("JHO")
             var self = this;
             console.log("in AuthController")
 
+            function sendToBoard() {
+                $window.location.href = '#/board';
+                $window.location.href;
+            }
+
+            function sendToAuth() {
+                $window.location.href = '#/auth';
+                $window.location.href;
+            }
+
             function handleRequest(res) {
+                console.log("handleRequest response is:", res)
                 var token = res.data ? res.data.token : null;
                 if (token) {
                     console.log('JWT:', token);
+                    self.message = res.data;
+                    sendToBoard();
                 } else {
-                    console.log("server error / bad request: ", res);
+                    console.log("handleRequest server error / bad request: ", res);
+                    sendToAuth();
                 }
-                self.message = res.data;
-            }
-
-            self.toBoard = function($location) {
-                $location.path('/board').replace();
             }
 
             self.login = function(returningUser) {
