@@ -1,4 +1,4 @@
-angular.module("JHO", ['ngRoute', 'ngResource', 'JHO.controllers'])
+angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
 // .constant('API', 'https://jho.herokuapp.com')
 .constant('API', 'http://localhost:3000')
 

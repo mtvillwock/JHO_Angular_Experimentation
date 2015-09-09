@@ -14,7 +14,8 @@
 
       <header ng-include="'templates/header.html'"></header>
 
-      <div ng-include="'templates/nav-bar.html'"></div>
+      <div ng-include="'templates/rvb-nav-bar.html'"></div>
+      <nav ng-include="'templates/auth-nav.html'"></nav>
 
       <div class="row" >
         <!-- Templates accessed by router render here -->
@@ -25,35 +26,26 @@
         <footer ng-include="'templates/footer.html'"></footer>
       </div>
 
-
-      <!-- Before signed in -->
-      <header ng-include="'templates/header.html'"></header>
-      <nav ng-include="'templates/auth-nav.html'"></nav>
-
-      route based content renders here
-      <div ng-view class="app-content"></div>
-
-      <footer ng-include="'templates/footer.html'"></footer>
-
     </div>
 
   <!-- vendor -->
   <script src="javascripts/vendor/angular.js"></script>
   <script src="javascripts/vendor/angular-route.js"></script>
   <script src="javascripts/vendor/angular-resource.js"></script>
-  <script src="javascript/vendor/angular-drag-and-drop-lists.js"></script>
+  <script src="javascripts/vendor/angular-drag-and-drop-lists.js"></script>
 
   <!-- App -->
   <script src="javascripts/app.js"></script>
   <script src="javascripts/routes.js"></script>
 
-  <script src="javascripts/controllers.js"></script>
   <script src="javascripts/services/user.js"></script>
   <script src="javascripts/services/auth.js"></script>
   <script src="javascripts/services/interceptors.js"></script>
   <script src="javascripts/controllers/auth-controller.js"></script>
   <script src="javascripts/controllers/welcome-controller.js"></script>
   <script src="javascripts/controllers/users-controller.js"></script>
+  <script src="javascripts/controllers/board-controller.js"></script>
+  <script src="javascripts/controllers/add-organization-controller.js"></script>
 
 </body>
 </html>
