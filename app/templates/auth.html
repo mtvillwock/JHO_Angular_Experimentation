@@ -1,5 +1,4 @@
 <div ng-controller="AuthController as auth" ng-model="form">
-<a href="#/logout" ng-if="auth.isAuthed()" ng-click="auth.logout()">Log out</a>
 <a href="#/login" ng-click="form = 'login'">Login</a>
 <a href="#/register" ng-click="form = 'register'">Register</a>
 <!-- ng-if="existingUser()" -->
