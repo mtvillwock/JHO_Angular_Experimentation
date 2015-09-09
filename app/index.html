@@ -7,20 +7,26 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body ng-controller="AuthController as auth">
-    <!-- Note need to change the display based upon whether the user is logged in -->
 
-    <!-- When signed in? -->
     <div class="grid-container outline">
 
-      <header ng-include="'templates/header.html'"></header>
-      <nav ng-include="'templates/auth-nav.html'"></nav>
+      <header ng-include="'templates/header.html'">
+        <!-- About, Contact, Welcome -->
+      </header>
 
-      <div ng-if="auth.isAuthed()" ng-include="'templates/rvb-nav-bar.html'"></div>
-      <nav ng-if="!auth.isAuthed()" ng-include="'templates/auth.html'"></nav>
+      <nav ng-if="!auth.isAuthed()" ng-include="'templates/auth.html'">
+        <!-- show Login / Register links and forms if user not logged in -->
+      </nav>
+
+      <div ng-if="auth.isAuthed()" ng-include="'templates/rvb-nav-bar.html'">
+        <!-- show tabbed panel navigation if user is logged in -->
+      </div>
 
       <div class="row" >
+        <div ng-if="auth.isAuthed()" ng-view>
+        <!-- show main page content if user is logged in -->
         <!-- Templates accessed by router render here -->
-        <div ng-if="auth.isAuthed()" ng-view></div>
+        </div>
       </div>
 
       </div>
