@@ -1,5 +1,6 @@
+<!-- Not being used - handling all logging in and registration through auth.html -->
 <div ng-controller="AuthController as auth">
-<!-- ng-if="existingUser()" -->
+<a href="#/register">Register</a>
   <section id="login">
     <h2>Login</h2>
     <div class="login">
@@ -10,7 +11,6 @@
       </form>
     </div>
   </section>
-  <!-- ng-if="newUser()" -->
     <small>
       {{auth.message}}
     </small>

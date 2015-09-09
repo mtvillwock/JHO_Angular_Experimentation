@@ -12,21 +12,36 @@ angular.module("JHO")
                 redirectTo: '/auth'
             })
 
-            // example route
-            // .when('/notes', {
-            //     templateUrl: "assets/templates/notes/index.html",
-            //     controller: "NotesIndexController"
-            // })
-
             .when('/logout', {
                 redirectTo: '/auth'
             })
-
+            // Auth view
             .when('/auth', {
                 templateUrl: "templates/auth.html",
                 controller: "AuthController",
                 controllerAs: 'auth'
             })
+
+            .when('/board', {
+                templateUrl: 'templates/panels/board/board-index.html',
+                activetab: 'board'
+            })
+
+            .when('/today', {
+                templateUrl: 'templates/panels/today/today-index.html',
+                activetab: 'today'
+            })
+
+            .when('/stats', {
+                templateUrl: 'templates/panels/stats/stats-index.html',
+                activetab: 'toda'
+            })
+
+            .when('/tips', {
+                templateUrl: 'templates/panels/tips/tips-index.html',
+                activetab: 'board'
+            })
+
             // Welcome view
             .when('/welcome', {
                 templateUrl: "templates/welcome.html",
@@ -68,48 +83,6 @@ angular.module("JHO")
                 controller: ['$scope',
                     function($scope) {
                         $scope.title = "Contact the JHO team";
-                    }
-                ]
-            })
-
-            .when('/board', {
-                templateUrl: "templates/board.html",
-                controller: ['$scope',
-                    function($scope) {
-                        var board1 = {
-                            name: "Test Board Title",
-                            description: '...'
-                        }
-
-                        var list1_items = [{
-                            title: "Google"
-                        }, {
-                            title: "Wired"
-                        }, {
-                            title: "TheGreatBlue"
-                        }, ]
-
-                        $scope.title = "Your board";
-                        $scope.tab = 1;
-
-                        $scope.selectTab = function(newActiveTab) {
-                            $scope.tab = newActiveTab;
-                        };
-
-                        $scope.isSelected = function(tabToCheck) {
-                            return $scope.tab === tabToCheck;
-                        };
-
-                        $scope.board = board1;
-                        $scope.list1_items = list1_items;
-
-                        $scope.organization = {};
-                        $scope.list1_items = list1_items;
-
-                        $scope.addOrganization = function(list1_items) {
-                            $scope.list1_items.push($scope.organization);
-                            $scope.organization = {};
-                        };
                     }
                 ]
             })
