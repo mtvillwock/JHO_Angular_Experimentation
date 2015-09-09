@@ -1,6 +1,6 @@
 angular.module("JHO")
-    .controller('AuthController', ['user', 'auth', '$window',
-        function AuthController(user, auth, $window) {
+    .controller('AuthController', ['user', 'auth', '$window', '$location',
+        function AuthController(user, auth, $window, $location) {
             var self = this;
             console.log("in AuthController")
 
@@ -12,6 +12,10 @@ angular.module("JHO")
                     console.log("server error / bad request: ", res);
                 }
                 self.message = res.data;
+            }
+
+            self.toBoard = function($location) {
+                $location.path('/board').replace();
             }
 
             self.login = function(returningUser) {

@@ -1,10 +1,10 @@
-<div ng-controller="AuthController as auth" ng-model="form">
+<div ng-controller="AuthController as auth" ng-if="!auth.isAuthed()" ng-model="form">
 <a href="#/login" ng-click="form = 'login'">Login</a>
 <a href="#/register" ng-click="form = 'register'">Register</a>
-<!-- ng-if="existingUser()" -->
+
   <section id="login" ng-show="form == 'login'">
     <h2>Login</h2>
-    <div class="login" >
+    <div class="login">
       <form novalidate ng-submit="auth.login(user)" name="loginForm">
         Email: <input required ng-model="user.email" type="text" name="user[email]">
         Password: <input required ng-model="user.password" type="password" name="user[password]">
@@ -12,10 +12,11 @@
       </form>
     </div>
   </section>
-  <!-- ng-if="newUser()" -->
+
     <h3>
       {{auth.message}}
     </h3>
+
   <section id="register" ng-show="form == 'register'">
     <h2>Register</h2>
     <div class="register">
