@@ -6,20 +6,21 @@
   <link rel="stylesheet" href="stylesheets/main.css">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body ng-controller="AuthController as auth">
     <!-- Note need to change the display based upon whether the user is logged in -->
 
     <!-- When signed in? -->
     <div class="grid-container outline">
 
       <header ng-include="'templates/header.html'"></header>
-
-      <div ng-include="'templates/rvb-nav-bar.html'"></div>
       <nav ng-include="'templates/auth-nav.html'"></nav>
+
+      <div ng-if="auth.isAuthed()" ng-include="'templates/rvb-nav-bar.html'"></div>
+      <nav ng-if="!auth.isAuthed()" ng-include="'templates/auth.html'"></nav>
 
       <div class="row" >
         <!-- Templates accessed by router render here -->
-        <div ng-view></div>
+        <div ng-if="auth.isAuthed()" ng-view></div>
       </div>
 
       </div>
@@ -44,9 +45,10 @@
   <script src="javascripts/controllers/auth-controller.js"></script>
   <script src="javascripts/controllers/welcome-controller.js"></script>
   <script src="javascripts/controllers/users-controller.js"></script>
+  <!--
   <script src="javascripts/controllers/board-controller.js"></script>
   <script src="javascripts/controllers/add-organization-controller.js"></script>
-
+ -->
 </body>
 </html>
 

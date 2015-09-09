@@ -73,11 +73,11 @@ angular.module("JHO")
             })
 
             .when('/board', {
-                templateUrl: '../templates/panels/board/board-index.html',
+                templateUrl: 'templates/panels/board/board-index.html',
                 activetab: 'board'
             })
                 .when('/today', {
-                    templateUrl: '../templates/panels/today/today-index.html',
+                    templateUrl: 'templates/panels/today/today-index.html',
                     activetab: 'today'
                 })
                 .when('/stats', {
