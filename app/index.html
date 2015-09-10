@@ -10,15 +10,15 @@
 
     <div class="grid-container outline">
 
-      <header ng-include="'templates/header.html'">
+      <header class="row" ng-include="'templates/header.html'">
         <!-- About, Contact, Welcome -->
       </header>
 
-      <nav ng-if="!auth.isAuthed()" ng-include="'templates/auth.html'">
+      <!-- Two versions of site navigation if signed in or not -->
+      <nav class="row" ng-if="!auth.isAuthed()" ng-include="'templates/auth.html'">
         <!-- show Login / Register links and forms if user not logged in -->
       </nav>
-
-      <div ng-if="auth.isAuthed()" ng-include="'templates/rvb-nav-bar.html'">
+      <div class="row" ng-if="auth.isAuthed()" ng-include="'templates/rvb-nav-bar.html'">
         <!-- show tabbed panel navigation if user is logged in -->
       </div>
 
@@ -30,7 +30,7 @@
       </div>
 
       </div>
-        <footer ng-include="'templates/footer.html'"></footer>
+        <footer class="row" ng-include="'templates/footer.html'"></footer>
       </div>
 
     </div>
