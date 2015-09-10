@@ -44,7 +44,7 @@ blue: #22c1ee
 black: #272729*/
 
 .header-nav {
-  background-color: #fdfcfc;
+  background-color: #272729; /*#fdfcfc;*/
   color: #22c1ee;
   border-bottom: 1px solid #272729;
   margin: 0 0 15px 0;
@@ -60,22 +60,31 @@ black: #272729*/
 }
 
 .header-nav ul {
-  display: inline-block;
-  float: right;
-  background-color: red;
-  margin: 0 20% 0 0;
-  list-style-type: none;
+  /*display: inline-block;*/
+  /*float: right;*/
+  /*background-color: red;*/
+  /*margin: 0 20% 0 0;*/
+  /*list-style-type: none;*/
   margin: 0;
-  padding: 0;
-  overflow: hidden;
+  padding: 22px 15px 0 15px;
+  /*vertical-align: center;*/
+  /*overflow: hidden;*/
 
 }
 .header-nav li {
   float: right;
-  padding: 100px, 10%, 0, 10%;
+  /*padding: 100px, 10%, 0, 10%;*/
   display: inline-block;
   margin: 0 1% 0px 1%;
   font-weight: normal;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #22c1ee;
+}
+.header-nav a:hover {
+  color: #fdfcfc;
 }
 
 
