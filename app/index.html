@@ -16,9 +16,9 @@
         <!-- show Login / Register links and forms if user not logged in -->
       </nav>
 
+
       <!-- This needs to disappear when going to Home, About, etc.  -->
       <div class="row" ng-if="auth.isAuthed()" ng-include="'templates/rvb-nav-bar.html'">
-        <!-- show tabbed panel navigation if user is logged in -->
       </div>
 
       <div class="row" >
