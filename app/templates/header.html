@@ -5,10 +5,10 @@
       <!-- <p>Your job hunt, organized</p> -->
 
       <ul>
-        <li><a href="#/welcome">Home</a></li>
-        <li><a href="#/about">About</a></li>
-        <li><a href="#/contact">Contact</a></li>
         <li ng-if="auth.isAuthed()"><a href="#/logout"  ng-click="auth.logout()">Log out</a></li>
+        <li><a href="#/contact">Contact</a></li>
+        <li><a href="#/about">About</a></li>
+        <li><a href="#/welcome">Home</a></li>
       </ul>
 
   </div>

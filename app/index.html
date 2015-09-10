@@ -10,19 +10,13 @@
 
     <div class="grid-container outline">
 
-      <!-- <div class="row" ng-include="'templates/rvb-header.html'"></div> -->
+      <header class="row header-bar" ng-include="'templates/header.html'"> </header>
 
-      <header class="row header-bar" ng-include="'templates/header.html'">
-        <!-- About, Contact, Welcome -->
-      </header>
-
-      <!-- Two versions of site navigation if signed in or not -->
       <nav class="row" ng-if="!auth.isAuthed()" ng-include="'templates/auth.html'">
         <!-- show Login / Register links and forms if user not logged in -->
-        This should not show when when authorized.  Working
       </nav>
 
-
+      <!-- This needs to disappear when going to Home, About, etc.  -->
       <div class="row" ng-if="auth.isAuthed()" ng-include="'templates/rvb-nav-bar.html'">
         <!-- show tabbed panel navigation if user is logged in -->
       </div>
@@ -34,9 +28,8 @@
         </div>
       </div>
 
-      <!-- Consolidate the 2 footers -->
       </div>
-        <footer class="row" ng-include="'templates/rvb-footer.html'"></footer>
+        <footer class="row" ng-include="'templates/footer.html'"></footer>
       </div>
 
     </div>

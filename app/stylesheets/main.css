@@ -58,18 +58,14 @@ black: #272729*/
   /*margin: 0 25% 8px 0;*/
   padding: 0 0 0 15px;
 }
+#title:hover {
+  color: #fdfcfc;
+}
 
 .header-nav ul {
-  /*display: inline-block;*/
-  /*float: right;*/
-  /*background-color: red;*/
-  /*margin: 0 20% 0 0;*/
-  /*list-style-type: none;*/
   margin: 0;
   padding: 22px 15px 0 15px;
-  /*vertical-align: center;*/
   /*overflow: hidden;*/
-
 }
 .header-nav li {
   float: right;
@@ -80,6 +76,7 @@ black: #272729*/
 }
 
 .header-nav a {
+  font-size: 0.85em;
   text-decoration: none;
   color: #22c1ee;
 }
@@ -206,8 +203,8 @@ ul .dndDraggingSource {
 
 .board .dndPlaceholder {
     display: block;
-    background-color: #ADEBAD;  /*Should be a blue shadow*/
-    min-height: 20px;
+    background-color: #272729; /*Should be a blue shadow*/
+    min-height: 25px;
 }
 
 
