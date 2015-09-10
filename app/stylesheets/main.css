@@ -43,19 +43,48 @@ body {
 blue: #22c1ee
 black: #272729*/
 
-.header-bar {
+.header-nav {
   background-color: #fdfcfc;
-  text-align: center;
   color: #22c1ee;
   border-bottom: 1px solid #272729;
-  /*margin: 0 10% 0 10%;*/
+  margin: 0 0 15px 0;
 }
-.header-bar h1 {
+#title {
+  text-decoration: none;
+  font-size: 3.0em;
+  float: left;
+  font-weight: bold;
+  color: #22c1ee;
+  /*margin: 0 25% 8px 0;*/
+  padding: 0 0 0 15px;
+}
+
+.header-nav ul {
+  display: inline-block;
+  float: right;
+  background-color: red;
+  margin: 0 20% 0 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+}
+.header-nav li {
+  float: right;
+  padding: 100px, 10%, 0, 10%;
+  display: inline-block;
+  margin: 0 1% 0px 1%;
+  font-weight: normal;
+}
+
+
+/*.header-bar h1 {
   font-size: 3.5em;
   font-weight: bold;
   color: #22c1ee;
   margin: 0 0 0 0;
-}
+}*/
 
 /*In general, think it would be good to fix the width of the tab and adjust text to fit*/
 .tab-bar {

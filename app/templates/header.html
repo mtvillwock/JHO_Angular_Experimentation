@@ -1,14 +1,15 @@
-<!-- <h1><a href="#/">JHO</a></h1> -->
-<!-- <p>Your job hunt, organized</p> -->
+<div class="row">
+  <div class="col-6 header-nav">
 
-<nav>
-  <ul>
-    <li><a href="#/welcome">Home</a></li>
-    <li><a href="#/about">About</a></li>
-    <li><a href="#/contact">Contact</a></li>
-    <li ng-if="auth.isAuthed()"><a href="#/logout"  ng-click="auth.logout()">Log out</a></li>
-  </ul>
-</nav>
+      <div><a id="title" href="#/">JHO</a></div>
+      <!-- <p>Your job hunt, organized</p> -->
 
+      <ul>
+        <li><a href="#/welcome">Home</a></li>
+        <li><a href="#/about">About</a></li>
+        <li><a href="#/contact">Contact</a></li>
+        <li ng-if="auth.isAuthed()"><a href="#/logout"  ng-click="auth.logout()">Log out</a></li>
+      </ul>
 
-
+  </div>
+</div>
