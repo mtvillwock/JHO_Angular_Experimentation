@@ -14,7 +14,12 @@
                 dnd-effect-allowed="move"
                 dnd-type="card"
                 dnd-moved="boardCtrl.board.lists[0].cards.splice($index, 1)"
-            >{{card.title}}</li>
+            >
+              {{card.title}}
+              <!-- Test modal -->
+
+
+            </li>
           </ul>
 
           <form id="board-form" name="addOrganizationForm" ng-controller="AddOrganizationController as addOrgCtrl" ng-submit="addOrganizationForm .$valid && addOrgCtrl.addOrganization(list1_items)" novalidate>
