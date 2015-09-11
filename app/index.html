@@ -17,10 +17,6 @@
       </nav>
 
 
-      <!-- This needs to disappear when going to Home, About, etc.  -->
-      <div class="row" ng-if="auth.isAuthed()" ng-include="'templates/rvb-nav-bar.html'">
-      </div>
-
       <div class="row" >
         <div ng-if="auth.isAuthed()" ng-view>
         <!-- show main page content if user is logged in -->

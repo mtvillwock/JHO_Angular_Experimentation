@@ -51,7 +51,7 @@ black: #272729*/
 }
 #title {
   text-decoration: none;
-  font-size: 3.0em;
+  font-size: 2.5em;
   float: left;
   font-weight: bold;
   color: #22c1ee;
@@ -138,7 +138,9 @@ black: #272729*/
 .panel {
   border-top: 3px solid #22c1ee;
   border-radius: 10px;
-  margin: 0px 3px 3px 3px;
+  margin: 4px 3px 3px 3px;
+  /*overflow-x: scroll ;*/
+  /*width: 850px;*/
 }
 
 .panel h1 {
@@ -152,8 +154,13 @@ black: #272729*/
   width: 1425px;
   max-width: 1425px;
   display: inline-block;
-/*  Put a scroll bar at the bottom
-  overflow: scroll;*/
+  /*Put a scroll bar at the bottom*/
+  overflow: scroll;
+  /*display: inline;*/
+  /*white-space: nowrap;*/
+/*  overflow: auto;
+  white-space: nowrap;
+*/
 }
 
 #interested-col {
