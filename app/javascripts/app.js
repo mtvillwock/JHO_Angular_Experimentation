@@ -24,12 +24,16 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
     };
 })
 
-.controller('CardController', function($scope, card) {
+.controller('CardController', ['$scope', function($scope, card) {
+    console.log("in CardController")
     $scope.modalShown = false;
     $scope.toggleModal = function() {
+        console.log("Toggle modal!!!")
         $scope.modalShown = !$scope.modalShown;
+        console.log($scope.modalShown);
     };
-})
+}])
+
 
 var board1 = {
 name: "New Test Board",

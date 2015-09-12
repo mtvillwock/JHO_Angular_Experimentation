@@ -1,4 +1,5 @@
-app.directive('modalDialog', function() {
+angular.module("JHO")
+.directive('modalDialog', function() {
   return {
     restrict: 'E',
     scope: {
@@ -16,6 +17,12 @@ app.directive('modalDialog', function() {
         scope.show = false;
       };
     },
-    template: '/templates/panels/board/card/card-modal.html'
+    template: "<div class='ng-modal' ng-show='show'>
+  <div class='ng-modal-overlay' ng-click='hideModal()'></div>
+  <div class='ng-modal-dialog' ng-style='dialogStyle'>
+    <div class='ng-modal-close' ng-click='hideModal()'>X</div>
+    <div class='ng-modal-dialog-content' ng-transclude></div>
+  </div>
+</div>"
   };
 });
