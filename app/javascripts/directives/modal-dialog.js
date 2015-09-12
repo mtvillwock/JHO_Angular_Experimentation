@@ -1,3 +1,4 @@
+// Review this line by line
 angular.module("JHO")
 .directive('modalDialog', function() {
   return {

@@ -24,6 +24,7 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
     };
 })
 
+// This is actually the modal controller
 .controller('CardController', ['$scope', function($scope, card) {
     console.log("in CardController")
     $scope.modalShown = false;
