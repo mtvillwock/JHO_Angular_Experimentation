@@ -49,7 +49,20 @@
                 dnd-effect-allowed="move"
                 dnd-type="card"
                 dnd-moved="boardCtrl.board.lists[1].cards.splice($index, 1)"
-            >{{card.title}}</li>
+            >
+            {{card.title}}
+
+            <!-- Test modal -->
+              <div ng-controller='CardController as card'>
+                <button ng-click='toggleModal()'>Edit</button>
+                <modal-dialog show='modalShown' width='50%' height='60%'>
+                  <p>Modal Content For list 1 Goes here<p>
+                    <!-- Following doesn't work -->
+                    <!-- <p> edit {{card.title}}</p> -->
+                </modal-dialog>
+              </div>
+
+          </li>
           </ul>
 
       </div>
