@@ -241,7 +241,7 @@ ul .dndDraggingSource {
 }
 .ng-modal-dialog {
   /* A centered div above the overlay with a box shadow. */
-  z-index:10000;
+  z-index:10000;  /*This is not good*/
   position: absolute;
   width: 50%; /* Default */
 
@@ -254,6 +254,8 @@ ul .dndDraggingSource {
 
   background-color: #fff;
   box-shadow: 4px 4px 80px #000;
+  border-radius: 10px;
+  color: #272729;
 }
 .ng-modal-dialog-content {
   padding:10px;

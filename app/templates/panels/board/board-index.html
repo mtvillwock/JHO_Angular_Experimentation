@@ -17,7 +17,12 @@
             >
               {{card.title}}
               <!-- Test modal -->
-
+              <div ng-controller='CardController as card'>
+                <button ng-click='toggleModal()'>Edit</button>
+                <modal-dialog show='modalShown' width='50%' height='60%'>
+                  <p>Modal Content Goes here<p>
+                </modal-dialog>
+              </div>
 
             </li>
           </ul>
