@@ -8,11 +8,19 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
     }
 ])
 
-.controller('BoardController', function() {
-    this.board = board1;
-    this.list1_items = board1.lists[0];
-    // console.log("board1")
-})
+.controller('BoardController', ['$http','$scope', function($http,$scope) {
+    // New Code;  Put the board onto
+    $scope.board = board1; //{};
+    // $http({method: 'GET', url: 'something', apiKey: 'somethingElse'})
+    // .success(function(returnValues){
+    //    $scope.board = returnValues;
+    // });
+    $scope.list1_items = $scope.board.lists[0]
+
+    // Old Code
+    // $scope.board = board1;
+    // $scope.list1_items = board1.lists[0];
+}])
 
 .controller("AddOrganizationController", function() {
     this.organization = {};

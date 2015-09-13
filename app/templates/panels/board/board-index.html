@@ -3,14 +3,14 @@
 <div class="col-6 panel board" ng-controller="BoardController as boardCtrl">
 <!--           Eventually this board should be refactored to use a combination of ng-repeat and forceful CSS for the individual lists -->
 
-    <h1>{{boardCtrl.board.name}} </h1>
+    <h1>{{board.name}} </h1>
 
     <div id="interested-col" dnd-allowed-types="['card']">
         <!-- {{boardCtrl.board.lists[0].name}} -->
         <h3> Interested </h3>
 
-          <ul dnd-list="boardCtrl.board.lists[0].cards" >
-            <li ng-repeat="card in boardCtrl.board.lists[0].cards" dnd-draggable="card"
+          <ul dnd-list="board.lists[0].cards" >
+            <li ng-repeat="card in board.lists[0].cards" dnd-draggable="card"
                 dnd-effect-allowed="move"
                 dnd-type="card"
                 dnd-moved="boardCtrl.board.lists[0].cards.splice($index, 1)"
