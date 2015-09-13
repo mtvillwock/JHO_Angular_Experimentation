@@ -8,20 +8,29 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
     }
 ])
 
-.controller('BoardController', ['$http','$scope', function($http,$scope) {
+.controller('BoardController', ['$http','$scope','API', function($http,$scope, API) {
     // New Code;  Put the board onto
-    $scope.board = board1; //{};
-    // $http({method: 'GET', url: 'something', apiKey: 'somethingElse'})
-    // .success(function(returnValues){
-    //    $scope.board = returnValues;
-    // });
-    $scope.list1_items = $scope.board.lists[0]
+    $scope.board = {};
+    $scope.list1_items = [];
+    $http({method: 'GET', url: API+'/boards/' + 1})
+    .success(function(returnValues){
+        console.log("ReturnValues : ", returnValues)
+        $scope.board = returnValues.board;
+        console.log("Inside succes:", $scope.board);
+        $scope.list1_items = $scope.board.lists[0]
+    });
+    // console.log("In boardCtrl:", board.create())
+    // $scope.board = board.get();
+
+    // console.log("After success:", $scope.board);
+    // $scope.list1_items = Sscope.board.lists[0]
 
     // Old Code
     // $scope.board = board1;
     // $scope.list1_items = board1.lists[0];
 }])
 
+// Either this function needs to be in the boardController or we need a board Factory.  Currently this works because board is a global variable
 .controller("AddOrganizationController", function() {
     this.organization = {};
     this.list1_items = board1.lists[0];
