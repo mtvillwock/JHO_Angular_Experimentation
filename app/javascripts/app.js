@@ -13,7 +13,7 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
     $scope.board = {};
     $scope.list1_items = [];
     // Refactor this into a service
-    $http({method: 'GET', url: API+'/boards/' + 1})
+    $http({method: 'GET', url: API+'/dashboard'})
     .success(function(returnValues){
         console.log("ReturnValues : ", returnValues)
         $scope.board = returnValues.board;
@@ -23,8 +23,7 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
 
 }])
 
-// Either this function needs to be in the boardController or we need a board Factory.  Currently this works because board is a global variable
-.controller("AddOrganizationController", ['$scope', function($scope) {
+.controller("AddOrganizationController", ['$scope','$http', function($scope) {
     this.organization = {};
     // this.list1_items = board1.lists[0];
     this.addOrganization = function(list1_items) {
@@ -32,6 +31,15 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
         $scope.list1_items.cards.push(this.organization);
         this.organization = {};
     };
+
+    $http({method: 'PUT', url: API+'/boards/', { }})
+    .success(function(returnValues){
+        console.log("ReturnValues : ", returnValues)
+        $scope.board = returnValues.board;
+        console.log("Inside succes:", $scope.board);
+        $scope.list1_items = $scope.board.lists[0]
+    });
+
 }])
 
 // This is actually the modal controller
