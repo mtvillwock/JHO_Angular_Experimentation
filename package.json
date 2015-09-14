@@ -1,0 +1,20 @@
+{
+  "name": "jho",
+  "version": "1.0.0",
+  "description": "MVP framework of the JHO Angular.JS frontend.  More will be following very soon.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mtvillwock/JHO_Angular_Experimentation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtvillwock/JHO_Angular_Experimentation/issues"
+  },
+  "homepage": "https://github.com/mtvillwock/JHO_Angular_Experimentation"
+}
