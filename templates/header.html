@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-6 header-nav">
+
+      <div><a id="title" href="#/">JHO</a></div>
+      <!-- <p>Your job hunt, organized</p> -->
+
+      <ul>
+        <li ng-if="auth.isAuthed()"><a href="#/logout"  ng-click="auth.logout()">Log out</a></li>
+        <li><a href="#/contact">Contact</a></li>
+        <li><a href="#/about">About</a></li>
+        <li ng-if="auth.isAuthed()"><a href="#/board">Home</a></li>
+      </ul>
+
+  </div>
+</div>

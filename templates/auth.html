@@ -1,0 +1,33 @@
+<div ng-controller="AuthController as auth" ng-model="form">
+<a href="#/auth" ng-click="form = 'login'">Login</a>
+<a href="#/auth" ng-click="form = 'register'">Register</a>
+
+  <section id="login" ng-if="form == 'login'">
+    <h2>Login</h2>
+    <div class="login">
+      <form novalidate ng-submit="auth.login(user)" name="loginForm">
+        Email: <input required ng-model="user.email" type="text" name="user[email]">
+        Password: <input required ng-model="user.password" type="password" name="user[password]">
+        <input ng-disabled="loginForm.$invalid" type="submit" value="Login">
+      </form>
+    </div>
+  </section>
+
+    <h3>
+      {{auth.message}}
+    </h3>
+
+  <section id="register" ng-if="form == 'register'">
+    <h2>Register</h2>
+    <div class="register">
+      <form novalidate ng-submit="auth.register(user)" name="registerForm">
+        Name: <input required ng-model="user.name" type="text" name="user[name]">
+        Email: <input required ng-model="user.email" type="text" name="user[email]">
+        Password: <input required ng-model="user.password" type="password" name="user[password]">
+        Password Confirmation: <input required ng-model="user.password_confirmation" type="password" name="user[password_confirmation]">
+        <input ng-disabled="registerForm.$invalid" type="submit" value="Register">
+      </form>
+    </div>
+  </section>
+</div>
+
