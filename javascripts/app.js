@@ -45,6 +45,9 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
     this.updateCardPosition = function(event,index,card, list_id) {
         console.log("in updateCardPosition")
         console.log("event,index,card, list_id", event,index,card, list_id);
+
+        card.list_id = list_id; // update Card in DOM
+
         $http.put( API+'/cards/' + card.id, {
             card: {
                 title: card.title,
@@ -52,7 +55,7 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
             }
         })
         .success(function(response){
-            console.log("updated card :", response);
+            console.log("updated card: ", response);
         });
     };
 
