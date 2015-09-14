@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "dependencies": {
+    "express": "~4.9.8"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/mtvillwock/JHO_Angular_Experimentation.git"
