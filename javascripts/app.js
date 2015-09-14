@@ -40,15 +40,13 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
     };
 
 
-
-
     this.updateCardPosition = function(event,index,card, list_id) {
         console.log("in updateCardPosition")
         console.log("event,index,card, list_id", event,index,card, list_id);
 
         card.list_id = list_id; // update Card in DOM
 
-        $http.put( API+'/cards/' + card.id, {
+        $http.post( API+'/cards/' + card.id + '/movements', {
             card: {
                 title: card.title,
                 list_id: list_id
@@ -59,7 +57,6 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
         });
     };
 
-    // updateCardPosition(event,index,item,type)
 
 }])
 
@@ -93,71 +90,83 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
         newCard(card, list_id);
 
     };
-    // console.log("Cards : ", $scope.board)
-    // Be very careful with this method of getting the last element.  Refactor with underscore
 
 
 }])
 
-// This is actually the modal controller.  Removed card from the cardController function call...
-.controller('CardController', ['$scope', function($scope) {
+//Removed card from the cardController function call...
+.controller('CardController', ['$scope','$http','API', function($scope,$http,API) {
     console.log("in CardController")
     $scope.modalShown = false;
     $scope.toggleModal = function() {
-        console.log("Toggle modal!!!")
+        // console.log("Toggle modal!!!")
         $scope.modalShown = !$scope.modalShown;
-        console.log($scope.modalShown);
+        // console.log($scope.modalShown);
     };
-    $scope.updateCard = function(card) {
+
+    this.updateCard = function(card) {
         console.log("In updateCard function:", card)
+        // Add in all card attributes, eventually
+        $http.put( API+'/cards/' + card.id, {
+            card: {
+                title: card.title
+            }
+        })
+        .success(function(response){
+            console.log("updated card: ", response);
+        });
+
     };
 }])
 
+.controller('TodayController')
 
-var board1 = {
-name: "New Test Board",
-lists: [{
-    name: "interested-col",
-    cards: [{
-        title: 'Google'
-    }, {
-        title: 'FaceBook'
-    }]
-}, {
-    name: "in-progress",
-    cards: [{
-        title: 'Wired'
-    }, {
-        title: 'Make'
-    }]
-}, {
-    name: "done",
-    cards: [{
-        title: 'Wired Times'
-    }, {
-        title: 'Make'
-    }]
-}, {
-    name: "interested-col",
-    cards: [{
-        title: 'Wired'
-    }, {
-        title: 'Maker Times'
-    }]
-}, {
-    name: "interested-col",
-    cards: [{
-        title: 'News Corp.'
-    }, {
-        title: 'Make'
-    }]
-}, {
-    name: "interested-col",
-    cards: [{
-        title: 'Wired'
-    }, {
-        title: 'WWF'
-    }]
-}],
-user_id: 123456
-}
+
+// Test data on client side when API is not available
+// var board1 = {
+// name: "New Test Board",
+// lists: [{
+//     name: "interested-col",
+//     cards: [{
+//         title: 'Google'
+//     }, {
+//         title: 'FaceBook'
+//     }]
+// }, {
+//     name: "in-progress",
+//     cards: [{
+//         title: 'Wired'
+//     }, {
+//         title: 'Make'
+//     }]
+// }, {
+//     name: "done",
+//     cards: [{
+//         title: 'Wired Times'
+//     }, {
+//         title: 'Make'
+//     }]
+// }, {
+//     name: "interested-col",
+//     cards: [{
+//         title: 'Wired'
+//     }, {
+//         title: 'Maker Times'
+//     }]
+// }, {
+//     name: "interested-col",
+//     cards: [{
+//         title: 'News Corp.'
+//     }, {
+//         title: 'Make'
+//     }]
+// }, {
+//     name: "interested-col",
+//     cards: [{
+//         title: 'Wired'
+//     }, {
+//         title: 'WWF'
+//     }]
+// }],
+// user_id: 123456
+// }
