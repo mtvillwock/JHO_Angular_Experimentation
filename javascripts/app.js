@@ -99,14 +99,17 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
 
 }])
 
-// This is actually the modal controller
-.controller('CardController', ['$scope', function($scope, card) {
+// This is actually the modal controller.  Removed card from the cardController function call...
+.controller('CardController', ['$scope', function($scope) {
     console.log("in CardController")
     $scope.modalShown = false;
     $scope.toggleModal = function() {
         console.log("Toggle modal!!!")
         $scope.modalShown = !$scope.modalShown;
         console.log($scope.modalShown);
+    };
+    $scope.updateCard = function(card) {
+        console.log("In updateCard function:", card)
     };
 }])
 

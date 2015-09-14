@@ -20,20 +20,28 @@
                 dnd-moved="board.lists[0].cards.splice($index, 1); log(e)"
             >
               {{card.title}}
-              <!-- Test modal -->
-              <div ng-controller='CardController as card'>
+              <!-- Took CardController AS CARD out to give access to the boardCtrl card -->
+              <div ng-controller='CardController as cardCtrl'>
                 <button ng-click='toggleModal()'>Edit</button>
+
                 <modal-dialog show='modalShown' width='50%' height='60%'>
                   <p>Modal Content for {{ board.lists[0].name }} Goes here<p>
-                    <!-- Following doesn't work -->
-                    <!-- <p> edit {{card.title}}</p> -->
+                  <!-- EXTREMELY IMPORT: card is from the boardCtrl -->
+                  <form id="card-modal-form" name="editCardForm" ng-submit="cardCtrl.updateCard(card)" novalidate>
+                    <label>Organization Name</label>
+                    <input type="text" value="{{card.title}}" required>
+                    <label>Organization ID</label>
+                    <input type="text" value="{{card.id}}" required>
+                    <input type="submit" value="Update (AYFL?)">
+                  </form>
                 </modal-dialog>
+
               </div>
 
             </li>
           </ul>
 
-          <form id="board-form" name="addOrganizationForm" ng-controller="AddOrganizationController as addOrgCtrl" ng-submit="addOrganizationForm .$valid && addOrgCtrl.addOrganization(list1_items)" novalidate>
+          <form id="board-form" name="addOrganizationForm" ng-controller="AddOrganizationController as addOrgCtrl" ng-submit="addOrganizationForm.$valid && addOrgCtrl.addOrganization(list1_items)" novalidate>
             <input ng-model="addOrgCtrl.organization.title" type="text" placeholder="New Organization" required/>
             <input type="submit" value="Add" />
           </form>
@@ -59,11 +67,12 @@
               {{card.title}}
 
             <!-- Test modal -->
-              <div ng-controller='CardController as card'>
+              <div ng-controller='CardController'>
                 <button ng-click='toggleModal()'>Edit</button>
                 <modal-dialog show='modalShown' width='50%' height='60%'>
                   <p>Modal Content For {{ board.lists[1].name }} Goes here<p>
                     <!-- Following doesn't work -->
+                    <input type="text" value="{{card.title }}">
                     <!-- <p> edit {{card.title}}</p> -->
                 </modal-dialog>
               </div>
