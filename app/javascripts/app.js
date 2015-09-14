@@ -23,22 +23,39 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
 
 }])
 
-.controller("AddOrganizationController", ['$scope','$http', function($scope) {
+.controller("AddOrganizationController", ['$scope','$http','API', function($scope,$http,API) {
     this.organization = {};
     // this.list1_items = board1.lists[0];
+    var newCard = function(card, list_id){
+
+        $http.post( API+'/cards', {
+            card: {
+                title: card.title,
+                list_id: list_id
+            }
+        })
+        .success(function(returnValues){
+            console.log("ReturnValues : ", returnValues)
+            // $scope.board = returnValues.board;
+            console.log("Inside succes:", $scope.board);
+            // $scope.list1_items = $scope.board.lists[0]
+        });
+    };
+
     this.addOrganization = function(list1_items) {
         console.log("in AddOrganizationController", $scope.board)
         $scope.list1_items.cards.push(this.organization);
         this.organization = {};
-    };
 
-    $http({method: 'PUT', url: API+'/boards/', { }})
-    .success(function(returnValues){
-        console.log("ReturnValues : ", returnValues)
-        $scope.board = returnValues.board;
-        console.log("Inside succes:", $scope.board);
-        $scope.list1_items = $scope.board.lists[0]
-    });
+        var card = $scope.list1_items.cards[$scope.list1_items.cards.length - 1];
+        var list_id = $scope.list1_items.id
+        console.log("Card", card)
+        newCard(card, list_id);
+
+    };
+    // console.log("Cards : ", $scope.board)
+    // Be very careful with this method of getting the last element.  Refactor with underscore
+
 
 }])
 
