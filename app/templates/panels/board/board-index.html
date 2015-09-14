@@ -9,7 +9,8 @@
         <!-- {{boardCtrl.board.lists[0].name}} -->
         <h3> Interested </h3>
 
-          <ul dnd-list="board.lists[0].cards" >
+          <ul dnd-list="board.lists[0].cards"
+            dnd-inserted="console.log('Element was inserted at position ' + index, event)">
             <li ng-repeat="card in board.lists[0].cards" dnd-draggable="card"
                 dnd-effect-allowed="move"
                 dnd-type="card"

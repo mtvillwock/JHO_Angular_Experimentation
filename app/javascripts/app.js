@@ -12,14 +12,35 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
     // New Code;  Put the board onto
     $scope.board = {};
     $scope.list1_items = [];
-    // Refactor this into a service
-    $http({method: 'GET', url: API+'/dashboard'})
-    .success(function(returnValues){
-        console.log("ReturnValues : ", returnValues)
-        $scope.board = returnValues.board;
-        console.log("Inside succes:", $scope.board);
-        $scope.list1_items = $scope.board.lists[0]
-    });
+    // Refactor this into a service later
+    (function(){
+        $http({method: 'GET', url: API+'/dashboard'})
+        .success(function(returnValues){
+            // console.log("ReturnValues : ", returnValues)
+            $scope.board = returnValues.board;
+            // console.log("Inside succes:", $scope.board);
+            $scope.list1_items = $scope.board.lists[0]
+        });
+    })();
+
+    this.updateCardPosition = function(event,index,item,type) {
+        console.log("in updateCardPosition")
+        console.log("event,index,item,type", event,index,item,type);
+        // $http.put( API+'/cards', {
+        //     card: {
+        //         title: card.title,
+        //         list_id: list_id
+        //     }
+        // })
+        // .success(function(returnValues){
+        //     console.log("ReturnValues : ", returnValues)
+        //     // $scope.board = returnValues.board;
+        //     console.log("Inside succes:", $scope.board);
+        //     // $scope.list1_items = $scope.board.lists[0]
+        // });
+    };
+
+    // updateCardPosition(event,index,item,type)
 
 }])
 
