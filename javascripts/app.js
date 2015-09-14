@@ -1,5 +1,5 @@
 angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
-// .constant('API', 'https://jho.herokuapp.com')
+// .constant('API', 'https://jho-api.herokuapp.com')
 .constant('API', 'http://localhost:3000')
 
 .config(['$httpProvider',
@@ -18,26 +18,42 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
         .success(function(returnValues){
             // console.log("ReturnValues : ", returnValues)
             $scope.board = returnValues.board;
-            // console.log("Inside succes:", $scope.board);
+            console.log("Inside succes:", $scope.board);
             $scope.list1_items = $scope.board.lists[0]
         });
     })();
 
-    this.updateCardPosition = function(event,index,item,type) {
+    $scope.dropCallback = function(event, index, item, external, type, allowedType) {
+        console.log("dropped item is: ", item);
+        $scope.logListEvent('dropped at', event, index, external, type);
+        if (external) {
+            if (allowedType === 'itemType' && !item.label) return false;
+            if (allowedType === 'containerType' && !angular.isArray(item)) return false;
+        }
+        return item;
+    };
+
+    $scope.logListEvent = function(action, event, index, external, type) {
+        var message = external ? 'External ' : '';
+        message += type + ' element is ' + action + ' position ' + index;
+        console.log(message, event);
+    };
+
+
+
+
+    this.updateCardPosition = function(event,index,card, list_id) {
         console.log("in updateCardPosition")
-        console.log("event,index,item,type", event,index,item,type);
-        // $http.put( API+'/cards', {
-        //     card: {
-        //         title: card.title,
-        //         list_id: list_id
-        //     }
-        // })
-        // .success(function(returnValues){
-        //     console.log("ReturnValues : ", returnValues)
-        //     // $scope.board = returnValues.board;
-        //     console.log("Inside succes:", $scope.board);
-        //     // $scope.list1_items = $scope.board.lists[0]
-        // });
+        console.log("event,index,card, list_id", event,index,card, list_id);
+        $http.put( API+'/cards/' + card.id, {
+            card: {
+                title: card.title,
+                list_id: list_id
+            }
+        })
+        .success(function(response){
+            console.log("updated card :", response);
+        });
     };
 
     // updateCardPosition(event,index,item,type)
