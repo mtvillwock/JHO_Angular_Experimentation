@@ -3,17 +3,18 @@
 <div class="col-6 panel board" ng-controller="BoardController as boardCtrl">
 <!--           Eventually this board should be refactored to use a combination of ng-repeat and forceful CSS for the individual lists -->
 
-    <h1>{{boardCtrl.board.name}} </h1>
+    <h1>{{board.name}} </h1>
 
     <div id="interested-col" dnd-allowed-types="['card']">
         <!-- {{boardCtrl.board.lists[0].name}} -->
         <h3> Interested </h3>
 
-          <ul dnd-list="boardCtrl.board.lists[0].cards" >
-            <li ng-repeat="card in boardCtrl.board.lists[0].cards" dnd-draggable="card"
+          <ul dnd-list="board.lists[0].cards"
+            dnd-inserted="console.log('Element was inserted at position ' + index, event)">
+            <li ng-repeat="card in board.lists[0].cards" dnd-draggable="card"
                 dnd-effect-allowed="move"
                 dnd-type="card"
-                dnd-moved="boardCtrl.board.lists[0].cards.splice($index, 1)"
+                dnd-moved="board.lists[0].cards.splice($index, 1)"
             >
               {{card.title}}
 
@@ -44,11 +45,11 @@
       <div id="in-progress" dnd-allowed-types="['card']">
         <h4>In Progress </h4>
 
-          <ul dnd-list="boardCtrl.board.lists[1].cards" >
-            <li ng-repeat="card in boardCtrl.board.lists[1].cards" dnd-draggable="card"
+          <ul dnd-list="board.lists[1].cards" >
+            <li ng-repeat="card in board.lists[1].cards" dnd-draggable="card"
                 dnd-effect-allowed="move"
                 dnd-type="card"
-                dnd-moved="boardCtrl.board.lists[1].cards.splice($index, 1)"
+                dnd-moved="board.lists[1].cards.splice($index, 1)"
             >
             {{card.title}}
 
@@ -70,11 +71,11 @@
       <div id="done" dnd-allowed-types="['card']" >
         <h4>Done </h4>
           <!-- Bug : this is showing lists[1] instead of lists[2] -->
-          <ul dnd-list="boardCtrl.board.lists[2].cards">
-            <li ng-repeat="card in boardCtrl.board.lists[2].cards" dnd-draggable="card"
+          <ul dnd-list="board.lists[2].cards">
+            <li ng-repeat="card in board.lists[2].cards" dnd-draggable="card"
                 dnd-effect-allowed="move"
                 dnd-type="card"
-                dnd-moved="boardCtrl.board.lists[2].cards.splice($index, 1)"
+                dnd-moved="board.lists[2].cards.splice($index, 1)"
             >{{card.title}}</li>
           </ul>
       </div>
@@ -88,11 +89,11 @@
       <div id="in-progress" dnd-allowed-types="['card']">
         <h4>In Progress</h4>
 
-          <ul dnd-list="boardCtrl.board.lists[3].cards">
-            <li ng-repeat="card in boardCtrl.board.lists[3].cards" dnd-draggable="card"
+          <ul dnd-list="board.lists[3].cards">
+            <li ng-repeat="card in board.lists[3].cards" dnd-draggable="card"
                 dnd-effect-allowed="move"
                 dnd-type="card"
-                dnd-moved="boardCtrl.board.lists[3].cards.splice($index, 1)"
+                dnd-moved="board.lists[3].cards.splice($index, 1)"
             >{{card.title}}</li>
           </ul>
 
@@ -101,11 +102,11 @@
       <div id="done" dnd-allowed-types="['card']">
         <h4>Done</h4>
 
-          <ul dnd-list="boardCtrl.board.lists[4].cards">
-            <li ng-repeat="card in boardCtrl.board.lists[4].cards" dnd-draggable="card"
+          <ul dnd-list="board.lists[4].cards">
+            <li ng-repeat="card in board.lists[4].cards" dnd-draggable="card"
                 dnd-effect-allowed="move"
                 dnd-type="card"
-                dnd-moved="boardCtrl.board.lists[4].cards.splice($index, 1)"
+                dnd-moved="board.lists[4].cards.splice($index, 1)"
             >{{card.title}}</li>
           </ul>
 
@@ -115,11 +116,11 @@
     <div id="interview-col" dnd-allowed-types="['card']">
       <h3>Interview</h3>
 
-        <ul dnd-list="boardCtrl.board.lists[5].cards" >
-          <li ng-repeat="card in boardCtrl.board.lists[5].cards" dnd-draggable="card"
+        <ul dnd-list="board.lists[5].cards" >
+          <li ng-repeat="card in board.lists[5].cards" dnd-draggable="card"
               dnd-effect-allowed="move"
               dnd-type="card"
-              dnd-moved="boardCtrl.board.lists[5].cards.splice($index, 1)"
+              dnd-moved="board.lists[5].cards.splice($index, 1)"
           >{{card.title}}</li>
         </ul>
 

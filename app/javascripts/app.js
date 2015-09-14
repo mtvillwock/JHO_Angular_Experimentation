@@ -8,21 +8,77 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
     }
 ])
 
-.controller('BoardController', function() {
-    this.board = board1;
-    this.list1_items = board1.lists[0];
-    // console.log("board1")
-})
+.controller('BoardController', ['$http','$scope','API', function($http,$scope, API) {
+    // New Code;  Put the board onto
+    $scope.board = {};
+    $scope.list1_items = [];
+    // Refactor this into a service later
+    (function(){
+        $http({method: 'GET', url: API+'/dashboard'})
+        .success(function(returnValues){
+            // console.log("ReturnValues : ", returnValues)
+            $scope.board = returnValues.board;
+            // console.log("Inside succes:", $scope.board);
+            $scope.list1_items = $scope.board.lists[0]
+        });
+    })();
 
-.controller("AddOrganizationController", function() {
-    this.organization = {};
-    this.list1_items = board1.lists[0];
-    this.addOrganization = function(list1_items) {
-        console.log("in AddOrganizationController")
-        this.list1_items.cards.push(this.organization);
-        this.organization = {};
+    this.updateCardPosition = function(event,index,item,type) {
+        console.log("in updateCardPosition")
+        console.log("event,index,item,type", event,index,item,type);
+        // $http.put( API+'/cards', {
+        //     card: {
+        //         title: card.title,
+        //         list_id: list_id
+        //     }
+        // })
+        // .success(function(returnValues){
+        //     console.log("ReturnValues : ", returnValues)
+        //     // $scope.board = returnValues.board;
+        //     console.log("Inside succes:", $scope.board);
+        //     // $scope.list1_items = $scope.board.lists[0]
+        // });
     };
-})
+
+    // updateCardPosition(event,index,item,type)
+
+}])
+
+.controller("AddOrganizationController", ['$scope','$http','API', function($scope,$http,API) {
+    this.organization = {};
+    // this.list1_items = board1.lists[0];
+    var newCard = function(card, list_id){
+
+        $http.post( API+'/cards', {
+            card: {
+                title: card.title,
+                list_id: list_id
+            }
+        })
+        .success(function(returnValues){
+            console.log("ReturnValues : ", returnValues)
+            // $scope.board = returnValues.board;
+            console.log("Inside succes:", $scope.board);
+            // $scope.list1_items = $scope.board.lists[0]
+        });
+    };
+
+    this.addOrganization = function(list1_items) {
+        console.log("in AddOrganizationController", $scope.board)
+        $scope.list1_items.cards.push(this.organization);
+        this.organization = {};
+
+        var card = $scope.list1_items.cards[$scope.list1_items.cards.length - 1];
+        var list_id = $scope.list1_items.id
+        console.log("Card", card)
+        newCard(card, list_id);
+
+    };
+    // console.log("Cards : ", $scope.board)
+    // Be very careful with this method of getting the last element.  Refactor with underscore
+
+
+}])
 
 // This is actually the modal controller
 .controller('CardController', ['$scope', function($scope, card) {
