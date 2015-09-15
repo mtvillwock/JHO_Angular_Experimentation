@@ -115,7 +115,16 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
         // Add in all card attributes, eventually
         $http.put( API+'/cards/' + card.id, {
             card: {
-                title: card.title
+                title: card.title,
+                description: card.description,
+                organization_name: card.organization_name,
+                organization_summary: card.organization_summary,
+                position_description: card.position_description,
+                advocate: card.advocate,
+                position_applied_for: card.position_applied_for,
+                tech_stack: card.tech_stack,
+                glassdoor_rating: card.glassdoor_rating,
+                recent_articles: card.recent_articles
             }
         })
         .success(function(response){
@@ -125,7 +134,9 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
     };
 }])
 
-.controller('TodayController')
+// .controller('TodayController', function(){
+//     console.log("today controller");
+// })€
 
 
 // Test data on client side when API is not available
