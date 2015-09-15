@@ -22,7 +22,7 @@
               {{card.title}}
               <!-- Took CardController AS CARD out to give access to the boardCtrl card -->
               <div ng-controller='CardController as cardCtrl'>
-                <button ng-click='toggleModal()'>Edit</button>
+                <button id="edit-card-button" ng-click='toggleModal()'>Edit</button>
                 <!-- <input id="edit-card-button' type="image" src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/pencil.svg" ng-click='toggleModal()' /> -->
 
                 <modal-dialog show='modalShown' width='50%' height='40%'>
@@ -71,7 +71,7 @@
 
             <!-- Test modal -->
               <div ng-controller='CardController as cardCtrl'>
-                <button ng-click='toggleModal()'>Edit</button>
+                <button id="edit-card-button" ng-click='toggleModal()'>Edit</button>
                 <modal-dialog show='modalShown' width='50%' height='40%'>
                   <!-- <p>Modal Content For {{ board.lists[1].name }} Goes here<p> -->
                     <!-- EXTREMELY IMPORT: card is from the boardCtrl -->
@@ -106,7 +106,7 @@
               {{card.title}}
               <!-- Test modal -->
               <div ng-controller='CardController as cardCtrl'>
-                <button ng-click='toggleModal()'>Edit</button>
+                <button id="edit-card-button" ng-click='toggleModal()'>Edit</button>
                 <modal-dialog show='modalShown' width='50%' height='45%'>
                   <!-- <p>Modal Content For {{ board.lists[2].name }} Goes here<p> -->
                     <!-- EXTREMELY IMPORT: card is from the boardCtrl -->
@@ -149,7 +149,7 @@
               {{card.title}}
               <!-- Test modal -->
               <div ng-controller='CardController as cardCtrl'>
-                <button ng-click='toggleModal()'>Edit</button>
+                <button id="edit-card-button" ng-click='toggleModal()'>Edit</button>
                 <modal-dialog show='modalShown' width='50%' height='55%'>
                   <!-- <p>Modal Content For {{ board.lists[3].name }} Goes here<p> -->
 
@@ -189,7 +189,7 @@
               {{card.title}}
               <!-- Test modal -->
               <div ng-controller='CardController as cardCtrl'>
-                <button ng-click='toggleModal()'>Edit</button>
+                <button id="edit-card-button" ng-click='toggleModal()'>Edit</button>
                 <modal-dialog show='modalShown' width='50%' height='60%'>
                   <!-- <p>Modal Content For {{ board.lists[4].name }} Goes here<p> -->
 
@@ -232,7 +232,7 @@
             {{card.title}}
             <!-- Test modal -->
               <div ng-controller='CardController as cardCtrl'>
-                <button ng-click='toggleModal()'>Edit</button>
+                <button id="edit-card-button" ng-click='toggleModal()'>Edit</button>
                 <modal-dialog show='modalShown' width='50%' height='70%'>
                   <!-- <p>Modal Content For {{ board.lists[5].name }} Goes here<p> -->
 

@@ -115,11 +115,14 @@ black: #272729*/
   border-top-right-radius: 10%;
   text-decoration: none;
   color: #22c1ee;
+  /*color: #22c1ee; !!!!!!!!!!!!!!!!!!!!!!!!*/
 }
 
 .tab-bar a:hover {
   /*Enabling this causes the tab bar to jump a bit, fix and re-enable*/
-  font-size: 1.1em;
+  font-size: 1em;
+  /*outline: 2px solid #22c1ee;*/
+  background-color: #EEEFF0; /*#f8f8f8;*/
   /*Resetting the padding to stop other tabs being pushed*/
   /*padding: 3px 1% 0px 1%;*/
   /*margin: 0 0 0 0;*/
@@ -194,6 +197,8 @@ black: #272729*/
   padding: 3px;
   background-color: #fdfcfc;
   /*position: relative;*/
+  color: #22c1ee;
+  border-color: #272729;
 }
 .board li:hover {
   font-size: 0.9em;
@@ -203,12 +208,24 @@ black: #272729*/
   padding: 2px;
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++*/
-.board#edit-card-button {
-  height: auto;
-  width: auto;
-  max-width: 25px;
-  max-height: 25px;
+#edit-card-button {
+  /*display: inline-block;*/
+  /*float: right;*/
+
+
+  color: #272729;
+  background: #fdfcfc;
+  border-style: none;
+   -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  /*margin: 0;*/
+  vertical-align: center;
+  border-color: 1px solid #272729;
+  /*height: 15px;*/
+  font-size: 0.5em;
 }
+
 .board input#submit {
   width:100px;
   position:absolute;
@@ -615,8 +632,34 @@ input#submit:hover {
 
 
 .stats p {
-  margin: 20px 5% 20px 5%;
+  margin: 20px 5%  15px 5%;
 }
+.stats h1 {
+  margin: 10px 0 20px 1%;
+}
+.stats h3 {
+  font-size: 1.25em;
+  margin: 0 0 0 1%;
+  /*border-bottom: 1px solid black*/
+}
+#article-container {
+  width: 80%;
+  /*display: inline-block;*/
+  background-color: #fdfcfc; /*#f8f8f8;*/
+  margin: 8px 10% 8px 8%;
+  border-radius: 8px;
+  padding: 5px 0 5px 0;
+  border: 1px solid #272729;
+  /*background-color: red;*/
+}
+#article-container p {
+  font-size: 0.75em;
+}
+
+/*white: #fdfcfc
+blue: #22c1ee
+black: #272729*/
+
 
 /*Media Rules below */
 
