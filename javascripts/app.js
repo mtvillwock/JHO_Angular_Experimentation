@@ -9,35 +9,24 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
 ])
 
 .controller('BoardController', ['$http','$scope','API', function($http,$scope, API) {
-    // New Code;  Put the board onto
     $scope.board = {};
     $scope.list1_items = [];
+    $scope.allCards = [];
+    // $scope
+
     // Refactor this into a service later
     (function(){
         $http({method: 'GET', url: API+'/dashboard'})
         .success(function(returnValues){
             // console.log("ReturnValues : ", returnValues)
             $scope.board = returnValues.board;
-            console.log("Inside succes:", $scope.board);
+            // console.log("Inside succes:", $scope.board);
             $scope.list1_items = $scope.board.lists[0]
+            $scope.allCards = returnValues.cards;
+            // console.log("All cards: ", $scope.allCards)
+            // console.log("Entire board: ", returnValues)
         });
     })();
-
-    $scope.dropCallback = function(event, index, item, external, type, allowedType) {
-        console.log("dropped item is: ", item);
-        $scope.logListEvent('dropped at', event, index, external, type);
-        if (external) {
-            if (allowedType === 'itemType' && !item.label) return false;
-            if (allowedType === 'containerType' && !angular.isArray(item)) return false;
-        }
-        return item;
-    };
-
-    $scope.logListEvent = function(action, event, index, external, type) {
-        var message = external ? 'External ' : '';
-        message += type + ' element is ' + action + ' position ' + index;
-        console.log(message, event);
-    };
 
 
     this.updateCardPosition = function(event,index,card, list_id) {
@@ -57,6 +46,23 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
         });
     };
 
+    // this.remainingTasks = function
+
+    // $scope.dropCallback = function(event, index, item, external, type, allowedType) {
+    //     console.log("dropped item is: ", item);
+    //     $scope.logListEvent('dropped at', event, index, external, type);
+    //     if (external) {
+    //         if (allowedType === 'itemType' && !item.label) return false;
+    //         if (allowedType === 'containerType' && !angular.isArray(item)) return false;
+    //     }
+    //     return item;
+    // };
+
+    // $scope.logListEvent = function(action, event, index, external, type) {
+    //     var message = external ? 'External ' : '';
+    //     message += type + ' element is ' + action + ' position ' + index;
+    //     console.log(message, event);
+    // };
 
 }])
 
