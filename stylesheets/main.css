@@ -227,6 +227,7 @@ ul .dndDraggingSource {
   margin-bottom: 12px;
 }
 
+
 /*Modal CSS*/
 .ng-modal-overlay {
   /* A dark translucent div that covers the whole screen */
@@ -252,7 +253,7 @@ ul .dndDraggingSource {
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
 
-  background-color: #fff;
+  background-color: #EEEFF0;
   box-shadow: 4px 4px 80px #000;
   border-radius: 10px;
   color: #272729;
@@ -260,7 +261,66 @@ ul .dndDraggingSource {
 .ng-modal-dialog-content {
   padding:10px;
   text-align: left;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: bold;
+  color: #272729;
+  /*white: #fdfcfc
+  blue: #22c1ee
+  black: #272729*/
+  text-decoration: none;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border: inset 1px solid #333;
 }
+
+#card-modal-title {
+  display: block;
+  border: none;
+  height: 25px;
+  background-color: #EEEFF0; /*#f8f8f8;*/  /*#e2e4e6*/
+  margin: 4px 0 8px 0;
+  font-size: 1.5em
+}
+#card-modal-input {
+  display: block;
+  width: 75%;
+  border: none;
+  border-bottom: 1px solid #272729;
+  height: 25px;
+  background-color: #fdfcfc; /*#f8f8f8;*/  /*#e2e4e6*/
+  margin: 4px 0 4px 5%;
+}
+#card-modal-label {
+  display: block;
+  width: 75%;
+  margin: 4px 0 4px 5%;
+  font-size: 0.85em;
+}
+input#submit {
+  width:100px;
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  background:#22c1ee;
+  color: #fdfcfc;
+  height:30px;
+  border: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+input#submit:hover {
+  background:#fdfcfc;
+  color:#22c1ee;
+}
+textarea:focus, input:focus {
+  border: 1px solid #22c1ee;
+}
+
+
+
 .ng-modal-close {
   position: absolute;
   top: 3px;
