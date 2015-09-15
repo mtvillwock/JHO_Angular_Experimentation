@@ -500,7 +500,10 @@ textarea:focus, input:focus {
 
 .footer {
   font-size: .65em;
-  margin: 20px 0 0 1%;
+  margin: 20px 0 0px 1%;
+  position: fixed;
+  bottom: 0;
+  clear: both;
 }
 
 
