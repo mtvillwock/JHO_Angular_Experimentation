@@ -9,8 +9,9 @@
 
   <ul>
     <!-- Then we need to order by priority and only display the top 7-10 -->
-    <li ng-repeat="card in allCards">
-      {{card.title}} : [Task Goes Here] {{card.nextTask}}
+    <!-- <li ng-repeat="card in allCards"> -->
+    <li ng-repeat="card in todayCards">
+      {{card.title}}: {{card.next_task}}
       <!-- Complete button launches modal to edit card -->
       <div ng-controller='CardController as cardCtrl'>
                 <button ng-click='toggleModal()'>Complete</button>
@@ -40,7 +41,6 @@
       <button>Save for Later</button>
     </li>
   </ul>
-
 </div>
 
 
