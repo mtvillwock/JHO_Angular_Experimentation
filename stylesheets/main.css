@@ -115,11 +115,14 @@ black: #272729*/
   border-top-right-radius: 10%;
   text-decoration: none;
   color: #22c1ee;
+  /*color: #22c1ee; !!!!!!!!!!!!!!!!!!!!!!!!*/
 }
 
 .tab-bar a:hover {
   /*Enabling this causes the tab bar to jump a bit, fix and re-enable*/
-  font-size: 1.1em;
+  font-size: 1em;
+  /*outline: 2px solid #22c1ee;*/
+  background-color: #EEEFF0; /*#f8f8f8;*/
   /*Resetting the padding to stop other tabs being pushed*/
   /*padding: 3px 1% 0px 1%;*/
   /*margin: 0 0 0 0;*/
@@ -194,6 +197,8 @@ black: #272729*/
   padding: 3px;
   background-color: #fdfcfc;
   /*position: relative;*/
+  color: #22c1ee;
+  border-color: #272729;
 }
 .board li:hover {
   font-size: 0.9em;
@@ -202,6 +207,44 @@ black: #272729*/
   color: #fdfcfc;
   padding: 2px;
 }
+/*++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#edit-card-button {
+  /*display: inline-block;*/
+  /*float: right;*/
+
+
+  color: #272729;
+  background: #fdfcfc;
+  border-style: none;
+   -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  /*margin: 0;*/
+  vertical-align: center;
+  border-color: 1px solid #272729;
+  /*height: 15px;*/
+  font-size: 0.5em;
+}
+
+.board input#submit {
+  width:100px;
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  background:#22c1ee;
+  color: #fdfcfc;
+  height:30px;
+  border: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+input#submit:hover {
+  background:#fdfcfc;
+  color:#22c1ee;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
 
 /*To style the drag and drop*/
 ul .dndDraggingSource {
@@ -253,7 +296,7 @@ ul .dndDraggingSource {
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
 
-  background-color: #EEEFF0;
+  background-color: #EEEFF0;  /*dark gray*/
   box-shadow: 4px 4px 80px #000;
   border-radius: 10px;
   color: #272729;
@@ -280,8 +323,11 @@ ul .dndDraggingSource {
   border: none;
   height: 25px;
   background-color: #EEEFF0; /*#f8f8f8;*/  /*#e2e4e6*/
-  margin: 4px 0 8px 0;
-  font-size: 1.5em
+  margin: 4px 0 4px 0;
+  font-size: 1.5em;
+  /*Maybe get rid of this*/
+  /*border-bottom: 1px solid #272729;*/
+  padding: 0 0 4px 0;
 }
 #card-modal-input {
   display: block;
@@ -318,8 +364,6 @@ input#submit:hover {
 textarea:focus, input:focus {
   border: 1px solid #22c1ee;
 }
-
-
 
 .ng-modal-close {
   position: absolute;
@@ -472,11 +516,149 @@ textarea:focus, input:focus {
 
 
 .footer {
-  font-size: .5em;
+  font-size: .65em;
+  margin: 20px 0 0px 1%;
+  position: fixed;
+  bottom: 0;
+  clear: both;
 }
 
 
+/*Today Panel Styling*/
+.today h1{
+  /*display: inline-block;*/
+  /*font-size: 0.85em;*/
+  /*margin: 0 0 0 3%;*/
+}
+/*.today h4{
+  display: inline-block;
+  font-size: 0.85em;
+  margin: 0 0 0 3%;
+}*/
+.today ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+.today li {
+  width: 60%;
+  display: inline-block;
+  background-color: #EEEFF0; /*#f8f8f8;*/
+  margin: 8px 10% 8px 4%;
+  border-radius: 8px;
+  padding: 5px 0 5px 0;
+  /*border: 1px solid #272729;*/
+}
+.today li:hover {
+  background-color: #f8f8f8;
+  outline: 2px solid #EEEFF0; /*#272729;*/
+  /*box-shadow: none;*/
+  /*box-shadow: 0 0 3pt 2pt;*/
+}
+#outer-div {
+  /*display: inline;*/
+  /*height: 40px;*/
+  /*width: 100px;*/
+  /*padding: 0 5px 0 5px;*/
+}
+#today-list-org-name{
+  /*float: left;*/
+  font-size: 0.85em;
+  color: #22c1ee;
+  margin: 0 1% 4px 1%;
+  vertical-align: center;
+  /*height: 30px;*/
+  /*width: 250px;*/
+}
+#today-list-task {
+  float: left;
+  font-size: 1.75em;
+  margin: 0 1% 0 1%;
+  width: 200px;
+}
 
+#complete-button {
+  display: inline;
+  float: right;
+  width:100px;
+  /*vertical-align: center;*/
+  /*position:absolute;*/
+  /*right:20px;*/
+  /*bottom:20px;*/
+  background:#22c1ee;
+  color: #fdfcfc;
+  height:30px;
+  border: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 3px 1% 0 0 ;
+}
+#save-for-later {
+  display: inline;
+  float: right;
+  width:140px;
+  /*vertical-align: center;*/
+  /*position:absolute;*/
+  /*right:20px;*/
+  /*bottom:20px;*/
+  background:#22c1ee;
+  color: #fdfcfc;
+  height:30px;
+  border: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 3px 1% 0 1%;
+}
+
+/*input#submit {
+  width:100px;
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  background:#22c1ee;
+  color: #fdfcfc;
+  height:30px;
+  border: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+input#submit:hover {
+  background:#fdfcfc;
+  color:#22c1ee;
+}*/
+
+
+.stats p {
+  margin: 20px 5%  15px 5%;
+}
+.stats h1 {
+  margin: 10px 0 20px 1%;
+}
+.stats h3 {
+  font-size: 1.25em;
+  margin: 0 0 0 1%;
+  /*border-bottom: 1px solid black*/
+}
+#article-container {
+  width: 80%;
+  /*display: inline-block;*/
+  background-color: #fdfcfc; /*#f8f8f8;*/
+  margin: 8px 10% 8px 8%;
+  border-radius: 8px;
+  padding: 5px 0 5px 0;
+  border: 1px solid #272729;
+  /*background-color: red;*/
+}
+#article-container p {
+  font-size: 0.75em;
+}
+
+/*white: #fdfcfc
+blue: #22c1ee
+black: #272729*/
 
 
 /*Media Rules below */
