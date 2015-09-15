@@ -126,6 +126,21 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
             // console.log($scope.modalShown);
         };
 
+        this.delete = function(card) {
+            console.log("card to delete", card);
+
+            $http.delete(API + '/cards/' + card.id).success(function(response) {
+                // var listToDeleteFrom = $scope.board.lists[card.list_id];
+                console.log("listToDeleteFrom ", listToDeleteFrom)
+                // .log(response);
+                // for (var i = listToDeleteFrom.length - 1; i >= 0; i--) {
+                //     if (listToDeleteFrom[i].id = card.id) {
+                //         listToDeleteFrom.splice(i, 1);
+                //     }
+                // };
+            });
+        }
+
         this.updateCard = function(card) {
             console.log("In updateCard function:", card)
             // Add in all card attributes, eventually
