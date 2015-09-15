@@ -23,14 +23,18 @@
               <!-- Took CardController AS CARD out to give access to the boardCtrl card -->
               <div ng-controller='CardController as cardCtrl'>
                 <button ng-click='toggleModal()'>Edit</button>
-                <modal-dialog show='modalShown' width='50%' height='60%'>
-                  <p>Modal Content for {{ board.lists[0].name }} Goes here<p>
+                <modal-dialog show='modalShown' width='50%' height='40%'>
+                  <!-- <p>Modal Content for {{ board.lists[0].name }} Goes here<p> -->
                   <!-- EXTREMELY IMPORT: card is from the boardCtrl -->
                   <form id="card-modal-form" name="editCardForm" ng-submit="cardCtrl.updateCard(card)" novalidate>
-                    <label>Title</label>
-                    <input type="text" ng-model="card.title" value="{{card.title}}" required>
-                    <input type="hidden" ng-model="card.id" value="{{card.id}}" required>
-                    <input type="submit" value="Update (AYFL?)">
+                    <!-- <label id="card-modal-label">Title</label> -->
+                    <input id="card-modal-title" type="text" ng-model="card.title" value="{{card.title}}" required>
+                    <!-- <input type="hidden" ng-model="card.id" value="{{card.id}}" required> -->
+                    <label id="card-modal-label">Position Description</label>
+                    <textarea id="card-modal-input"  ng-model="card.position_description" required>{{ card.position_description }}</textarea>
+                    <label id="card-modal-label">Tech Stack</label>
+                    <input id="card-modal-input" type="text" ng-model="card.tech_stack" value="{{card.tech_stack}}" required>
+                    <input id="submit" type="submit" value="Update">
                   </form>
                 </modal-dialog>
               </div>
@@ -66,18 +70,18 @@
             <!-- Test modal -->
               <div ng-controller='CardController as cardCtrl'>
                 <button ng-click='toggleModal()'>Edit</button>
-                <modal-dialog show='modalShown' width='50%' height='60%'>
-                  <p>Modal Content For {{ board.lists[1].name }} Goes here<p>
+                <modal-dialog show='modalShown' width='50%' height='40%'>
+                  <!-- <p>Modal Content For {{ board.lists[1].name }} Goes here<p> -->
                     <!-- EXTREMELY IMPORT: card is from the boardCtrl -->
-                  <form id="card-modal-form" name="editCardForm2" ng-submit="cardCtrl.updateCard(card)" novalidate>
-                    <label>Title</label>
-                    <input type="text" ng-model="card.title" value="{{card.title}}" required>
-                    <input type="hidden" ng-model="card.id" value="{{card.id}}" required>
-                    <label>Position Description</label>
-                    <!-- <textarea ng-model="card.position_description" required>{{ card.position_description }}</textarea> -->
-                    <label>Tech Stack</label>
-                    <input type="text" ng-model="card.tech_stack" value="{{card.tech_stack}}" required>
-                    <input type="submit" value="Update (AYFL?)">
+                  <form id="card-modal-form" name="editCardForm" ng-submit="cardCtrl.updateCard(card)" novalidate>
+                    <!-- <label id="card-modal-label">Title</label> -->
+                    <input id="card-modal-title" type="text" ng-model="card.title" value="{{card.title}}" required>
+                    <!-- <input type="hidden" ng-model="card.id" value="{{card.id}}" required> -->
+                    <label id="card-modal-label">Position Description</label>
+                    <textarea id="card-modal-input"  ng-model="card.position_description" required>{{ card.position_description }}</textarea>
+                    <label id="card-modal-label">Tech Stack</label>
+                    <input id="card-modal-input" type="text" ng-model="card.tech_stack" value="{{card.tech_stack}}" required>
+                    <input id="submit" type="submit" value="Update">
                   </form>
                 </modal-dialog>
               </div>
@@ -101,20 +105,20 @@
               <!-- Test modal -->
               <div ng-controller='CardController as cardCtrl'>
                 <button ng-click='toggleModal()'>Edit</button>
-                <modal-dialog show='modalShown' width='50%' height='60%'>
-                  <p>Modal Content For {{ board.lists[2].name }} Goes here<p>
+                <modal-dialog show='modalShown' width='50%' height='45%'>
+                  <!-- <p>Modal Content For {{ board.lists[2].name }} Goes here<p> -->
                     <!-- EXTREMELY IMPORT: card is from the boardCtrl -->
                   <form id="card-modal-form" name="editCardForm" ng-submit="cardCtrl.updateCard(card)" novalidate>
-                    <label>Title</label>
-                    <input type="text" ng-model="card.title" value="{{card.title}}" required>
-                    <input type="hidden" ng-model="card.id" value="{{card.id}}" required>
-                    <label>Position Description</label>
-                    <textarea ng-model="card.position_description" required>{{ card.position_description }}</textarea>
-                    <label>Tech Stack</label>
-                    <input type="text" ng-model="card.tech_stack" value="{{card.tech_stack}}" required>
-                    <label>Advocate Name</label>
-                    <input type="text" ng-model="card.advocate" value="{{card.advocate}}" required>
-                    <input type="submit" value="Update (AYFL?)">
+                    <!-- <label id="card-modal-label">Title</label> -->
+                    <input id="card-modal-title" type="text" ng-model="card.title" value="{{card.title}}" required>
+                    <!-- <input type="hidden" ng-model="card.id" value="{{card.id}}" required> -->
+                    <label id="card-modal-label">Position Description</label>
+                    <textarea id="card-modal-input"  ng-model="card.position_description" required>{{ card.position_description }}</textarea>
+                    <label id="card-modal-label">Tech Stack</label>
+                    <input id="card-modal-input" type="text" ng-model="card.tech_stack" value="{{card.tech_stack}}" required>
+                    <label id="card-modal-label">Advocate Name</label>
+                    <input id="card-modal-input" type="text" ng-model="card.advocate" value="{{card.advocate}}" required>
+                    <input id="submit" type="submit" value="Update">
                   </form>
                 </modal-dialog>
               </div>
@@ -144,22 +148,22 @@
               <!-- Test modal -->
               <div ng-controller='CardController as cardCtrl'>
                 <button ng-click='toggleModal()'>Edit</button>
-                <modal-dialog show='modalShown' width='50%' height='60%'>
-                  <p>Modal Content For {{ board.lists[3].name }} Goes here<p>
+                <modal-dialog show='modalShown' width='50%' height='55%'>
+                  <!-- <p>Modal Content For {{ board.lists[3].name }} Goes here<p> -->
 
                     <form id="card-modal-form" name="editCardForm" ng-submit="cardCtrl.updateCard(card)" novalidate>
-                    <label>Title</label>
-                    <input type="text" ng-model="card.title" value="{{card.title}}" required>
-                    <input type="hidden" ng-model="card.id" value="{{card.id}}" required>
-                    <label>Position Description</label>
-                    <textarea ng-model="card.position_description" required>{{ card.position_description }}</textarea>
-                    <label>Tech Stack</label>
-                    <input type="text" ng-model="card.tech_stack" value="{{card.tech_stack}}" required>
-                    <label>Advocate Name</label>
-                    <input type="text" ng-model="card.advocate" value="{{card.advocate}}" required>
-                    <label>Organization Summary</label>
-                    <input type="text" ng-model="card.organization_summary" value="{{card.organization_summary}}" required>
-                    <input type="submit" value="Update (AYFL?)">
+                    <!-- <label id="card-modal-label">Title</label> -->
+                    <input id="card-modal-title" type="text" ng-model="card.title" value="{{card.title}}" required>
+                    <!-- <input type="hidden" ng-model="card.id" value="{{card.id}}" required> -->
+                    <label id="card-modal-label">Position Description</label>
+                    <textarea id="card-modal-input"  ng-model="card.position_description" required>{{ card.position_description }}</textarea>
+                    <label id="card-modal-label">Tech Stack</label>
+                    <input id="card-modal-input" type="text" ng-model="card.tech_stack" value="{{card.tech_stack}}" required>
+                    <label id="card-modal-label">Advocate Name</label>
+                    <input id="card-modal-input" type="text" ng-model="card.advocate" value="{{card.advocate}}" required>
+                    <label id="card-modal-label">Organization Summary</label>
+                    <input id="card-modal-input" type="text" ng-model="card.organization_summary" value="{{card.organization_summary}}" required>
+                    <input id="submit" type="submit" value="Update">
                   </form>
                 </modal-dialog>
               </div>
@@ -185,23 +189,23 @@
               <div ng-controller='CardController as cardCtrl'>
                 <button ng-click='toggleModal()'>Edit</button>
                 <modal-dialog show='modalShown' width='50%' height='60%'>
-                  <p>Modal Content For {{ board.lists[4].name }} Goes here<p>
+                  <!-- <p>Modal Content For {{ board.lists[4].name }} Goes here<p> -->
 
                     <form id="card-modal-form" name="editCardForm" ng-submit="cardCtrl.updateCard(card)" novalidate>
-                    <label>Title</label>
-                    <input type="text" ng-model="card.title" value="{{card.title}}" required>
-                    <input type="hidden" ng-model="card.id" value="{{card.id}}" required>
-                    <label>Position Description</label>
-                    <textarea ng-model="card.position_description" required>{{ card.position_description }}</textarea>
-                    <label>Tech Stack</label>
-                    <input type="text" ng-model="card.tech_stack" value="{{card.tech_stack}}" required>
-                    <label>Advocate Name</label>
-                    <input type="text" ng-model="card.advocate" value="{{card.advocate}}" required>
-                    <label>Organization Summary</label>
-                    <input type="text" ng-model="card.organization_summary" value="{{card.organization_summary}}" required>
-                    <label>Glassdoor Rating</label>
-                    <input type="text" ng-model="card.glassdoor_rating" value="{{card.glassdoor_rating}}" required>
-                    <input type="submit" value="Update (AYFL?)">
+                    <!-- <label id="card-modal-label">Title</label> -->
+                    <input id="card-modal-title" type="text" ng-model="card.title" value="{{card.title}}" required>
+                    <!-- <input type="hidden" ng-model="card.id" value="{{card.id}}" required> -->
+                    <label id="card-modal-label">Position Description</label>
+                    <textarea id="card-modal-input"  ng-model="card.position_description" required>{{ card.position_description }}</textarea>
+                    <label id="card-modal-label">Tech Stack</label>
+                    <input id="card-modal-input" type="text" ng-model="card.tech_stack" value="{{card.tech_stack}}" required>
+                    <label id="card-modal-label">Advocate Name</label>
+                    <input id="card-modal-input" type="text" ng-model="card.advocate" value="{{card.advocate}}" required>
+                    <label id="card-modal-label">Organization Summary</label>
+                    <input id="card-modal-input" type="text" ng-model="card.organization_summary" value="{{card.organization_summary}}" required>
+                    <label id="card-modal-label">Glassdoor Rating</label>
+                    <input id="card-modal-input" type="text" ng-model="card.glassdoor_rating" value="{{card.glassdoor_rating}}" required>
+                    <input id="submit" type="submit" value="Update">
                   </form>
                 </modal-dialog>
               </div>
@@ -227,26 +231,26 @@
             <!-- Test modal -->
               <div ng-controller='CardController as cardCtrl'>
                 <button ng-click='toggleModal()'>Edit</button>
-                <modal-dialog show='modalShown' width='50%' height='60%'>
-                  <p>Modal Content For {{ board.lists[5].name }} Goes here<p>
+                <modal-dialog show='modalShown' width='50%' height='70%'>
+                  <!-- <p>Modal Content For {{ board.lists[5].name }} Goes here<p> -->
 
                     <form id="card-modal-form" name="editCardForm" ng-submit="cardCtrl.updateCard(card)" novalidate>
-                    <label>Title</label>
-                    <input type="text" ng-model="card.title" value="{{card.title}}" required>
-                    <input type="hidden" ng-model="card.id" value="{{card.id}}" required>
-                    <label>Position Description</label>
-                    <textarea ng-model="card.position_description" required>{{ card.position_description }}</textarea>
-                    <label>Tech Stack</label>
-                    <input type="text" ng-model="card.tech_stack" value="{{card.tech_stack}}" required>
-                    <label>Advocate Name</label>
-                    <input type="text" ng-model="card.advocate" value="{{card.advocate}}" required>
-                    <label>Organization Summary</label>
-                    <input type="text" ng-model="card.organization_summary" value="{{card.organization_summary}}" required>
-                    <label>Glassdoor Rating</label>
-                    <input type="text" ng-model="card.glassdoor_rating" value="{{card.glassdoor_rating}}" required>
-                    <label>Recent Articles</label>
-                    <input type="text" ng-model="card.recent_articles" value="{{card.recent_articles}}" required>
-                    <input type="submit" value="Update (AYFL?)">
+                    <!-- <label>Title</label> -->
+                    <input id="card-modal-title" type="text" ng-model="card.title" value="{{card.title}}" required>
+                    <input id="card-modal-input" type="hidden" ng-model="card.id" value="{{card.id}}" required>
+                    <label id="card-modal-label" >Position Description</label>
+                    <textarea id="card-modal-input" ng-model="card.position_description" required>{{ card.position_description }}</textarea>
+                    <label id="card-modal-label" >Tech Stack</label>
+                    <input id="card-modal-input" type="text" ng-model="card.tech_stack" value="{{card.tech_stack}}" required>
+                    <label id="card-modal-label" >Advocate Name</label>
+                    <input id="card-modal-input" type="text" ng-model="card.advocate" value="{{card.advocate}}" required>
+                    <label id="card-modal-label" >Organization Summary</label>
+                    <input id="card-modal-input" type="text" ng-model="card.organization_summary" value="{{card.organization_summary}}" required>
+                    <label id="card-modal-label" >Glassdoor Rating</label>
+                    <input id="card-modal-input" type="text" ng-model="card.glassdoor_rating" value="{{card.glassdoor_rating}}" required>
+                    <label id="card-modal-label" >Recent Articles</label>
+                    <input id="card-modal-input" type="text" ng-model="card.recent_articles" value="{{card.recent_articles}}" required>
+                    <input id="submit"type="submit" value="Update">
                   </form>
                 </modal-dialog>
               </div>
