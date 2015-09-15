@@ -20,7 +20,7 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
         .success(function(returnValues){
             // console.log("ReturnValues : ", returnValues)
             $scope.board = returnValues.board;
-            // console.log("Inside succes:", $scope.board);
+            console.log("Inside succes:", $scope.board);
             $scope.list1_items = $scope.board.lists[0]
             $scope.allCards = returnValues.cards;
             // console.log("All cards: ", $scope.allCards)
@@ -42,7 +42,10 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
             }
         })
         .success(function(response){
-            console.log("updated card: ", response);
+            // response.movement and response.card
+            console.log("moved card: ", response);
+            card.priority = response.card.priority;
+            console.log("card with new priority is: ", card);
         });
     };
 
@@ -78,7 +81,10 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
             }
         })
         .success(function(returnValues){
-            console.log("ReturnValues : ", returnValues)
+            // This needs to set the ID of the Card so that we can use the dropCallback that needs the card ID
+            console.log("ReturnValues : ", returnValues); // ReturnValues :  Object {id: 56, list_id: 160, organization_name: null, organization_summary: null, position_applied_for: null…}
+            // card.id = returnValues.id;
+            // console.log(card); //Object {title: "Asana", $$hashKey: "object:167", id: 56}
             // $scope.board = returnValues.board;
             console.log("Inside succes:", $scope.board);
             // $scope.list1_items = $scope.board.lists[0]
