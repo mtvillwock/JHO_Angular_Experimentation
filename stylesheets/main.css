@@ -202,7 +202,13 @@ black: #272729*/
   color: #fdfcfc;
   padding: 2px;
 }
-
+/*++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.board#edit-card-button {
+  height: auto;
+  width: auto;
+  max-width: 25px;
+  max-height: 25px;
+}
 .board input#submit {
   width:100px;
   position:absolute;
@@ -220,6 +226,7 @@ input#submit:hover {
   background:#fdfcfc;
   color:#22c1ee;
 }
+/*++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 
 /*To style the drag and drop*/
@@ -492,7 +499,8 @@ textarea:focus, input:focus {
 
 
 .footer {
-  font-size: .5em;
+  font-size: .65em;
+  margin: 20px 0 0 1%;
 }
 
 
@@ -602,6 +610,10 @@ input#submit:hover {
   color:#22c1ee;
 }*/
 
+
+.stats p {
+  margin: 20px 5% 20px 5%;
+}
 
 /*Media Rules below */
 
