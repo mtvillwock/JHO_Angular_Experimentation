@@ -203,6 +203,25 @@ black: #272729*/
   padding: 2px;
 }
 
+.board input#submit {
+  width:100px;
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  background:#22c1ee;
+  color: #fdfcfc;
+  height:30px;
+  border: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+input#submit:hover {
+  background:#fdfcfc;
+  color:#22c1ee;
+}
+
+
 /*To style the drag and drop*/
 ul .dndDraggingSource {
     display: none;
@@ -483,20 +502,105 @@ textarea:focus, input:focus {
   /*font-size: 0.85em;*/
   /*margin: 0 0 0 3%;*/
 }
-.today h4{
+/*.today h4{
   display: inline-block;
   font-size: 0.85em;
   margin: 0 0 0 3%;
-}
+}*/
 .today ul {
   list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+.today li {
+  width: 60%;
+  display: inline-block;
+  background-color: #EEEFF0; /*#f8f8f8;*/
+  margin: 8px 10% 8px 4%;
+  border-radius: 8px;
+  padding: 5px 0 5px 0;
+  /*border: 1px solid #272729;*/
+}
+.today li:hover {
+  background-color: #f8f8f8;
+  outline: 2px solid #EEEFF0; /*#272729;*/
+  /*box-shadow: none;*/
+  /*box-shadow: 0 0 3pt 2pt;*/
+}
+#outer-div {
+  /*display: inline;*/
+  /*height: 40px;*/
+  /*width: 100px;*/
+  /*padding: 0 5px 0 5px;*/
+}
+#today-list-org-name{
+  /*float: left;*/
+  font-size: 0.85em;
+  color: #22c1ee;
+  margin: 0 1% 4px 1%;
+  vertical-align: center;
+  /*height: 30px;*/
+  /*width: 250px;*/
+}
+#today-list-task {
+  float: left;
+  font-size: 1.75em;
+  margin: 0 1% 0 1%;
+  width: 200px;
 }
 
-.today#complete-button {
+#complete-button {
   display: inline;
-  color: red;
+  float: right;
+  width:100px;
+  /*vertical-align: center;*/
+  /*position:absolute;*/
+  /*right:20px;*/
+  /*bottom:20px;*/
+  background:#22c1ee;
+  color: #fdfcfc;
+  height:30px;
+  border: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 3px 1% 0 0 ;
+}
+#save-for-later {
+  display: inline;
+  float: right;
+  width:140px;
+  /*vertical-align: center;*/
+  /*position:absolute;*/
+  /*right:20px;*/
+  /*bottom:20px;*/
+  background:#22c1ee;
+  color: #fdfcfc;
+  height:30px;
+  border: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 3px 1% 0 1%;
 }
 
+/*input#submit {
+  width:100px;
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  background:#22c1ee;
+  color: #fdfcfc;
+  height:30px;
+  border: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+input#submit:hover {
+  background:#fdfcfc;
+  color:#22c1ee;
+}*/
 
 
 /*Media Rules below */
