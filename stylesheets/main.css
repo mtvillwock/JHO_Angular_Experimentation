@@ -253,7 +253,7 @@ ul .dndDraggingSource {
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
 
-  background-color: #EEEFF0;
+  background-color: #EEEFF0;  /*dark gray*/
   box-shadow: 4px 4px 80px #000;
   border-radius: 10px;
   color: #272729;
@@ -280,8 +280,11 @@ ul .dndDraggingSource {
   border: none;
   height: 25px;
   background-color: #EEEFF0; /*#f8f8f8;*/  /*#e2e4e6*/
-  margin: 4px 0 8px 0;
-  font-size: 1.5em
+  margin: 4px 0 4px 0;
+  font-size: 1.5em;
+  /*Maybe get rid of this*/
+  /*border-bottom: 1px solid #272729;*/
+  padding: 0 0 4px 0;
 }
 #card-modal-input {
   display: block;
@@ -318,8 +321,6 @@ input#submit:hover {
 textarea:focus, input:focus {
   border: 1px solid #22c1ee;
 }
-
-
 
 .ng-modal-close {
   position: absolute;
@@ -476,6 +477,25 @@ textarea:focus, input:focus {
 }
 
 
+/*Today Panel Styling*/
+.today h1{
+  /*display: inline-block;*/
+  /*font-size: 0.85em;*/
+  /*margin: 0 0 0 3%;*/
+}
+.today h4{
+  display: inline-block;
+  font-size: 0.85em;
+  margin: 0 0 0 3%;
+}
+.today ul {
+  list-style-type: none;
+}
+
+.today#complete-button {
+  display: inline;
+  color: red;
+}
 
 
 
