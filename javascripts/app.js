@@ -48,8 +48,8 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
                 .success(function(response) {
                     // response.movement and response.card
                     console.log("moved card: ", response);
-                    card.priority = response.card.priority;
-                    console.log("card with new priority is: ", card);
+                    card = response.card;
+                    console.log("card with new priority and position is: ", card);
                 });
         };
 
