@@ -4,12 +4,12 @@
   <h1>My top priorities for today</h1>
 
   <ul>
-    <li ng-repeat="card in allCards | orderBy:'card.priority' | limitTo:7 ">
+    <li ng-repeat="card in allCards | orderBy :'-priority' | limitTo:7 ">
       <div id="outer-div">
 
         <div id="today-list-org-name">{{card.title}} </div>
         <div id="today-list-task">{{card.next_task}} </div>
-        <div id="today-list-task">{{card.priority}} </div>
+        <!-- <div id="today-list-task">{{card.priority}} </div> -->
 
         <!-- Complete button launches modal to edit card -->
         <div ng-controller='CardController as cardCtrl'>

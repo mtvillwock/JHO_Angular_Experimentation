@@ -571,10 +571,10 @@ textarea:focus, input:focus {
   /*width: 250px;*/
 }
 #today-list-task {
-  float: left;
+  /*float: left;*/
   font-size: 1.75em;
   margin: 0 1% 0 1%;
-  width: 200px;
+  /*width: 200px;*/
 }
 
 #complete-button {
