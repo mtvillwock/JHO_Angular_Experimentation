@@ -671,6 +671,10 @@ input#submit:hover {
 #article-container p {
   font-size: 0.75em;
 }
+.stats small {
+  font-size: 0.5em;
+  margin: 0 0 0 5%;
+}
 
 /*white: #fdfcfc
 blue: #22c1ee
