@@ -14,7 +14,9 @@
             dnd-inserted="boardCtrl.updateCardPosition(event, index, item, {{ board.lists[0].id }})"
             >
 
-            <li ng-repeat="card in board.lists[0].cards" dnd-draggable="card"
+            <li id="card{{card.id}}"
+                ng-repeat="card in board.lists[0].cards"
+                dnd-draggable="card"
                 dnd-effect-allowed="move"
                 dnd-type="card"
                 dnd-moved="board.lists[0].cards.splice($index, 1); log(e)"
@@ -63,7 +65,7 @@
           dnd-list="board.lists[1].cards"
           dnd-inserted="boardCtrl.updateCardPosition(event, index, item, {{ board.lists[1].id }})"
           >
-            <li ng-repeat="card in board.lists[1].cards" dnd-draggable="card"
+            <li id="card{{card.id}}" ng-repeat="card in board.lists[1].cards" dnd-draggable="card"
                 dnd-effect-allowed="move"
                 dnd-type="card"
                 dnd-moved="board.lists[1].cards.splice($index, 1)"
@@ -100,7 +102,7 @@
           dnd-list="board.lists[2].cards"
           dnd-inserted="boardCtrl.updateCardPosition(event, index, item, {{ board.lists[2].id }})"
           >
-            <li ng-repeat="card in board.lists[2].cards" dnd-draggable="card"
+            <li id="card{{card.id}}" ng-repeat="card in board.lists[2].cards" dnd-draggable="card"
                 dnd-effect-allowed="move"
                 dnd-type="card"
                 dnd-moved="board.lists[2].cards.splice($index, 1)"
@@ -144,7 +146,7 @@
           dnd-list="board.lists[3].cards"
           dnd-inserted="boardCtrl.updateCardPosition(event, index, item, {{ board.lists[3].id }})"
           >
-            <li ng-repeat="card in board.lists[3].cards" dnd-draggable="card"
+            <li id="card{{card.id}}" ng-repeat="card in board.lists[3].cards" dnd-draggable="card"
                 dnd-effect-allowed="move"
                 dnd-type="card"
                 dnd-moved="board.lists[3].cards.splice($index, 1)"
@@ -185,7 +187,7 @@
           dnd-list="board.lists[4].cards"
           dnd-inserted="boardCtrl.updateCardPosition(event, index, item, {{ board.lists[4].id }})"
           >
-            <li ng-repeat="card in board.lists[4].cards" dnd-draggable="card"
+            <li id="card{{card.id}}" ng-repeat="card in board.lists[4].cards" dnd-draggable="card"
                 dnd-effect-allowed="move"
                 dnd-type="card"
                 dnd-moved="board.lists[4].cards.splice($index, 1)"
@@ -229,7 +231,7 @@
         dnd-list="board.lists[5].cards"
         dnd-inserted="boardCtrl.updateCardPosition(event, index, item, {{ board.lists[5].id }})"
         >
-          <li ng-repeat="card in board.lists[5].cards" dnd-draggable="card"
+          <li id="card{{card.id}}" ng-repeat="card in board.lists[5].cards" dnd-draggable="card"
               dnd-effect-allowed="move"
               dnd-type="card"
               dnd-moved="board.lists[5].cards.splice($index, 1)"

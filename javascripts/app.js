@@ -129,15 +129,24 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
         this.delete = function(card) {
             console.log("card to delete", card);
 
+            var element = document.getElementById('card' + card.id);
+            console.log("card to element", element);
+            element.parentNode.removeChild(element);
+
+            for (var i = 0; i < $scope.board.lists.length; i++) {
+                if ($scope.board.lists[i].id == card.list_id) {
+                    list = $scope.board.lists[i];
+                    for (var j = 0; j < list.length; j++) {
+                        if (list[j].id == card.id) {
+                            console.log("found card: ", list[j]);
+                            list.splice(j, 1);
+                        }
+                    };
+                }
+            };
+
             $http.delete(API + '/cards/' + card.id).success(function(response) {
-                // var listToDeleteFrom = $scope.board.lists[card.list_id];
-                console.log("listToDeleteFrom ", listToDeleteFrom)
-                // .log(response);
-                // for (var i = listToDeleteFrom.length - 1; i >= 0; i--) {
-                //     if (listToDeleteFrom[i].id = card.id) {
-                //         listToDeleteFrom.splice(i, 1);
-                //     }
-                // };
+                console.log("response ", response);
             });
         }
 
