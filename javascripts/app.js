@@ -1,6 +1,6 @@
 angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
-.constant('API', 'https://jho-api.herokuapp.com')
-// .constant('API', 'http://localhost:3000')
+// .constant('API', 'https://jho-api.herokuapp.com')
+.constant('API', 'http://localhost:3000')
 
 .config(['$httpProvider',
     function($httpProvider) {
@@ -136,10 +136,11 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
             for (var i = 0; i < $scope.board.lists.length; i++) {
                 if ($scope.board.lists[i].id == card.list_id) {
                     list = $scope.board.lists[i];
-                    for (var j = 0; j < list.length; j++) {
-                        if (list[j].id == card.id) {
-                            console.log("found card: ", list[j]);
-                            list.splice(j, 1);
+                    // console.log("list !!!", list);
+                    for (var j = 0; j < list.cards.length; j++) {
+                        if (list.cards[j].id == card.id) {
+                            // console.log("found card: ", list.cards[j]);
+                            list.cards.splice(j, 1);
                         }
                     };
                 }
