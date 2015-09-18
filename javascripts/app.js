@@ -155,6 +155,7 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
         this.updateCard = function(card) {
             console.log("In updateCard function:", card)
             // Add in all card attributes, eventually
+            $scope.toggleModal()
             $http.put(API + '/cards/' + card.id, {
                 card: {
                     title: card.title,
