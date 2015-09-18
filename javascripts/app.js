@@ -146,6 +146,7 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
                 }
             };
 
+            $scope.toggleModal()
             $http.delete(API + '/cards/' + card.id).success(function(response) {
                 console.log("response ", response);
             });
