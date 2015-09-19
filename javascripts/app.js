@@ -145,6 +145,7 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
                     };
                 }
             };
+            // Need to also implement this for cards
 
             $scope.toggleModal()
             $http.delete(API + '/cards/' + card.id).success(function(response) {
@@ -167,12 +168,32 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
                     position_applied_for: card.position_applied_for,
                     tech_stack: card.tech_stack,
                     glassdoor_rating: card.glassdoor_rating,
-                    recent_articles: card.recent_articles
+                    recent_articles: card.recent_articles,
+                    priority: card.priority
                 }
             })
                 .success(function(response) {
                     console.log("updated card: ", response);
                 });
+
+        };
+        this.updateCardPriority = function(card) {
+            // console.log("In updateCardPriority function:", card)
+
+            for (var i = 0; i < $scope.allCards.length; i++) {
+                if ($scope.allCards[i].id == card.id) {
+                    $scope.allCards[i].priority = 1;
+                }
+            };
+
+            $http.put(API + '/cards/' + card.id, {
+                card: {
+                    priority: 1
+                }
+            })
+            .success(function(response) {
+                console.log("updated card: ", response);
+            });
 
         };
     }

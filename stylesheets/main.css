@@ -622,8 +622,8 @@ textarea:focus, input:focus {
   color: #fdfcfc;
   height:30px;
   border: none;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
+  /*-webkit-border-radius: 5px;*/
+  /*-moz-border-radius: 5px;*/
   border-radius: 5px;
   margin: 3px 1% 0 1%;
 }
