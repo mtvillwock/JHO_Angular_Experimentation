@@ -714,4 +714,121 @@ black: #272729*/
 /*.done-true {
   text-decoration: line-through;
   color: grey;
+}*/
+
+#register {
+  /*border: 1px solid #272729;*/
+  width: 50%;
+  background-color: #EEEFF0; /*#f8f8f8;*/
+  border-radius: 8px;
+  margin: 2% auto 0 auto;
 }
+#register h2 {
+  margin: 0 0 15px 0;
+  font-size: 2.75em;
+  color: #22c1ee;
+  padding: 0 0 0 1%;
+  /*border-bottom: 1px solid #272729;*/
+}
+#register form {
+  position: relative;
+  height:315px;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: bold;
+  color: #09C;
+  text-decoration: none;
+}
+#register input {
+  width:60%;
+  display:block;
+  border: none;
+  border-bottom: 1px solid #272729;
+  height: 25px;
+  background-color: #fdfcfc;
+  margin: 4px 0 4px 5%;
+  color: #272729;
+}
+#register label {
+  margin: 4px 0 4px 5%;
+}
+#register input[type=submit] {
+  display: inline;
+  float: left;
+  width:150px;
+  font-size: 25px;
+  background:#22c1ee;
+  color: #fdfcfc;
+  height:40px;
+  border: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 20px 4% 0 5% ;
+}
+#register input[type=submit]:hover {
+  color:#272729;
+}
+#register input:focus {
+  border: 1px solid #22c1ee;
+}
+
+/*The login in styling is very similar to the register -- refactor to compact*/
+#login {
+  /*border: 1px solid black;*/
+  width: 50%;
+  background-color: #EEEFF0;
+  border-radius: 8px;
+  margin: 2% auto 0 auto;
+}
+#login h2 {
+  margin: 0 0 15px 0;
+  font-size: 2.75em;
+  color: #22c1ee;
+  padding: 0 0 0 1%;
+  /*border-bottom: 1px solid black;*/
+}
+#login form {
+  position: relative;
+  height:195px;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: bold;
+  color: #09C;
+  text-decoration: none;
+}
+#login input {
+  width:60%;
+  display:block;
+  border: none;
+  border-bottom: 1px solid #272729;
+  height: 25px;
+  background-color: #fdfcfc;
+  margin: 4px 0 4px 5%;
+}
+#login label {
+  margin: 4px 0 4px 5%;
+}
+#login input[type=submit] {
+  display: inline;
+  float: left;
+  width:150px;
+  font-size: 25px;
+  background:#22c1ee;
+  color: #fdfcfc;
+  height:40px;
+  border: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 20px 4% 0 5% ;
+}
+#login input[type=submit]:hover {
+  color:#272729;
+}
+#login input:focus {
+  border: 1px solid #22c1ee;
+}
+
+
+
