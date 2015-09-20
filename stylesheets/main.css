@@ -797,7 +797,7 @@ black: #272729*/
   font-size: 14px;
   line-height: 24px;
   font-weight: bold;
-  color: #09C;
+  /*color: #09C;*/
   text-decoration: none;
 }
 #login input {
@@ -839,7 +839,18 @@ black: #272729*/
   font-size: 2em;
 }
 #welcome p {
-  /*display: inline;*/
   margin: 0 0 0 2.5%;
 }
-
+#welcome a {
+  text-decoration: none;
+  /*font-weight: bold;*/
+  font-size: 1em;
+  color: #272729;
+  border-bottom: 1px dashed #272729;
+}
+#welcome a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: #22c1ee;
+  border-bottom: 1px solid #22c1ee;
+}
