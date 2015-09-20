@@ -724,7 +724,7 @@ black: #272729*/
   width: 50%;
   background-color: #EEEFF0; /*#f8f8f8;*/
   border-radius: 8px;
-  margin: 2% auto 0 auto;
+  margin: 1% auto 0 auto;
 }
 #register h2 {
   margin: 0 0 15px 0;
@@ -782,7 +782,7 @@ black: #272729*/
   width: 50%;
   background-color: #EEEFF0;
   border-radius: 8px;
-  margin: 2% auto 0 auto;
+  margin: 1% auto 0 auto;
 }
 #login h2 {
   margin: 0 0 15px 0;
@@ -808,6 +808,7 @@ black: #272729*/
   height: 25px;
   background-color: #fdfcfc;
   margin: 4px 0 4px 5%;
+  color: #272729;
 }
 #login label {
   margin: 4px 0 4px 5%;
@@ -833,5 +834,12 @@ black: #272729*/
   border: 1px solid #22c1ee;
 }
 
-
+#welcome h2 {
+  margin: 0 0 5px 2%;
+  font-size: 2em;
+}
+#welcome p {
+  /*display: inline;*/
+  margin: 0 0 0 2.5%;
+}
 

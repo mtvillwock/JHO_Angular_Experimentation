@@ -1,6 +1,11 @@
-<div ng-controller="AuthController as auth" ng-model="form">
-<a href="#/auth" ng-click="form = 'login'">Login</a>
-<a href="#/auth" ng-click="form = 'register'">Register</a>
+<div id="welcome" ng-controller="AuthController as auth" ng-model="form">
+  <h2>Welcome to JHO!</h2>
+  <p>
+    Please
+    <a href="#/auth" ng-click="form = 'login'">Login</a>
+    or
+    <a href="#/auth" ng-click="form = 'register'">Register</a>
+  </p>
 
   <section id="login" ng-if="form == 'login'">
     <h2>Login</h2>
