@@ -653,6 +653,9 @@ input#submit:hover {
 .stats h1 {
   margin: 10px 0 20px 1%;
 }
+.stats h2 {
+  margin: 10px 0 20px 3%;
+}
 .stats h3 {
   font-size: 1.25em;
   margin: 0 0 0 1%;
