@@ -4,12 +4,24 @@ angular.module("JHO")
             var self = this;
             console.log("in AuthController")
 
-            function sendToBoard() {
+            // checks for existing token, sends to board if token exists or board if they don't
+            function verifyLoggedIn() {
+                if (auth.isAuthed()) {
+                    self.sendToBoard();
+                } else {
+                    self.sendToAuth();
+                }
+            }
+
+            // this should only fire when the page loads since we don't have page refreshes happening
+            angular.element(document).ready(verifyLoggedIn);
+
+            self.sendToBoard = function() {
                 $window.location.href = '#/board';
                 $window.location.href;
             }
 
-            function sendToAuth() {
+            self.sendToAuth = function() {
                 $window.location.href = '#/auth';
                 $window.location.href;
             }
@@ -20,10 +32,10 @@ angular.module("JHO")
                 if (token) {
                     console.log('JWT:', token);
                     self.message = res.data;
-                    sendToBoard();
+                    self.sendToBoard();
                 } else {
                     console.log("handleRequest server error / bad request: ", res);
-                    sendToAuth();
+                    self.sendToAuth();
                 }
             }
 
