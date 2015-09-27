@@ -31,13 +31,20 @@
                   <!-- <p>Modal Content for {{ board.lists[0].name }} Goes here<p> -->
                   <!-- EXTREMELY IMPORT: card is from the boardCtrl -->
                   <form id="card-modal-form" name="editCardForm" ng-submit="cardCtrl.updateCard(card)" novalidate>
+                    <div class="card-tasks" ng-repeat="task in card.tasks">
+                      {{ task.title }}
+                      <input type="checkbox" ng-model="task.completed" ng-click="alert('checked a box');">
+                      <textarea ng-model="task.notes"></textarea>
+                    </div>
+
+
                     <!-- <label id="card-modal-label">Title</label> -->
-                    <input id="card-modal-title" type="text" ng-model="card.title" value="{{card.title}}" required>
+                    <!-- <input id="card-modal-title" type="text" ng-model="card.title" value="{{card.title}}" required>
                     <input type="hidden" ng-model="card.id" value="{{card.id}}" required>
                     <label id="card-modal-label">Position Description</label>
                     <textarea id="card-modal-input"  ng-model="card.position_description" required>{{ card.position_description }}</textarea>
                     <label id="card-modal-label">Tech Stack</label>
-                    <input id="card-modal-input" type="text" ng-model="card.tech_stack" value="{{card.tech_stack}}" required>
+                    <input id="card-modal-input" type="text" ng-model="card.tech_stack" value="{{card.tech_stack}}" required> -->
                     <input id="submit" type="submit" value="Update">
                   </form>
                   <button id="delete" ng-click="cardCtrl.delete(card); $event.stopPropogation();" value="Delete">Delete</button>
