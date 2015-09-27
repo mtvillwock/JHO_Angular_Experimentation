@@ -27,17 +27,39 @@
                 <button id="edit-card-button" ng-click='toggleModal()'>Edit</button>
                 <!-- <input id="edit-card-button' type="image" src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/pencil.svg" ng-click='toggleModal()' /> -->
 
-                <modal-dialog show='modalShown' width='50%' height='40%'>
+                <modal-dialog show='modalShown' width='50%' height='90%'>
                   <!-- <p>Modal Content for {{ board.lists[0].name }} Goes here<p> -->
                   <!-- EXTREMELY IMPORT: card is from the boardCtrl -->
+                  <div class="card-tasks" ng-repeat="task in card.tasks" ng-controller="TasksController as tasksCtrl">
+                    {{ task.title }}
+                    <!-- should checkbox only be checkable if notes are filled in? -->
+                    <input type="checkbox" class="task-checkbox" ng-model="task.completed" ng-click="tasksCtrl.updateTask(task);">
+                    <!-- renders the textarea if the task is not complete -->
+                    <textarea id="card-modal-input" ng-model="task.notes" ng-if="task.completed === false" placeholder="What's happened?">{{ task.notes }}</textarea>
+                  </div>
+
+                  <!-- POST to DB, set JS task.completed to false, push to card's tasks array  -->
+                  <div class="task-model-form" ng-controller="TasksController as tasksCtrl">
+                    <form id="create-task-form" name="newTaskForm" ng-submit="tasksCtrl.createTask(newTask, card);" novalidate>
+                      <!-- list="tasks" -->
+                      Add task: <input type="text" id="new-task-title" placeholder="Choose a task or make your own" ng-model="newTask.title">
+                      <!-- <datalist id='tasks'>
+                        <option ng-repeat="task in card.tasks" value="{{ task.title }}">{{ task.title }}</option>
+                      </datalist> -->
+                      <input type="submit" value="Create Task">
+                    </form>
+                  </div>
+
                   <form id="card-modal-form" name="editCardForm" ng-submit="cardCtrl.updateCard(card)" novalidate>
+
+
                     <!-- <label id="card-modal-label">Title</label> -->
-                    <input id="card-modal-title" type="text" ng-model="card.title" value="{{card.title}}" required>
+                    <!-- <input id="card-modal-title" type="text" ng-model="card.title" value="{{card.title}}" required>
                     <input type="hidden" ng-model="card.id" value="{{card.id}}" required>
                     <label id="card-modal-label">Position Description</label>
                     <textarea id="card-modal-input"  ng-model="card.position_description" required>{{ card.position_description }}</textarea>
                     <label id="card-modal-label">Tech Stack</label>
-                    <input id="card-modal-input" type="text" ng-model="card.tech_stack" value="{{card.tech_stack}}" required>
+                    <input id="card-modal-input" type="text" ng-model="card.tech_stack" value="{{card.tech_stack}}" required> -->
                     <input id="submit" type="submit" value="Update">
                   </form>
                   <button id="delete" ng-click="cardCtrl.delete(card); $event.stopPropogation();" value="Delete">Delete</button>

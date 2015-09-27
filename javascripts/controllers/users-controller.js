@@ -4,30 +4,6 @@ angular.module("JHO")
             var controller = this;
             console.log("in user controller");
 
-            // //////////////
-            // Using AuthController for registration
-            // //////////////
-
-            // controller.createUser = function(user) {
-            //     console.log(user);
-
-            //     $http({
-            //         method: 'POST',
-            //         url: API + '/users',
-            //         // url: 'https://jho.herokuapp.com/users',
-            //         data: {
-            //             user: user
-            //         },
-            //     })
-            //         .then(function(response) {
-            //             console.log("user data is: ", response["data"]);
-            //             controller.user = response["data"];
-            //             console.log("controller.user is: ", controller.user)
-            //         }, function(data) {
-            //             console.log("errors: ", data);
-            //         })
-            // };
-
             controller.updateUser = function(user) {
                 console.log("user from form is: ", user);
                 var token, parsed_token, user_id;
