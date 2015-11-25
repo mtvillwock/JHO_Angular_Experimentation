@@ -6,14 +6,14 @@
   <link rel="stylesheet" href="stylesheets/main.css">
   <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
-<body ng-controller="AuthController as auth">
+<body ng-controller="AuthController">
 
     <div class="grid-container outline">
 
       <header class="row header-bar" ng-include="'templates/header.html'"> </header>
 
       <div class="row" >
-        <div ng-view>
+        <div ui-view>
         <!-- show main page content if user is logged in -->
         <!-- Templates accessed by router render here -->
         </div>
@@ -27,7 +27,7 @@
 
   <!-- vendor -->
   <script src="javascripts/vendor/angular.js"></script>
-  <script src="javascripts/vendor/angular-route.js"></script>
+  <script src="javascripts/vendor/angular-ui-router.js"></script>
   <script src="javascripts/vendor/angular-resource.js"></script>
   <script src="javascripts/vendor/angular-drag-and-drop-lists.js"></script>
 

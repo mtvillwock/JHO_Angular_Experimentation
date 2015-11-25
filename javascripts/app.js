@@ -1,6 +1,6 @@
-angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
-.constant('API', 'https://jho-api.herokuapp.com')
-// .constant('API', 'http://localhost:3000')
+angular.module("JHO", ['ui.router', 'ngResource', 'dndLists'])
+// .constant('API', 'https://jho-api.herokuapp.com')
+.constant('API', 'http://localhost:3000')
 
 .config(['$httpProvider',
     function($httpProvider) {
@@ -27,8 +27,8 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
                     console.log("Inside succes:", $scope.board);
                     $scope.list1_items = $scope.board.lists[0]
                     $scope.allCards = returnValues.cards;
-                    // console.log("All cards: ", $scope.allCards)
-                    // console.log("Entire board: ", returnValues)
+                    console.log("All cards: ", $scope.allCards)
+                    console.log("Entire board: ", returnValues)
                 });
         })();
 
@@ -52,25 +52,6 @@ angular.module("JHO", ['ngRoute', 'ngResource', 'dndLists'])
                     console.log("card with new priority and position is: ", card);
                 });
         };
-
-        // this.remainingTasks = function
-
-        // $scope.dropCallback = function(event, index, item, external, type, allowedType) {
-        //     console.log("dropped item is: ", item);
-        //     $scope.logListEvent('dropped at', event, index, external, type);
-        //     if (external) {
-        //         if (allowedType === 'itemType' && !item.label) return false;
-        //         if (allowedType === 'containerType' && !angular.isArray(item)) return false;
-        //     }
-        //     return item;
-        // };
-
-        // $scope.logListEvent = function(action, event, index, external, type) {
-        //     var message = external ? 'External ' : '';
-        //     message += type + ' element is ' + action + ' position ' + index;
-        //     console.log(message, event);
-        // };
-
     }
 ])
 

@@ -23,7 +23,7 @@
             >
               {{card.title}}
               <!-- Took CardController AS CARD out to give access to the boardCtrl card -->
-              <div ng-controller='CardController as cardCtrl'>
+              <div ng-controller='CardController'>
                 <button id="edit-card-button" ng-click='toggleModal()'>Edit</button>
                 <!-- <input id="edit-card-button' type="image" src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/pencil.svg" ng-click='toggleModal()' /> -->
 
@@ -50,7 +50,7 @@
                     </form>
                   </div>
 
-                  <form id="card-modal-form" name="editCardForm" ng-submit="cardCtrl.updateCard(card)" novalidate>
+                  <form id="card-modal-form" name="editCardForm" ng-submit="CardController.updateCard(card)" novalidate>
 
 
                     <!-- <label id="card-modal-label">Title</label> -->
@@ -62,7 +62,7 @@
                     <input id="card-modal-input" type="text" ng-model="card.tech_stack" value="{{card.tech_stack}}" required> -->
                     <input id="submit" type="submit" value="Update">
                   </form>
-                  <button id="delete" ng-click="cardCtrl.delete(card); $event.stopPropogation();" value="Delete">Delete</button>
+                  <button id="delete" ng-click="CardController.delete(card); $event.stopPropogation();" value="Delete">Delete</button>
                 </modal-dialog>
               </div>
 
@@ -95,12 +95,12 @@
               {{card.title}}
 
             <!-- Test modal -->
-              <div ng-controller='CardController as cardCtrl'>
+              <div ng-controller='CardController'>
                 <button id="edit-card-button" ng-click='toggleModal()'>Edit</button>
                 <modal-dialog show='modalShown' width='50%' height='40%'>
                   <!-- <p>Modal Content For {{ board.lists[1].name }} Goes here<p> -->
                     <!-- EXTREMELY IMPORT: card is from the boardCtrl -->
-                  <form id="card-modal-form" name="editCardForm" ng-submit="cardCtrl.updateCard(card)" novalidate>
+                  <form id="card-modal-form" name="editCardForm" ng-submit="CardController.updateCard(card)" novalidate>
                     <!-- <label id="card-modal-label">Title</label> -->
                     <input id="card-modal-title" type="text" ng-model="card.title" value="{{card.title}}" required>
                     <input type="hidden" ng-model="card.id" value="{{card.id}}" required>
@@ -110,7 +110,7 @@
                     <input id="card-modal-input" type="text" ng-model="card.tech_stack" value="{{card.tech_stack}}" required>
                     <input id="submit" type="submit" value="Update">
                   </form>
-                  <button id="delete" ng-click="cardCtrl.delete(card); $event.stopPropogation();" value="Delete">Delete</button>
+                  <button id="delete" ng-click="CardController.delete(card); $event.stopPropogation();" value="Delete">Delete</button>
                 </modal-dialog>
               </div>
             </li>
@@ -131,12 +131,12 @@
             >
               {{card.title}}
               <!-- Test modal -->
-              <div ng-controller='CardController as cardCtrl'>
+              <div ng-controller='CardController'>
                 <button id="edit-card-button" ng-click='toggleModal()'>Edit</button>
                 <modal-dialog show='modalShown' width='50%' height='45%'>
                   <!-- <p>Modal Content For {{ board.lists[2].name }} Goes here<p> -->
                     <!-- EXTREMELY IMPORT: card is from the boardCtrl -->
-                  <form id="card-modal-form" name="editCardForm" ng-submit="cardCtrl.updateCard(card)" novalidate>
+                  <form id="card-modal-form" name="editCardForm" ng-submit="CardController.updateCard(card)" novalidate>
                     <!-- <label id="card-modal-label">Title</label> -->
                     <input id="card-modal-title" type="text" ng-model="card.title" value="{{card.title}}" required>
                     <input type="hidden" ng-model="card.id" value="{{card.id}}" required>
@@ -148,7 +148,7 @@
                     <input id="card-modal-input" type="text" ng-model="card.advocate" value="{{card.advocate}}" required>
                     <input id="submit" type="submit" value="Update">
                   </form>
-                  <button id="delete" ng-click="cardCtrl.delete(card); $event.stopPropogation();" value="Delete">Delete</button>
+                  <button id="delete" ng-click="CardController.delete(card); $event.stopPropogation();" value="Delete">Delete</button>
                 </modal-dialog>
               </div>
             </li>
@@ -175,12 +175,12 @@
             >
               {{card.title}}
               <!-- Test modal -->
-              <div ng-controller='CardController as cardCtrl'>
+              <div ng-controller='CardController'>
                 <button id="edit-card-button" ng-click='toggleModal()'>Edit</button>
                 <modal-dialog show='modalShown' width='50%' height='55%'>
                   <!-- <p>Modal Content For {{ board.lists[3].name }} Goes here<p> -->
 
-                    <form id="card-modal-form" name="editCardForm" ng-submit="cardCtrl.updateCard(card)" novalidate>
+                    <form id="card-modal-form" name="editCardForm" ng-submit="CardController.updateCard(card)" novalidate>
                     <!-- <label id="card-modal-label">Title</label> -->
                     <input id="card-modal-title" type="text" ng-model="card.title" value="{{card.title}}" required>
                     <input type="hidden" ng-model="card.id" value="{{card.id}}" required>
@@ -194,7 +194,7 @@
                     <input id="card-modal-input" type="text" ng-model="card.organization_summary" value="{{card.organization_summary}}" required>
                     <input id="submit" type="submit" value="Update">
                   </form>
-                  <button id="delete" ng-click="cardCtrl.delete(card); $event.stopPropogation();" value="Delete">Delete</button>
+                  <button id="delete" ng-click="CardController.delete(card); $event.stopPropogation();" value="Delete">Delete</button>
                 </modal-dialog>
               </div>
             </li>
@@ -216,12 +216,12 @@
             >
               {{card.title}}
               <!-- Test modal -->
-              <div ng-controller='CardController as cardCtrl'>
+              <div ng-controller='CardController'>
                 <button id="edit-card-button" ng-click='toggleModal()'>Edit</button>
                 <modal-dialog show='modalShown' width='50%' height='60%'>
                   <!-- <p>Modal Content For {{ board.lists[4].name }} Goes here<p> -->
 
-                    <form id="card-modal-form" name="editCardForm" ng-submit="cardCtrl.updateCard(card)" novalidate>
+                    <form id="card-modal-form" name="editCardForm" ng-submit="CardController.updateCard(card)" novalidate>
                     <!-- <label id="card-modal-label">Title</label> -->
                     <input id="card-modal-title" type="text" ng-model="card.title" value="{{card.title}}" required>
                     <input type="hidden" ng-model="card.id" value="{{card.id}}" required>
@@ -237,7 +237,7 @@
                     <input id="card-modal-input" type="text" ng-model="card.glassdoor_rating" value="{{card.glassdoor_rating}}" required>
                     <input id="submit" type="submit" value="Update">
                   </form>
-                  <button id="delete" ng-click="cardCtrl.delete(card); $event.stopPropogation();" value="Delete">Delete</button>
+                  <button id="delete" ng-click="CardController.delete(card); $event.stopPropogation();" value="Delete">Delete</button>
                 </modal-dialog>
               </div>
             </li>
@@ -260,12 +260,12 @@
           >
             {{card.title}}
             <!-- Test modal -->
-              <div ng-controller='CardController as cardCtrl'>
+              <div ng-controller='CardController'>
                 <button id="edit-card-button" ng-click='toggleModal()'>Edit</button>
                 <modal-dialog show='modalShown' width='50%' height='70%'>
                   <!-- <p>Modal Content For {{ board.lists[5].name }} Goes here<p> -->
 
-                    <form id="card-modal-form" name="editCardForm" ng-submit="cardCtrl.updateCard(card)" novalidate>
+                    <form id="card-modal-form" name="editCardForm" ng-submit="CardController.updateCard(card)" novalidate>
                     <!-- <label>Title</label> -->
                     <input id="card-modal-title" type="text" ng-model="card.title" value="{{card.title}}" required>
                     <input id="card-modal-input" type="hidden" ng-model="card.id" value="{{card.id}}" required>
@@ -283,7 +283,7 @@
                     <input id="card-modal-input" type="text" ng-model="card.recent_articles" value="{{card.recent_articles}}" required>
                     <input id="submit"type="submit" value="Update">
                   </form>
-                  <button id="delete" ng-click="cardCtrl.delete(card); $event.stopPropogation();" value="Delete">Delete</button>
+                  <button id="delete" ng-click="CardController.delete(card); $event.stopPropogation();" value="Delete">Delete</button>
                 </modal-dialog>
               </div>
           </li>

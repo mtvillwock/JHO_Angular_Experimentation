@@ -17,13 +17,11 @@ angular.module("JHO")
             angular.element(document).ready(verifyLoggedIn);
 
             self.sendToBoard = function() {
-                $window.location.href = '#/board';
-                $window.location.href;
+                $location.path('/board');
             }
 
             self.sendToAuth = function() {
-                $window.location.href = '#/auth';
-                $window.location.href;
+                $location.path('/auth');
             }
 
             function handleRequest(res) {
