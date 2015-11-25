@@ -4,6 +4,9 @@ angular.module("JHO")
             var factory = {};
 
             // methods go here
+            factory.create = function(cardData) {
+              // magic
+            }
             // consider using $resource or Restangular
             return factory;
         }

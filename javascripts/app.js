@@ -53,18 +53,23 @@ angular.module("JHO", ['ui.router', 'ngResource', 'dndLists'])
     }
 ])
 
-.controller("AddOrganizationController", ['$scope', '$http', 'API',
-    function($scope, $http, API) {
+.controller("AddOrganizationController", ['$scope', '$http', 'API', 'Card',
+    function($scope, $http, API, Card) {
         this.organization = {};
         // this.list1_items = board1.lists[0];
         var newCard = function(card, list_id) {
 
-            $http.post(API + '/cards', {
-                card: {
-                    title: card.title,
-                    list_id: list_id
-                }
-            })
+            // $http.post(API + '/cards', {
+            //     card: {
+            //         title: card.title,
+            //         list_id: list_id
+            //     }
+            // })
+            var cardOptions = {
+                title: card.title,
+                list_id: list_id
+            }
+            Card.create(cardOptions)
                 .success(function(card) {
                     // This needs to set the ID of the Card so that we can use the dropCallback that needs the card ID
                     console.log("Cards#create returns: ", card);
