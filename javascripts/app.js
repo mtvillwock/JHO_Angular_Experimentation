@@ -8,30 +8,28 @@ angular.module("JHO", ['ui.router', 'ngResource', 'dndLists'])
     }
 ])
 
-.controller('BoardController', ['$http', '$scope', 'API',
-    function($http, $scope, API) {
+.controller('BoardController', ['$http', '$scope', 'API', 'Board',
+    function($http, $scope, API, Board) {
         $scope.board = {};
         $scope.list1_items = [];
         $scope.allCards = [];
         // $scope
 
-        // Refactor this into a service later
-        (function() {
-            $http({
-                method: 'GET',
-                url: API + '/dashboard'
-            })
+        function getBoard() {
+            console.log("in getBoard")
+            Board.dashboard()
                 .success(function(returnValues) {
                     // console.log("ReturnValues : ", returnValues)
                     $scope.board = returnValues.board;
-                    console.log("Inside succes:", $scope.board);
+                    console.log("Inside success:", $scope.board);
                     $scope.list1_items = $scope.board.lists[0]
                     $scope.allCards = returnValues.cards;
                     console.log("All cards: ", $scope.allCards)
                     console.log("Entire board: ", returnValues)
                 });
-        })();
+        }
 
+        getBoard();
 
         this.updateCardPosition = function(event, index, card, list_id) {
             console.log("in updateCardPosition")
@@ -172,9 +170,9 @@ angular.module("JHO", ['ui.router', 'ngResource', 'dndLists'])
                     priority: 1
                 }
             })
-            .success(function(response) {
-                console.log("updated card: ", response);
-            });
+                .success(function(response) {
+                    console.log("updated card: ", response);
+                });
 
         };
     }

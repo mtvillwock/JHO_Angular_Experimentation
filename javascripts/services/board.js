@@ -1,9 +1,9 @@
 angular.module("JHO")
     .factory('Board', ['$http', 'API', 'auth',
         function BoardFactory($http, API, auth) {
-            var self = this;
+            var factory = {};
 
-            self.get = function(board) {
+            factory.get = function(board) {
                 return $http.get(API + '/boards', {
                     board: {
                         name: board.name,
@@ -11,5 +11,9 @@ angular.module("JHO")
                 });
             };
 
+            factory.dashboard = function() {
+                return $http.get(API + '/dashboard');
+            }
+            return factory;
         }
     ])
