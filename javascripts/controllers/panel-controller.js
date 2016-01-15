@@ -1,4 +1,4 @@
-angular.module("JHO", [])
+angular.module("JHO")
     .controller("PanelController", function() {
         this.tab = 1;
 

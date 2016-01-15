@@ -20,6 +20,7 @@ angular.module("JHO")
 
             self.isAuthed = function() {
                 var token = self.getToken();
+                console.log("token in isAuthed", token)
                 if (token) {
                     var params = self.parseJwt(token);
                     return Math.round(new Date().getTime() / 1000) <= params.exp;

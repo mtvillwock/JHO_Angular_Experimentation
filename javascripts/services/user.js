@@ -7,7 +7,6 @@ angular.module("JHO")
             self.register = function(user) {
                 return $http.post(API + '/users', {
                     user: {
-
                         name: user.name,
                         email: user.email,
                         password: user.password,

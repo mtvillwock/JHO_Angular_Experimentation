@@ -1,44 +1,45 @@
-angular.module("JHO").controller('BoardController',function(){
-    this.board = board1;
-    this.list1_items = board1.lists[0];
-    // console.log("board1")
-  });
+angular.module("JHO")
+  .controller('BoardController', ['$http', '$scope', 'API', 'Board',
+        function($http, $scope, API, Board) {
+            $scope.board = {};
+            $scope.list1_items = [];
+            $scope.allCards = [];
+            // $scope
 
-// var board1 = {
-//     name: "Test Board Title",
-//     description: '...'
-// }
+            function getBoard() {
+                console.log("in getBoard")
+                Board.dashboard()
+                    .success(function(returnValues) {
+                        // console.log("ReturnValues : ", returnValues)
+                        $scope.board = returnValues.board;
+                        console.log("Inside success:", $scope.board);
+                        $scope.list1_items = $scope.board.lists[0]
+                        $scope.allCards = returnValues.cards;
+                        console.log("All cards: ", $scope.allCards)
+                        console.log("Entire board: ", returnValues)
+                    });
+            }
 
-// var list1_items = [{
-//     title: "Google"
-// }, {
-//     title: "Wired"
-// }, {
-//     title: "TheGreatBlue"
-// }, ]
+            getBoard();
 
+            this.updateCardPosition = function(event, index, card, list_id) {
+                console.log("in updateCardPosition")
+                console.log("event,index,card, list_id", event, index, card, list_id);
 
-// angular.module("JHO", [])
-//     .controller('BoardController', function() {
-//         this.board = board1;
-//         this.list1_items = list1_items;
-//     })
+                card.list_id = list_id; // update Card in DOM
 
-
-// angular.module('JHO', ['dndLists'])
-
-//     // start boardController
-//     .controller('BoardController', function() {
-//         var board = this;
-//         // should we do board.models.lists or boards.lists.cards etc.?
-//         board.lists = [{
-//             title: "Interested In"
-//             // name: "Interested In"
-//         }, {
-//             title: "Applied"
-//             // title: "Applied"
-//         }, {
-//             name: "Interviewed"
-//             // title: "Interviewed"
-//         }]
-//     }) // End of boardController
+                $http.post(API + '/cards/' + card.id + '/movements', {
+                    card: {
+                        title: card.title,
+                        list_id: list_id
+                    }
+                })
+                    .success(function(response) {
+                        // response.movement and response.card
+                        console.log("moved card: ", response);
+                        card = response.card;
+                        console.log("card with new priority and position is: ", card);
+                    });
+            };
+        }
+    ])

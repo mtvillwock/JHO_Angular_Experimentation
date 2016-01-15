@@ -1,1 +1,3 @@
-MVP framework of the JHO Angular.JS frontend.  More will be following very soon.
+# Job Hunt Organizer
+
+MVP framework of the JHO Angular.JS frontend.

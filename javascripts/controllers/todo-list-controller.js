@@ -1,4 +1,4 @@
-angular.module("JHO", [])
+angular.module("JHO")
 // start TodoListController
     .controller('TodoListController', function() {
         var todoList = this;

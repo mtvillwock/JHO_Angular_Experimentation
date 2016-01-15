@@ -23,10 +23,10 @@ angular.module("JHO")
             })
 
             // Welcome view
-            .state('logged-in', {
+            .state('welcome', {
                 url: "/",
                 templateUrl: "templates/welcome.html",
-                controller: "WelcomeController"
+                // controller: "WelcomeController"
             })
 
             // Register view

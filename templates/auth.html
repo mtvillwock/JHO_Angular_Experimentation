@@ -2,9 +2,9 @@
   <h2>Welcome to JHO!</h2>
   <p>
     Please
-    <a href="#/auth" ng-click="form = 'login'">Login</a>
+    <a ui-sref="auth" ng-click="form = 'login'">Login</a>
     or
-    <a href="#/auth" ng-click="form = 'register'">Register</a>
+    <a ui-sref="auth" ng-click="form = 'register'">Register</a>
   </p>
 
   <section id="login" ng-if="form == 'login'">

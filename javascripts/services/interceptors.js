@@ -5,7 +5,8 @@ angular.module("JHO")
                 // attach Authorization header on outgoing request
                 request: function(config) {
                     var token = auth.getToken();
-                    console.log("token from localStorage being used for API call:", token);
+                    console.log("using token from localStorage")
+                    // console.log("token from localStorage being used for API call:", token);
                     if (config.url.indexOf(API) === 0 && token) {
                         config.headers.Authorization = 'Bearer ' + token;
                     }
@@ -20,7 +21,8 @@ angular.module("JHO")
                 // If a token was sent back, save it
                 response: function(res) {
                     if (res.config.url.indexOf(API) === 0 && res.data.token) {
-                        console.log("token received from server:", res.data.token);
+                        console.log("token received from server")
+                        // console.log("token received from server:", res.data.token);
                         auth.saveToken(res.data.token);
                     }
 

@@ -49,7 +49,7 @@ black: #272729*/
   border-bottom: 1px solid #272729;
   margin: 0 0 15px 0;
 }
-#title {
+#logo {
   text-decoration: none;
   font-size: 2.5em;
   float: left;
@@ -58,7 +58,7 @@ black: #272729*/
   /*margin: 0 25% 8px 0;*/
   padding: 0 0 0 15px;
 }
-#title:hover {
+#logo:hover {
   color: #fdfcfc;
 }
 
@@ -853,4 +853,12 @@ black: #272729*/
   font-weight: bold;
   color: #22c1ee;
   border-bottom: 1px solid #22c1ee;
+}
+
+/*
+UTILITY CLASSES
+*/
+
+.pull-right {
+  float: right;
 }

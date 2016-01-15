@@ -1,6 +1,6 @@
 angular.module("JHO")
     .factory('Board', ['$http', 'API', 'auth',
-        function BoardFactory($http, API, auth) {
+        function Board($http, API, auth) {
             var factory = {};
 
             factory.get = function(board) {
