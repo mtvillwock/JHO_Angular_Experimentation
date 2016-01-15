@@ -1,4 +1,3 @@
-  //Removed card from the cardController function call...
 angular.module("JHO")
     .controller('CardController', ['$scope', '$http', 'API',
         function($scope, $http, API) {

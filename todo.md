@@ -1,6 +1,7 @@
 ## Todo
 
 1. Extract controller functions into services.
+1. Revise controllers ala this [article](http://www.technofattie.com/2014/03/21/five-guidelines-for-avoiding-scope-soup-in-angular.html)
 1. Extract HTML chunks into custom directives.
 1. Write unit tests for custom directives.
 1. Revise `a href` tags to `ui-sref` tags.

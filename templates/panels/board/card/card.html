@@ -1,0 +1,10 @@
+<li id="card{{card.id}}"
+                ng-repeat="card in boardCtrl.board.lists[0].cards"
+                dnd-draggable="card"
+                dnd-effect-allowed="move"
+                dnd-type="card"
+                dnd-moved="boardCtrl.board.lists[0].cards.splice($index, 1); log(e)"
+            >
+              {{card.title}}
+
+              <!-- Modal starts here -->

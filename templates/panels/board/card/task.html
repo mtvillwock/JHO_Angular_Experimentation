@@ -1,0 +1,7 @@
+<div class="card-tasks" ng-repeat="task in card.tasks" ng-controller="TasksController as tasksCtrl">
+  {{ task.title }}
+  <!-- should checkbox only be checkable if notes are filled in? -->
+  <input type="checkbox" class="task-checkbox" ng-model="task.completed" ng-click="tasksCtrl.updateTask(task);">
+  <!-- renders the textarea if the task is not complete -->
+  <textarea id="card-modal-input" ng-model="task.notes" ng-if="task.completed === false" placeholder="What's happened?">{{ task.notes }}</textarea>
+</div>

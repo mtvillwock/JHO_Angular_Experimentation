@@ -1,38 +1,42 @@
 angular.module("JHO")
-  .controller("AddOrganizationController", ['$scope', '$http', 'API', 'Card',
-        function($scope, $http, API, Card) {
-            this.organization = {};
-            // this.list1_items = board1.lists[0];
-            var newCard = function(card, list_id) {
+  .controller("AddOrganizationController", ['$scope', '$http', 'API', 'Card', 'Board',
+        function($scope, $http, API, Card, Board) {
+            var _this = this;
+            _this.list1;
+            _this.organization = {};
+
+            Board.dashboard()
+            .then(function(response){
+                _this.list1 = response.data.board.lists[0]
+            }, function(err) {
+                if (err) { console.log(err); }
+            })
+
+            _this.createCard = function(card, list_id) {
                 var cardOptions = {
                     title: card.title,
                     list_id: list_id
                 }
-                Card.create(cardOptions)
-                    .success(function(card) {
-                        // This needs to set the ID of the Card so that we can use the dropCallback that needs the card ID
-                        console.log("Cards#create returns: ", card);
 
-                        $scope.list1_items.cards.pop();
-                        $scope.list1_items.cards.push(card);
-                    })
-                    .fail(function(err) {
+                Card.create(cardOptions)
+                    .then(function(response) {
+                        console.log("Cards#create returns card: ", response.data);
+                        _this.list1.cards.pop();
+                        _this.list1.cards.push(response.data);
+                    },
+                    function(err) {
                         console.log("failed to add organization", err);
                     })
             };
 
-            this.addOrganization = function(list1_items) {
-                console.log("adding Organization in addOrgCtrl")
-                // reset addOrgCtrl.organization ng-model
-                $scope.list1_items.cards.push(this.organization);
-                this.organization = {};
+            _this.renderOrg = function(organization) {
+                _this.list1.cards.push(organization);
+                _this.organization = {}; // reset addOrgCtrl.organization ng-model
 
-                var card = $scope.list1_items.cards[$scope.list1_items.cards.length - 1];
-                console.log("card to send to DB:", card);
-                var list_id = $scope.list1_items.id
+                var card = _this.list1.cards[_this.list1.cards.length - 1];
+                console.log("in renderOrg, card to send to DB:", card);
 
-                newCard(card, list_id);
+                _this.createCard(card, _this.list1.id);
             };
-
         }
     ])

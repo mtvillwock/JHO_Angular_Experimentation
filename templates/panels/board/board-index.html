@@ -3,23 +3,37 @@
 <div class="col-6 panel board" ng-controller="BoardController as boardCtrl">
 <!--           Eventually this board should be refactored to use a combination of ng-repeat and forceful CSS for the individual lists -->
 
-    <h1>{{board.name}} </h1>
+    <h2 id="board-name">{{boardCtrl.board.name}} </h2>
+
+    <list ng-repeat="list in boardCtrl.board.lists">
+      <!--
+      <card ng-repeat="card in list.cards">
+        <card-modal></card-modal>
+        <task ng-repeat="task in card.tasks">
+          <task-modal></task-modal>
+        </task>
+      </card>
+  -->
+    </list>
+
+
+
 
     <div id="interested-col" dnd-allowed-types="['card']">
         <!-- {{boardCtrl.board.lists[0].name}} -->
         <h3> Interested </h3>
 
-          <ul data-list_id="{{ board.lists[0].id }}"
-            dnd-list="board.lists[0].cards"
-            dnd-inserted="boardCtrl.updateCardPosition(event, index, item, {{ board.lists[0].id }})"
+          <ul data-list_id="{{ boardCtrl.board.lists[0].id }}"
+            dnd-list="boardCtrl.board.lists[0].cards"
+            dnd-inserted="boardCtrl.updateCardPosition(event, index, item, {{ boardCtrl.board.lists[0].id }})"
             >
 
             <li id="card{{card.id}}"
-                ng-repeat="card in board.lists[0].cards"
+                ng-repeat="card in boardCtrl.board.lists[0].cards"
                 dnd-draggable="card"
                 dnd-effect-allowed="move"
                 dnd-type="card"
-                dnd-moved="board.lists[0].cards.splice($index, 1); log(e)"
+                dnd-moved="boardCtrl.board.lists[0].cards.splice($index, 1); log(e)"
             >
               {{card.title}}
               <!-- Took CardController AS CARD out to give access to the boardCtrl card -->
@@ -69,8 +83,9 @@
             </li>
           </ul>
 
-          <form id="board-form" name="addOrganizationForm" ng-controller="AddOrganizationController as addOrgCtrl" ng-submit="addOrganizationForm.$valid && addOrgCtrl.addOrganization(list1_items)" novalidate>
+          <form id="board-form" name="addOrganizationForm" ng-controller="AddOrganizationController as addOrgCtrl" ng-submit="addOrganizationForm.$valid && addOrgCtrl.renderOrg(addOrgCtrl.organization)" novalidate>
             <input ng-model="addOrgCtrl.organization.title" type="text" placeholder="New Organization" required/>
+
             <input type="submit" value="Add" />
           </form>
 
