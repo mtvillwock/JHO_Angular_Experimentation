@@ -1,16 +1,22 @@
 angular.module("JHO")
-  .controller("AddOrganizationController", ['$scope', '$http', 'API', 'Card', 'Board',
-        function($scope, $http, API, Card, Board) {
+  .controller("AddOrganizationController", ['$scope', '$http', 'API', 'Card', 'List',
+        function($scope, $http, API, Card, List) {
             var _this = this;
             _this.list1;
             _this.organization = {};
 
-            Board.dashboard()
-            .then(function(response){
-                _this.list1 = response.data.board.lists[0]
-            }, function(err) {
-                if (err) { console.log(err); }
-            })
+            function getFirstList() {
+                var firstListId = document.getElementsByClassName('list')[0].getAttribute("data-id");
+                List.get(firstListId)
+                .then(function(response){
+                    _this.list1 = response.data.list
+                    _this.list1.cards = response.data.cards
+                }, function(err) {
+                    if (err) { console.log(err); }
+                })
+            }
+            // on controller load
+            getFirstList();
 
             _this.createCard = function(card, list_id) {
                 var cardOptions = {

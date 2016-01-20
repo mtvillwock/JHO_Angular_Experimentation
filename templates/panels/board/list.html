@@ -1,5 +1,12 @@
 <div class="list">
   <h3>{{ name }}</h3>
+  <div ng-if="name == 'Organizations of Interest'">
+<form id="board-form" name="addOrganizationForm" ng-controller="AddOrganizationController as addOrgCtrl" ng-submit="addOrganizationForm.$valid && addOrgCtrl.renderOrg(addOrgCtrl.organization)" novalidate>
+            <input ng-model="addOrgCtrl.organization.title" type="text" placeholder="New Organization" required/>
+
+            <input type="submit" value="Add" />
+          </form>
+  </div>
   <ul data-list-id="{{ list.id }}"
       dnd-list="cards"
       dnd-inserted="boardCtrl.updateCardPosition(event, index, item, {{ list.id }})">
