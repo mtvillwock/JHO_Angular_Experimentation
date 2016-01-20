@@ -1,8 +1,11 @@
-<div id="{{list.name}}.join('-')"></div>
-<h3>{{ list.name }}</h3>
-<ul data-list-id="{{ list.id }}">
-  <li>
-    <!-- card directive goes here -->
-    Card
-  </li>
-</ul>
+<div id="{{name}}.join('-')">
+  <h3>{{ name }}</h3>
+  <ul data-list-id="{{ id }}">
+    <!-- dnd-list="boardCtrl.board.lists[0].cards" -->
+    <!-- dnd-inserted="boardCtrl.updateCardPosition(event, index, item, {{ boardCtrl.board.lists[0].id }})" -->
+    <li>
+      <!-- card directive goes here -->
+      Card
+    </li>
+  </ul>
+</div>

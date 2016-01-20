@@ -3,6 +3,8 @@
 1. Extract controller functions into services.
 1. Revise controllers ala this [article](http://www.technofattie.com/2014/03/21/five-guidelines-for-avoiding-scope-soup-in-angular.html)
 1. Extract HTML chunks into custom directives.
+1. Nest directives
+1. Research/implement passing info from parent controller to child controller for nested directives
 1. Write unit tests for custom directives.
 1. Revise `a href` tags to `ui-sref` tags.
 1. Fix header nav – `ng-if` and scope/state issues.

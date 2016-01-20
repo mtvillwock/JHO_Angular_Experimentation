@@ -855,6 +855,14 @@ black: #272729*/
   border-bottom: 1px solid #22c1ee;
 }
 
+
+/*
+UI elements
+*/
+.list {
+  border: 3px black solid;
+}
+
 /*
 UTILITY CLASSES
 */
