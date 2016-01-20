@@ -1,6 +1,6 @@
 angular.module("JHO")
-    .controller('CardController', ['$scope', '$http', 'API',
-        function($scope, $http, API) {
+    .controller('CardController', ['$scope', '$http', 'API', 'Card',
+        function($scope, $http, API, Card) {
             console.log("in CardController")
             $scope.modalShown = false;
             $scope.toggleModal = function() {

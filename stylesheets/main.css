@@ -861,6 +861,20 @@ UI elements
 */
 .list {
   border: 3px black solid;
+  /* FOR TESTING ONLY*/
+  display: inline;
+  width: 225px;
+  min-height: 500px;
+  margin: 0 0 0 0;
+  border: 1px solid #272729;
+  border-radius: 10px;
+  margin: 0 .5% 0 .5%;
+  float: left;
+  background-color: #f8f8f8;
+}
+
+.card {
+  border: 3px solid green;
 }
 
 /*

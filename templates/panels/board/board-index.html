@@ -1,21 +1,14 @@
 <div class="row" ng-include="'templates/rvb-nav-bar.html'"></div>
 
 <div class="col-6 panel board" ng-controller="BoardController as boardCtrl">
-<!--           Eventually this board should be refactored to use a combination of ng-repeat and forceful CSS for the individual lists -->
+  <!--           Eventually this board should be refactored to use a combination of ng-repeat and forceful CSS for the individual lists -->
 
-    <h2 id="board-name">{{boardCtrl.board.name}} </h2>
+  <h2 id="board-name">{{boardCtrl.board.name}} </h2>
 
-    <ul>
-      <list class="list" name="{{list.name}}" id="{{list.id}}" ng-repeat="list in boardCtrl.board.lists">
-        <!--
-        <card ng-repeat="card in list.cards">
-          <card-modal></card-modal>
-          <task ng-repeat="task in card.tasks">
-            <task-modal></task-modal>
-          </task>
-        </card>
-    -->
-      </list>
-    </ul>
+  <ul>
+    <list name="{{list.name}}" data-id="{{list.id}}" ng-repeat="list in boardCtrl.board.lists">
+      <card ng-repeat="card in list.cards" title="{{card.title}}"></card>
+  </list>
+</ul>
 
 </div>
